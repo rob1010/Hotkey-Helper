@@ -1,0 +1,12 @@
+{
+    "theme": "light",
+    "search_shortcuts": true,
+    "opacity": 0.5,
+    "max_window_width": 0.25,
+    "max_window_height": 0.6,
+    "font_family": "Times New Roman",
+    "font_color": "#000000",
+    "font_size": 8,
+    "adapting_window_to_list": true,
+    "position_priority": "top-left"
+}
