@@ -7,39 +7,148 @@ import platform
 import difflib
 import os
 import json
+import logging
 # Add error handling for loading the local map !!!
 # Add threading to load the local map in the background !!!
 # Add event driven design to update the shortcuts when the active window changes !!!
 # Add logging and diagnostics for debugging !!!
 # Add support for different platforms (Windows, Linux, macOS) !!!
 
-LOCAL_DB_PATH = os.path.join(os.path.dirname(__file__), "data/local_shortcut_db.json")
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    filename='shortcuts_manager.log',
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
 
 class ShortcutManager:
-    def __init__(self):
+    """Manages application shortcuts with caching and optimized matching.""" 
+   
+    def __init__(self, map_path, db_path, cache_duration=1):
+        """
+        Initialize the ShortcutManager with paths and cache settings.
+
+        Args:
+            map_path (str): Path to the application mapping text file.
+            db_path (str): Path to the local shortcut JSON database.
+            cache_duration (int): Cache duration in seconds (default: 60).
+        """
+        self.map_path = map_path
+        self.db_path = db_path
+        self.cache_duration = cache_duration
+        self.app_map_cache = None
+        self.app_names_sorted = None
         self.shortcut_cache = None
         self.last_load_time = 0
-        self.cache_duration = 60  # seconds
-        
-    def load_local_shortcuts(self, window_title):
+
+    def load_app_map(self):
+        """Load and cache the application map from the text file."""
         current_time = time.time()
-        if (self.shortcut_cache is None or 
-            (current_time - self.last_load_time) > self.cache_duration):
-            if not os.path.exists(LOCAL_DB_PATH):
-                print(f"Local shortcut file not found: {LOCAL_DB_PATH}")
-                return {}
-            with open(LOCAL_DB_PATH, "r") as f:
-                self.shortcut_cache = json.load(f)
-            self.last_load_time = current_time
+        if self.app_map_cache is None or (current_time - self.last_load_time) > self.cache_duration:
+            try:
+                with open(self.map_path, "r") as file:
+                    app_map = {}
+                    for line in file:
+                        if ":" in line:
+                            parts = line.strip().split(": ", 1)
+                            if len(parts) == 2:
+                                app_name, version = parts
+                                app_name = app_name.strip('"')  # Remove double quotes
+                                app_map[app_name] = {"name": app_name, "version": version}
+                    self.app_map_cache = app_map
+                    self.app_names_sorted = sorted(app_map.keys(), key=len, reverse=True)
+                    self.last_load_time = time.time()
+                    logger.info("App map loaded and cached")
+            except FileNotFoundError:
+                logger.error(f"App map file not found: {self.map_path}")
+                self.app_map_cache = {}
+                self.app_names_sorted = []
+            except Exception as e:
+                logger.error(f"Error loading app map: {e}")
+                self.app_map_cache = {}
+                self.app_names_sorted = []
+        return self.app_map_cache
+
+    def load_shortcut_cache(self):
+        """Load and cache the shortcut database from the JSON file."""
+        current_time = time.time()
+        if self.shortcut_cache is None or (current_time - self.last_load_time) > self.cache_duration:
+            try:
+                with open(self.db_path, "r") as f:
+                    self.shortcut_cache = json.load(f)
+                self.last_load_time = time.time()
+                logger.info("Shortcut database loaded and cached")
+            except FileNotFoundError:
+                logger.error(f"Shortcut database file not found: {self.db_path}")
+                self.shortcut_cache = {}
+            except json.JSONDecodeError:
+                logger.error("Error decoding JSON from shortcut database")
+                self.shortcut_cache = {}
+            except Exception as e:
+                logger.error(f"Unexpected error loading shortcut database: {e}")
+                self.shortcut_cache = {}
+        return self.shortcut_cache
+    
+    def find_best_match(self, window_title):
+        """
+        Find the best matching application name based on the window title.
+        
+        Args:
+            window_title (str): The title of the active window.
+            
+        Returns:
+            str or None: The standardized application name or None if no match.
+        """
+        self.load_app_map()
+        if not window_title:
+            return None
+        
+        # Attempt exact match based on phrases in the window title
+        window_title_lower = window_title.lower()
+        for app_name in self.app_names_sorted:
+            if app_name.lower() in window_title_lower:
+                return self.app_map_cache[app_name].get("name", app_name)
+        
+        # Extract the last part of the window title after " - " for better matching
+        if " - " in window_title:
+            window_title = window_title.split(" - ")[-1].strip()
 
         window_title_lower = window_title.lower()
-        for app_name in self.shortcut_cache.keys():
-            if app_name.lower() in window_title_lower:
-                print(f"Shortcuts found for: '{app_name}'")
-                return self.shortcut_cache.get(app_name, {})
-        print(f"No shortcuts for: '{window_title}'")
-        return {}
+
+        # If no exact match, use difflib to find the closest partial match
+        close_matches = difflib.get_close_matches(window_title_lower, self.app_map_cache.keys(), n=1, cutoff=0.5)
+        if close_matches:
+            best_match = close_matches[0]
+            return self.app_map_cache[best_match].get("name", best_match)
+        return None
+    
+    def get_shortcuts(self, window_title):
+        """
+        Retrieve shortcuts for the active window.
         
+        Args:
+            window_title (str): The title of the active window.
+            
+        Returns:
+            dict: Shortcuts for the matched application or empty dict if none.
+        """
+        app_name = self.find_best_match(window_title)
+        
+        if app_name:
+            self.load_shortcut_cache()  # Ensure the cache is loaded
+            logger.info(f"Available apps in shortcut_cache: {list(self.shortcut_cache.keys())}")
+            
+            if app_name in self.shortcut_cache:
+                shortcuts = self.shortcut_cache[app_name]
+                return shortcuts
+            else:
+                logger.info(f"No shortcuts for: '{app_name}' in the cache")
+                return {}
+        else:
+            logger.info(f"No app matched for: '{window_title}'")
+            return {}
+                
 def get_active_window_info():
     """
     Retrieves the title and process name of the currently active window.
@@ -92,76 +201,16 @@ def get_active_window_info():
 
 def is_my_app_active(active_window_title):
     """
-    Determines if the current application is the active window by checking keywords in the title.
-
-    Parameters:
-    active_window_title (str): The title of the active window.
-
+    Check if the current application is active based on window title keywords.
+    
+    Args:
+        active_window_title (str): The title of the active window.
+        
     Returns:
-    bool: True if the active window matches the application name, otherwise False.
+        bool: True if the app is active, False otherwise.
     """
     if not active_window_title:
         return False
-
-    # Convert the window title to lowercase for case-insensitive comparison
     title_lower = active_window_title.lower()
-
-    # List of keywords to check for
     app_keywords = ["hotkey helper", "hotkey_manager"]
-
-    # Check if any keyword is present in the title
     return any(keyword in title_lower for keyword in app_keywords)
-
-def find_best_match(app_map, window_title):
-    """
-    Finds the best match for an application based on the active window title.
-
-    Parameters:
-    app_map (dict): Dictionary of application names and their details.
-    window_title (str): The title of the active window.
-    verbose (bool): If True, prints debugging output. Default is True.
-
-    Returns:
-    tuple: (Standardized application name, version) or (None, None) if no match is found.
-    """
-    # Extract the last part of the window title after " - " for better matching
-    if " - " in window_title:
-        window_title = window_title.split(" - ")[-1].strip()
-
-    window_title_lower = window_title.lower()
-
-
-    # Attempt exact match based on phrases in the window title
-    for app_name, app_info in app_map.items():
-        if app_name.lower() in window_title_lower:
-            return app_info.get("name", app_name)
-
-    # If no exact match, use difflib to find the closest partial match
-    close_matches = difflib.get_close_matches(window_title_lower, app_map.keys(), n=1, cutoff=0.5)
-    if close_matches:
-        best_match = close_matches[0]
-        return app_map[best_match].get("name", best_match)
-
-    return None
-
-def load_local_map(file_path):
-    """
-    Loads a local application mapping file and parses it into a dictionary.
-    
-    Parameters:
-    file_path (str): Path to the application mapping text file.
-    
-    Returns:
-    dict: Dictionary mapping application names to their standardized name and version.
-    """
-    app_map = {}
-    
-    # Read and parse the mapping file line by line
-    with open(file_path, "r") as file:
-        for line in file:
-            # Each line should contain "app_name: version"
-            if ":" in line:
-                app_name, version = line.strip().split(": ")
-                app_map[app_name] = {"name": app_name, "version": version}
-    
-    return app_map

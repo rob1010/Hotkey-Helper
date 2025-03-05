@@ -17,8 +17,6 @@ from PySide6.QtWidgets import (
 from shortcuts_manager import ShortcutManager
 from shortcuts_manager import (
     get_active_window_info,
-    load_local_map,
-    find_best_match,
     is_my_app_active,
 )
 
@@ -137,9 +135,7 @@ class ShortcutDisplay(QWidget):
     def __init__(self, settings_manager, map_path=APP_NAME_MAP_PATH, local_db_path=LOCAL_DB_PATH, interval=250, parent=None):
         super().__init__(parent)
         self.settings_manager = settings_manager or {}
-        self.shortcut_manager = ShortcutManager()
-        self.map_path = map_path
-        self.local_db_path = local_db_path
+        self.shortcut_manager = ShortcutManager(map_path, local_db_path)
         self.interval = interval
         self.timer = QTimer()
         self.text = ""
@@ -147,8 +143,6 @@ class ShortcutDisplay(QWidget):
         self.last_active_app_name = None
         self.current_shortcuts = {}
         self.SEARCH_ICON_PATH = os.path.join(os.path.dirname(__file__), "data/search.png")
-        self.app_name_map = load_local_map(self.map_path)
-        self.local_shortcuts = self.shortcut_manager.load_local_shortcuts(self.local_db_path)
         self.SCREEN_SIZE_WIDTH = self.settings_manager.get_setting('max_window_width')
         self.SCREEN_SIZE_HEIGHT = self.settings_manager.get_setting('max_window_height')
         self.adapt = self.settings_manager.get_setting('adapting_window_to_list')
@@ -201,20 +195,13 @@ class ShortcutDisplay(QWidget):
         window_title, process_name = get_active_window_info()
 
         if not window_title:
-            #print("No active window detected.")
+            print("No active window detected.")
             return
 
-        # Step 2: Load app names mapping
-        try:
-            app_names_map = load_local_map(self.map_path)
-        except FileNotFoundError:
-            app_names_map = {}
-            print("Warning: app_name_map.txt not found.")
-
         # Step 3: Match the active window title to an application name
-        app_name = find_best_match(app_names_map, window_title)
+        app_name = self.shortcut_manager.find_best_match(window_title)
         if not app_name:
-            #print(f"No shortcuts found for the window title: '{window_title}'")
+            print(f"No shortcuts found for the window title: '{window_title}'")
             return
 
         # Step 4: Determine if the current window belongs to this application
@@ -222,13 +209,13 @@ class ShortcutDisplay(QWidget):
 
         # Step 5: Load shortcuts based on the app detection and previous state
         if is_my_app and self.last_active_app_name is None:
-            shortcuts = self.shortcut_manager.load_local_shortcuts(app_name)
+            shortcuts = self.shortcut_manager.get_shortcuts(app_name)
         elif is_my_app and self.last_active_app_name is not None:
-            shortcuts = self.shortcut_manager.load_local_shortcuts(self.last_active_app_name)
+            shortcuts = self.shortcut_manager.get_shortcuts(self.last_active_app_name)
         elif not is_my_app:
-            shortcuts = self.shortcut_manager.load_local_shortcuts(app_name)
+            shortcuts = self.shortcut_manager.get_shortcuts(app_name)
             self.last_active_app_name = app_name
-
+        
         # Step 6: Handle active search state and filter shortcuts
         if self.is_search_active:
             filtered_shortcuts = {
