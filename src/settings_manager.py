@@ -4,12 +4,7 @@ import shutil
 import logging
 from typing import Any, Dict, Optional
 
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO, 
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    filename='settings_manager.log'
-)
+# Get a logger for this module
 logger = logging.getLogger(__name__)
 
 # Configurable paths with environment variable support

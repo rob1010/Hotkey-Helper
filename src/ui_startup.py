@@ -1,7 +1,11 @@
 import os
+import logging
 from PySide6.QtCore import Signal
 from PySide6.QtGui import Qt, QPixmap
 from PySide6.QtWidgets import QDialog, QLabel, QVBoxLayout, QHBoxLayout, QPushButton
+
+# Get a logger for this module
+logger = logging.getLogger(__name__)
 
 class StartupDialog(QDialog):
     """

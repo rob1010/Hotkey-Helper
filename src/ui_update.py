@@ -1,6 +1,10 @@
+import logging
 from PySide6.QtCore import Signal, QThread, Qt, QCoreApplication
 from PySide6.QtWidgets import QWidget, QVBoxLayout, QLabel, QPushButton, QProgressBar
 from update_manager import download_all_collections
+
+# Get a logger for this module
+logger = logging.getLogger(__name__)
 
 class DbUpdateWorker(QThread):
     """

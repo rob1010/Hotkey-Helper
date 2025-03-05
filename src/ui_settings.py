@@ -1,5 +1,9 @@
+import logging
 from PySide6.QtCore import Qt, Signal
 from PySide6.QtWidgets import QWidget, QVBoxLayout, QLabel, QComboBox, QCheckBox, QPushButton, QSlider, QColorDialog
+
+# Get a logger for this module
+logger = logging.getLogger(__name__)
 
 class SettingsWindow(QWidget): 
     """
@@ -109,7 +113,7 @@ class SettingsWindow(QWidget):
         self.layout.addWidget(checkbox)
         return checkbox
 
-    def add_slider_setting(self, label_text, min_val, max_val, tooltip=None):
+    def add_slider_setting(self, label_text, min_val, max_val, unit="%", tooltip=None):
         """
         Add a slider setting to the layout.
 
@@ -124,18 +128,11 @@ class SettingsWindow(QWidget):
         """
         label = QLabel(label_text)
         slider = QSlider(Qt.Horizontal)
-
-        # Ensure min_val and max_val are integers (Corrected from previous usage)
-        min_val = int(min_val)
-        max_val = int(max_val)
-
-        slider.setRange(min_val, max_val)
-        value_label = QLabel(f"{slider.value()}%")
-        slider.valueChanged.connect(lambda value: value_label.setText(f"{value}%"))
+        slider.setRange(int(min_val), int(max_val))
+        value_label = QLabel(f"{slider.value()}{unit}")
+        slider.valueChanged.connect(lambda value: value_label.setText(f"{value}{unit}"))
         if tooltip:
             slider.setToolTip(tooltip)
-
-        # Add to layout
         self.layout.addWidget(label)
         self.layout.addWidget(slider)
         self.layout.addWidget(value_label)
@@ -198,9 +195,9 @@ class SettingsWindow(QWidget):
         """
         color = QColorDialog.getColor()
         if color.isValid():
-            self.settings_manager.set_setting('font_color', color.name())
             self.font_color_button.setStyleSheet(f"background-color: {color.name()};")
-    
+            self.save_settings_from_ui()  # Update via validated method
+            
     def load_settings_into_ui(self):
         """
         Load current settings into the UI elements.
@@ -267,6 +264,7 @@ class SettingsWindow(QWidget):
 
         # Font Color
         color = self.font_color_button.styleSheet().split(':')[-1].strip(';')
+        print(color)
         self.settings_manager.set_setting('font_color', color)
 
         # Font Size

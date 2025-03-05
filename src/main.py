@@ -1,6 +1,14 @@
 import sys
+import logging
 from PySide6.QtWidgets import QApplication
 from ui_window_manager import WindowManager
+
+# Configure logging once for the entire application
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    filename='application.log'  # Single log file for all modules
+)
 
 def main():
     """

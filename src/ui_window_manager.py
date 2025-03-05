@@ -1,5 +1,6 @@
 import sys
 import webbrowser
+import logging
 
 from PySide6.QtCore import QCoreApplication, QTimer
 from PySide6.QtWidgets import QApplication
@@ -9,6 +10,9 @@ from ui_settings import SettingsWindow
 from ui_update import LoadingWindow
 from settings_manager import SettingsManager
 from update_manager import check_for_db_updates
+
+# Get a logger for this module
+logger = logging.getLogger(__name__)
 
 class WindowManager:
     """

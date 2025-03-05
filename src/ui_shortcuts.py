@@ -1,4 +1,5 @@
 import os
+import logging
 import platform
 
 from PySide6.QtCore import Qt, Signal, Slot, QTimer
@@ -19,6 +20,9 @@ from shortcuts_manager import (
     get_active_window_info,
     is_my_app_active,
 )
+
+# Get a logger for this module
+logger = logging.getLogger(__name__)
 
 # Constants for file paths
 APP_NAME_MAP_PATH = os.path.join(os.path.dirname(__file__), "data/app_name_map.txt")

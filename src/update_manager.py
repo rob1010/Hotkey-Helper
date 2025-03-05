@@ -2,9 +2,13 @@ import os
 import time
 import json
 import shutil
+import logging
 import firebase_admin
 
 from firebase_admin import credentials, firestore
+
+# Get a logger for this module
+logger = logging.getLogger(__name__)
 
 # Define local storage paths for shortcut data and update log files
 LOCAL_DB_PATH = os.path.join(os.path.dirname(__file__), "data/shortcut_db.json")

@@ -14,12 +14,7 @@ import logging
 # Add logging and diagnostics for debugging !!!
 # Add support for different platforms (Windows, Linux, macOS) !!!
 
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    filename='shortcuts_manager.log',
-    format='%(asctime)s - %(levelname)s - %(message)s'
-)
+# Get a logger for this module
 logger = logging.getLogger(__name__)
 
 class ShortcutManager:

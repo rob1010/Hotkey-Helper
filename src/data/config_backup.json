@@ -1,12 +1,12 @@
 {
-    "theme": "light",
+    "theme": "dark",
     "search_shortcuts": true,
-    "opacity": 0.7,
+    "opacity": 0.67,
     "max_window_width": 0.25,
     "max_window_height": 0.5,
-    "font_family": "Times New Roman",
+    "font_family": "Verdana",
     "font_color": "#000000",
-    "font_size": 8,
+    "font_size": 12,
     "adapting_window_to_list": true,
-    "position_priority": "bottom-right"
+    "position_priority": "top-left"
 }
