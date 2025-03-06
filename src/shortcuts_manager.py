@@ -186,7 +186,7 @@ def get_active_window_info():
 
         return window_title, process_name
     except Exception as e:
-        print(f"Error getting active window info: {e}")
+        logger.info(f"Error getting active window info: {e}")
         return None, None
 
 def is_my_app_active(active_window_title):

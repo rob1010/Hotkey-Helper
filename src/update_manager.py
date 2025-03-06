@@ -32,7 +32,7 @@ try:
     firebase_admin.initialize_app(cred)
     db = firestore.client()
 except Exception as e:
-    print(f"Error initializing Firebase: {e}")
+    logger.error(f"Error initializing Firebase: {e}")
     db = None
 
 # Function to get the total number of shortcuts
@@ -41,11 +41,12 @@ def get_total_shortcuts():
     Get the total number of shortcuts from Firestore.
 
     Returns:
-    int: The total number of shortcuts, or 0 if an error occurs.
+    int: The total number of shortcuts, or local database count,
+    if an error occurs so it would not start the update.
     """
     if db is None:
         print("Firebase is not initialized properly.")
-        return 0
+        return get_local_shortcuts()
 
     current_time = time.time()
 
@@ -182,11 +183,9 @@ def download_all_collections(callback=None, cancel=None):
         for collection in collections:
             # Check if a cancellation request has been made
             if cancel and cancel():
-                print("Download canceled gracefully.")
                 log_update("cancelled", processed_shortcuts)
                 return False  # Indicate that the process was canceled
 
-            print(f"Fetching collection: {collection.id}")  # Debugging statement
             collection_data = get_all_documents_recursive(collection)
 
             # Adjusting structure to match JS format
@@ -202,7 +201,6 @@ def download_all_collections(callback=None, cancel=None):
 
                 # Check for cancellation during processing of each document
                 if cancel and cancel():
-                    print("Download canceled gracefully while processing documents.")
                     log_update("cancelled", processed_shortcuts)
                     return False
 

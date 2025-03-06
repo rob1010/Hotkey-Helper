@@ -145,6 +145,7 @@ class StartupDialog(QDialog):
         QPushButton: A QPushButton object for starting the application.
         """
         button = self.create_button("Start HotKey Helper", lambda: self.emit_start_app_signal())
+        button.setDefault(True)
         return button
 
     def create_settings_button(self):

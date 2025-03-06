@@ -1,7 +1,12 @@
 import sys
 import logging
+import sentry_sdk
+
 from PySide6.QtWidgets import QApplication
 from ui_window_manager import WindowManager
+
+# Initialize Sentry once in your app (e.g., in main.py)
+#sentry_sdk.init("your_sentry_dsn", traces_sample_rate=1.0)
 
 # Configure logging once for the entire application
 logging.basicConfig(

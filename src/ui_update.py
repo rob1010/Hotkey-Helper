@@ -161,11 +161,15 @@ class LoadingWindow(QWidget):
         """
         if self.thread.isRunning():
             self.worker.stop()
-
+            self.thread.quit()
+            self.thread.wait()
+            
             # Adjust label and button for user feedback
             self.progress_label.setText("Update canceled.")
             self.cancel_update_button.setText("Close")
             self.cancel_update_button.clicked.disconnect()
+            self.cleanup()
+            self.update_completed_signal.emit()
             self.cancel_update_button.clicked.connect(self.close)
 
     def handle_error(self, error_message):

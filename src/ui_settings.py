@@ -48,11 +48,11 @@ class SettingsWindow(QWidget):
         self.adapt_window_checkbox = self.add_checkbox_setting('Adapting window', "Choose between adapting window to shortcut content or a fixed size")
 
         # Window width and height sliders (Corrected values to ensure integers are passed)
-        self.width_slider = self.add_slider_setting('Shortcut window width:', 10, 50, "Set shortcut window width: 10-50%")
-        self.height_slider = self.add_slider_setting('Shortcut window height:', 10, 100, "Set shortcut window height: 10-100%")
+        self.width_slider = self.add_slider_setting('Shortcut window width:', 10, 50, "\nSet shortcut window width: 10-50%")
+        self.height_slider = self.add_slider_setting('Shortcut window height:', 10, 100, "\nSet shortcut window height: 10-100%")
 
         # Opacity Slider
-        self.opacity_slider = self.add_slider_setting('Shortcut window opacity:', 10, 100, "Set shortcut window opacity: 10-100%")
+        self.opacity_slider = self.add_slider_setting('Shortcut window opacity:', 10, 100, "\nSet shortcut window opacity: 10-100%")
         
         # Position Priority
         self.position_priority_combo = self.add_combo_box_setting('Shortcut window position priority:', 
@@ -70,7 +70,7 @@ class SettingsWindow(QWidget):
         self.font_size_slider = self.add_slider_setting_number('Set font size for windows:', 8, 24)
 
         # Save and Reset buttons
-        self.add_button_setting('Save', 'Save', self.save_settings_emit)
+        self.add_button_setting(None, 'Save', self.save_settings_emit)
         self.add_button_setting('Reset for Recommended Settings', 'Reset', self.reset_settings_emit)
 
         self.setLayout(self.layout)
@@ -195,7 +195,7 @@ class SettingsWindow(QWidget):
         """
         color = QColorDialog.getColor()
         if color.isValid():
-            self.font_color_button.setStyleSheet(f"background-color: {color.name()};")
+            self.font_color_button.setStyleSheet(f"background-color:{color.name()};")
             self.save_settings_from_ui()  # Update via validated method
             
     def load_settings_into_ui(self):
@@ -227,7 +227,7 @@ class SettingsWindow(QWidget):
 
         # Font Color
         font_color = self.settings_manager.get_setting('font_color')
-        self.font_color_button.setStyleSheet(f"background-color: {font_color};")
+        self.font_color_button.setStyleSheet(f"background-color:{font_color};")
 
         # Font Size
         font_size = self.settings_manager.get_setting('font_size')
@@ -264,7 +264,6 @@ class SettingsWindow(QWidget):
 
         # Font Color
         color = self.font_color_button.styleSheet().split(':')[-1].strip(';')
-        print(color)
         self.settings_manager.set_setting('font_color', color)
 
         # Font Size
