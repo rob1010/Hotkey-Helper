@@ -6,7 +6,6 @@ from PySide6.QtCore import Qt, Signal, Slot, QTimer
 from PySide6.QtGui import QIcon, QAction, QCursor
 from PySide6.QtWidgets import (
     QSystemTrayIcon,
-    QScrollArea,
     QWidget,
     QMenu,
     QVBoxLayout,
@@ -199,6 +198,7 @@ class ShortcutDisplay(QWidget):
         window_title, process_name = get_active_window_info()
 
         if not window_title:
+            self.descriptionLabel.setText("No active window detected")
             print("No active window detected.")
             return
 
@@ -343,18 +343,6 @@ class ShortcutDisplay(QWidget):
         # Configure labels to enable word wrapping and alignment
         self.descriptionLabel.setAlignment(Qt.AlignTop | Qt.AlignLeft)
         self.shortcutLabel.setAlignment(Qt.AlignTop | Qt.AlignLeft)
-        #self.descriptionLabel.setWordWrap(True)
-        #self.shortcutLabel.setWordWrap(True)
-
-        # Add labels to scrollable areas
-        #self.description_scroll_area = QScrollArea()
-        #self.shortcut_scroll_area = QScrollArea()
-        #self.description_scroll_area.setWidget(self.descriptionLabel)
-        #self.shortcut_scroll_area.setWidget(self.shortcutLabel)
-
-        # Ensure scroll areas resize with content
-        #self.description_scroll_area.setWidgetResizable(True)
-        #self.shortcut_scroll_area.setWidgetResizable(True)
 
         # Add scroll areas to the layout
         self.horizontal_layout.addWidget(self.descriptionLabel)

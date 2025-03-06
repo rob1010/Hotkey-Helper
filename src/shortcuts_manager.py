@@ -8,11 +8,6 @@ import difflib
 import os
 import json
 import logging
-# Add error handling for loading the local map !!!
-# Add threading to load the local map in the background !!!
-# Add event driven design to update the shortcuts when the active window changes !!!
-# Add logging and diagnostics for debugging !!!
-# Add support for different platforms (Windows, Linux, macOS) !!!
 
 # Get a logger for this module
 logger = logging.getLogger(__name__)

@@ -165,8 +165,11 @@ class WindowManager:
         Returns:
         str: The contents of the stylesheet file.
         """
-        with open(file_path, "r") as file:
-            return file.read()
+        try:
+            with open(file_path, "r") as file:
+                return file.read()
+        except Exception as e:
+            logger.error(f"Failed to load stylesheet: {e}")
 
     def start_app(self):
         """

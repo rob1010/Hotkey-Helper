@@ -7,7 +7,7 @@ from ui_window_manager import WindowManager
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    filename='application.log'  # Single log file for all modules
+    filename='data/application.log'  # Single log file for all modules
 )
 
 def main():
