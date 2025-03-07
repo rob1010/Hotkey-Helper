@@ -170,6 +170,7 @@ class WindowManager:
                 return file.read()
         except Exception as e:
             logger.error(f"Failed to load stylesheet: {e}")
+            return ""
 
     def start_app(self):
         """

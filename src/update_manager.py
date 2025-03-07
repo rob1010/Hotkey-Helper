@@ -3,6 +3,7 @@ import time
 import json
 import shutil
 import logging
+import requests
 import firebase_admin
 
 from firebase_admin import credentials, firestore
@@ -32,9 +33,32 @@ try:
     firebase_admin.initialize_app(cred)
     db = firestore.client()
 except Exception as e:
-    logger.error(f"Error initializing Firebase: {e}")
+    logger.info(f"Error initializing Firebase: {e}")
     db = None
 
+def load_latest_version():
+    version_file = "data/latest_version.txt"
+    try:
+        with open(version_file, "r") as f:
+            return f.read().strip()
+    except FileNotFoundError:
+        return "1.0.0"  # Default if file is missing
+    except IOError as e:
+        logger.error(f"Error reading {version_file}: {e}")
+        return "1.0.0"
+    
+def check_for_updates(current_version):
+    try:
+        url = "https://raw.githubusercontent.com/yourusername/yourrepo/main/latest_version.txt"
+        response = requests.get(url)
+        latest_version = response.text.strip()
+        if latest_version > current_version:
+            return True
+        else:
+            return False
+    except Exception:
+        logger.error("Couldn’t check for updates.")
+        
 # Function to get the total number of shortcuts
 def get_total_shortcuts():
     """
@@ -45,7 +69,6 @@ def get_total_shortcuts():
     if an error occurs so it would not start the update.
     """
     if db is None:
-        print("Firebase is not initialized properly.")
         return get_local_shortcuts()
 
     current_time = time.time()
@@ -65,13 +88,11 @@ def get_total_shortcuts():
             # Update the cache with the new value.
             cache["total_shortcuts"] = total_shortcuts
             cache["last_updated"] = current_time
-            print(f"Total number of shortcuts: {total_shortcuts}")
             return total_shortcuts
         else:
-            print("Counter document does not exist.")
             return 0
     except Exception as e:
-        print(f"Error fetching counter document: {e}")
+        logger.error(f"Error fetching counter document: {e}")
         return 0
 
 # Function to get the stored count of shortcuts from a local file
@@ -85,25 +106,27 @@ def get_local_shortcuts():
     try:
         # Check if the file exists before trying to open it
         if not os.path.exists(UPDATE_LOG_PATH):
-            print("Update log file does not exist. Assuming no shortcuts are stored.")
             return 0
 
         # Open and read the local update log file
-        with open(UPDATE_LOG_PATH, 'r') as update_log_file:
-            update_log = json.load(update_log_file)
+        try:
+            with open(UPDATE_LOG_PATH, 'r') as update_log_file:
+                update_log = json.load(update_log_file)
+        except Exception as e:
+            # Handle the case where the JSON file is not properly formatted
+            logger.error("Error reading update log file: Invalid JSON format.")
         
         # Retrieve the stored count, defaulting to 0 if the key is missing
         stored_count = update_log.get('processed_shortcuts', 0)
-        print(f"Total number of local shortcuts: {stored_count}")
         return stored_count
     
-    except json.JSONDecodeError:
+    except Exception as e:
         # Handle the case where the JSON file is not properly formatted
-        print("Error reading update log file: Invalid JSON format.")
+        logger.error("Error reading update log file: Invalid JSON format.")
         return 0
     except Exception as e:
         # General error handler for any other unforeseen issues
-        print(f"Unexpected error reading update log file: {e}")
+        logger.error(f"Unexpected error reading update log file: {e}")
         return 0
 
 # Function to determine if an update is needed
@@ -119,10 +142,8 @@ def check_for_db_updates():
 
     # Determine if the local count matches the current count in the database
     if stored_count == current_count:
-        print("No update needed. Local shortcut count matches the database.")
         return False
     else:
-        print("Update needed. Local shortcut count differs from the database.")
         return True
     
 def get_all_documents_recursive(collection_ref):
@@ -139,11 +160,9 @@ def get_all_documents_recursive(collection_ref):
     try:
         docs = collection_ref.stream()
         for doc in docs:
-            print(f"Fetching document: {doc.id}")  # Debugging statement to see document IDs
             sub_data = {}
             subcollections = doc.reference.collections()
             for subcollection in subcollections:
-                print(f"Fetching subcollection: {subcollection.id} in document: {doc.id}")  # Debugging statement
                 sub_data[subcollection.id] = get_all_documents_recursive(subcollection)
             # Unified format: Application name as the collection, shortcut name as the document
             data[doc.id] = {
@@ -151,7 +170,7 @@ def get_all_documents_recursive(collection_ref):
                 "subcollections": sub_data
             }
     except Exception as e:
-        print(f"Error fetching documents in collection {collection_ref.id}: {e}")
+        logger.error(f"Error fetching documents in collection {collection_ref.id}: {e}")
     return data
 
 def download_all_collections(callback=None, cancel=None):
@@ -169,7 +188,6 @@ def download_all_collections(callback=None, cancel=None):
         # Copy existing data from local to temp if it exists
         if os.path.exists(LOCAL_DB_PATH):
             shutil.copy(LOCAL_DB_PATH, TEMP_DB_PATH)
-            print("Existing local data copied to temp_shortcut_db.json.")
             with open(TEMP_DB_PATH, 'r') as temp_json_file:
                 all_data = json.load(temp_json_file)
         else:
@@ -207,15 +225,13 @@ def download_all_collections(callback=None, cancel=None):
         # Write updated data to the temporary JSON file
         with open(TEMP_DB_PATH, 'w') as temp_json_file:
             json.dump(all_data, temp_json_file, indent=4)
-        print("All Firestore data downloaded successfully to temp_shortcut_db.json.")
 
         # Move the temporary file to the final location
         shutil.move(TEMP_DB_PATH, LOCAL_DB_PATH)
-        print("Data moved to local_shortcut_db.json.")
         log_update("completed", processed_shortcuts)
         return True
     except Exception as e:
-        print(f"Error while downloading Firestore data: {e}")
+        logger.error(f"Error while downloading Firestore data: {e}")
         log_update("failed", processed_shortcuts)
         return False
 
@@ -235,6 +251,6 @@ def log_update(status, processed_shortcuts):
         # Write log entry to the file, overriding existing content
         with open(UPDATE_LOG_PATH, 'w') as log_file:
             json.dump(log_entry, log_file, indent=4)
-        print(f"Update log saved to {UPDATE_LOG_PATH}")
+        logger.error(f"Update log saved to {UPDATE_LOG_PATH}")
     except Exception as e:
-        print(f"Failed to write update log: {e}")
+        logger.error(f"Failed to write update log: {e}")

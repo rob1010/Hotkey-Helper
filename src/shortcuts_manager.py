@@ -5,7 +5,7 @@ import time
 import psutil
 import platform
 import difflib
-import os
+from threading import Lock
 import json
 import logging
 
@@ -31,6 +31,7 @@ class ShortcutManager:
         self.app_names_sorted = None
         self.shortcut_cache = None
         self.last_load_time = 0
+        self.cache_lock = Lock()
 
     def load_app_map(self):
         """Load and cache the application map from the text file."""
@@ -62,24 +63,24 @@ class ShortcutManager:
 
     def load_shortcut_cache(self):
         """Load and cache the shortcut database from the JSON file."""
-        current_time = time.time()
-        if self.shortcut_cache is None or (current_time - self.last_load_time) > self.cache_duration:
-            try:
-                with open(self.db_path, "r") as f:
-                    self.shortcut_cache = json.load(f)
-                self.last_load_time = time.time()
-                logger.info("Shortcut database loaded and cached")
-            except FileNotFoundError:
-                logger.error(f"Shortcut database file not found: {self.db_path}")
-                self.shortcut_cache = {}
-            except json.JSONDecodeError:
-                logger.error("Error decoding JSON from shortcut database")
-                self.shortcut_cache = {}
-            except Exception as e:
-                logger.error(f"Unexpected error loading shortcut database: {e}")
-                self.shortcut_cache = {}
-        return self.shortcut_cache
-    
+        with self.cache_lock:
+            if self.shortcut_cache is None or (time.time() - self.last_load_time) > self.cache_duration:
+                try:
+                    with open(self.db_path, "r") as f:
+                        self.shortcut_cache = json.load(f)
+                    self.last_load_time = time.time()
+                    logger.info("Shortcut database loaded and cached")
+                except FileNotFoundError:
+                    logger.error(f"Shortcut database file not found: {self.db_path}")
+                    self.shortcut_cache = {}
+                except json.JSONDecodeError:
+                    logger.error("Error decoding JSON from shortcut database")
+                    self.shortcut_cache = {}
+                except Exception as e:
+                    logger.error(f"Unexpected error loading shortcut database: {e}")
+                    self.shortcut_cache = {}
+            return self.shortcut_cache
+        
     def find_best_match(self, window_title):
         """
         Find the best matching application name based on the window title.

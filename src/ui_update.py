@@ -40,10 +40,6 @@ class DbUpdateWorker(QThread):
             success = download_all_collections(callback=self.emit_progress, cancel=cancel)
 
             if not self.cancelled:
-                if success:
-                    print("Database update completed successfully.")
-                else:
-                    print("Database update failed.")
                 self.finished.emit()
             else:
                 self.finished.emit()
@@ -67,6 +63,7 @@ class DbUpdateWorker(QThread):
         Stop the update process.
         """
         self.cancelled = True
+        self.wait()
 
 class LoadingWindow(QWidget):
     """

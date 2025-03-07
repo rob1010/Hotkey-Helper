@@ -199,13 +199,11 @@ class ShortcutDisplay(QWidget):
 
         if not window_title:
             self.descriptionLabel.setText("No active window detected")
-            print("No active window detected.")
             return
 
         # Step 3: Match the active window title to an application name
         app_name = self.shortcut_manager.find_best_match(window_title)
         if not app_name:
-            print(f"No shortcuts found for the window title: '{window_title}'")
             return
 
         # Step 4: Determine if the current window belongs to this application
@@ -242,6 +240,12 @@ class ShortcutDisplay(QWidget):
 
         # Step 7: Adjust the window's size and position
         self.adjust_size_and_position()
+        """
+        if self.last_active_app_name == self.shortcut_manager.find_best_match(window_title):
+            self.timer.setInterval(500)  # Slow down if stable
+        else:
+            self.timer.setInterval(250)  # Speed up on change
+        """
 
     def apply_styles_from_settings(self):
         """

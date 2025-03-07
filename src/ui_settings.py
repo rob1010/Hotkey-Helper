@@ -29,8 +29,6 @@ class SettingsWindow(QWidget):
         self.init_ui()
         self.load_settings_into_ui()
         self.move(self.x(), 0)
-        logger.info("Triggering test crash")
-        raise ValueError("This is a test crash to simulate an error")
 
     def init_ui(self):
         """

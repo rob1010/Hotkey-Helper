@@ -1,8 +1,10 @@
 import os
 import logging
+
 from PySide6.QtCore import Signal
 from PySide6.QtGui import Qt, QPixmap
 from PySide6.QtWidgets import QDialog, QLabel, QVBoxLayout, QHBoxLayout, QPushButton
+from update_manager import load_latest_version, check_for_updates
 
 # Get a logger for this module
 logger = logging.getLogger(__name__)
@@ -28,6 +30,8 @@ class StartupDialog(QDialog):
         parent (QWidget): The parent widget for this dialog, if any.
         """
         super().__init__(parent)
+        self.current_version = load_latest_version()
+        self.update_status = check_for_updates(self.current_version)
         self.is_action_in_progress = is_action_in_progress
         self.init_ui()
 
@@ -59,6 +63,13 @@ class StartupDialog(QDialog):
 
         for button in buttons:
             layout.addWidget(button)
+            
+        # Add version label at the bottom
+        if self.update_status:
+            version_label = QLabel(f"Version: {self.current_version} (Update available!)")
+        version_label = QLabel(f"Version: {self.current_version} (Up to date)")
+        version_label.setAlignment(Qt.AligbLeft)
+        layout.addWidget(version_label)
         
         # Set the main layout for the dialog
         self.setLayout(layout)
@@ -102,7 +113,7 @@ class StartupDialog(QDialog):
 
         # Welcome label
         if 'welcome_label' not in locals():
-            welcome_label = QLabel("Welcome to HotKey Helper!\nChoose an action below:")
+            welcome_label = QLabel("Welcome to HotKey Helper!\nChoose an action below or press Enter to start:")
 
         horizontal_layout.addWidget(welcome_label)
         horizontal_layout.setAlignment(Qt.AlignVCenter)
