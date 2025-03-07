@@ -222,3 +222,629 @@
 2025-03-06 19:58:17,773 - settings_manager - INFO - Settings saved successfully
 2025-03-06 19:58:17,776 - settings_manager - INFO - Settings saved successfully
 2025-03-06 19:58:17,784 - settings_manager - INFO - Settings saved successfully
+2025-03-06 21:58:45,467 - settings_manager - INFO - Settings loaded successfully
+2025-03-06 21:58:48,449 - ui_settings - INFO - Triggering test crash
+2025-03-06 21:58:48,450 - bug_reporting - ERROR - Unhandled exception: <class 'ValueError'>, This is a test crash to simulate an error
+Traceback (most recent call last):
+  File "C:\Environments\Hotkey-Helper\src\ui_window_manager.py", line 222, in open_settings
+    self.initialize_settings_window()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Environments\Hotkey-Helper\src\ui_window_manager.py", line 66, in initialize_settings_window
+    self.settings_window = SettingsWindow(self.settings_manager)
+                           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Environments\Hotkey-Helper\src\ui_settings.py", line 33, in __init__
+    raise ValueError("This is a test crash to simulate an error")
+ValueError: This is a test crash to simulate an error
+2025-03-06 21:59:39,765 - bug_reporting - ERROR - Unhandled exception: <class 'TypeError'>, Scope.update_from_kwargs() got an unexpected keyword argument 'extra'. Did you mean 'extras'?
+Traceback (most recent call last):
+  File "C:\Environments\Hotkey-Helper\src\bug_reporting.py", line 37, in send_report_and_exit
+    sentry_sdk.capture_message(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        f"User-reported crash: {desc}",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        level="error",
+        ^^^^^^^^^^^^^^
+        extra={"log_content": log_content}
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\api.py", line 172, in capture_message
+    return get_current_scope().capture_message(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        message, level, scope=scope, **scope_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\scope.py", line 1220, in capture_message
+    return self.capture_event(event, scope=scope, **scope_kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\scope.py", line 1182, in capture_event
+    scope = self._merge_scopes(scope, scope_kwargs)
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\scope.py", line 376, in _merge_scopes
+    final_scope.update_from_kwargs(**additional_scope_kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Scope.update_from_kwargs() got an unexpected keyword argument 'extra'. Did you mean 'extras'?
+2025-03-06 21:59:46,626 - bug_reporting - ERROR - Unhandled exception: <class 'TypeError'>, Scope.update_from_kwargs() got an unexpected keyword argument 'extra'. Did you mean 'extras'?
+Traceback (most recent call last):
+  File "C:\Environments\Hotkey-Helper\src\bug_reporting.py", line 37, in send_report_and_exit
+    sentry_sdk.capture_message(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        f"User-reported crash: {desc}",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        level="error",
+        ^^^^^^^^^^^^^^
+        extra={"log_content": log_content}
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\api.py", line 172, in capture_message
+    return get_current_scope().capture_message(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        message, level, scope=scope, **scope_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\scope.py", line 1220, in capture_message
+    return self.capture_event(event, scope=scope, **scope_kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\scope.py", line 1182, in capture_event
+    scope = self._merge_scopes(scope, scope_kwargs)
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\scope.py", line 376, in _merge_scopes
+    final_scope.update_from_kwargs(**additional_scope_kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Scope.update_from_kwargs() got an unexpected keyword argument 'extra'. Did you mean 'extras'?
+2025-03-06 21:59:57,314 - bug_reporting - ERROR - Unhandled exception: <class 'TypeError'>, Scope.update_from_kwargs() got an unexpected keyword argument 'extra'. Did you mean 'extras'?
+Traceback (most recent call last):
+  File "C:\Environments\Hotkey-Helper\src\bug_reporting.py", line 37, in send_report_and_exit
+    sentry_sdk.capture_message(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        f"User-reported crash: {desc}",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        level="error",
+        ^^^^^^^^^^^^^^
+        extra={"log_content": log_content}
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\api.py", line 172, in capture_message
+    return get_current_scope().capture_message(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        message, level, scope=scope, **scope_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\scope.py", line 1220, in capture_message
+    return self.capture_event(event, scope=scope, **scope_kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\scope.py", line 1182, in capture_event
+    scope = self._merge_scopes(scope, scope_kwargs)
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\scope.py", line 376, in _merge_scopes
+    final_scope.update_from_kwargs(**additional_scope_kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Scope.update_from_kwargs() got an unexpected keyword argument 'extra'. Did you mean 'extras'?
+2025-03-06 21:59:57,954 - bug_reporting - ERROR - Unhandled exception: <class 'TypeError'>, Scope.update_from_kwargs() got an unexpected keyword argument 'extra'. Did you mean 'extras'?
+Traceback (most recent call last):
+  File "C:\Environments\Hotkey-Helper\src\bug_reporting.py", line 37, in send_report_and_exit
+    sentry_sdk.capture_message(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        f"User-reported crash: {desc}",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        level="error",
+        ^^^^^^^^^^^^^^
+        extra={"log_content": log_content}
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\api.py", line 172, in capture_message
+    return get_current_scope().capture_message(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        message, level, scope=scope, **scope_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\scope.py", line 1220, in capture_message
+    return self.capture_event(event, scope=scope, **scope_kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\scope.py", line 1182, in capture_event
+    scope = self._merge_scopes(scope, scope_kwargs)
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\scope.py", line 376, in _merge_scopes
+    final_scope.update_from_kwargs(**additional_scope_kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Scope.update_from_kwargs() got an unexpected keyword argument 'extra'. Did you mean 'extras'?
+2025-03-06 21:59:58,395 - bug_reporting - ERROR - Unhandled exception: <class 'TypeError'>, Scope.update_from_kwargs() got an unexpected keyword argument 'extra'. Did you mean 'extras'?
+Traceback (most recent call last):
+  File "C:\Environments\Hotkey-Helper\src\bug_reporting.py", line 37, in send_report_and_exit
+    sentry_sdk.capture_message(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        f"User-reported crash: {desc}",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        level="error",
+        ^^^^^^^^^^^^^^
+        extra={"log_content": log_content}
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\api.py", line 172, in capture_message
+    return get_current_scope().capture_message(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        message, level, scope=scope, **scope_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\scope.py", line 1220, in capture_message
+    return self.capture_event(event, scope=scope, **scope_kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\scope.py", line 1182, in capture_event
+    scope = self._merge_scopes(scope, scope_kwargs)
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\scope.py", line 376, in _merge_scopes
+    final_scope.update_from_kwargs(**additional_scope_kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Scope.update_from_kwargs() got an unexpected keyword argument 'extra'. Did you mean 'extras'?
+2025-03-06 21:59:58,858 - bug_reporting - ERROR - Unhandled exception: <class 'TypeError'>, Scope.update_from_kwargs() got an unexpected keyword argument 'extra'. Did you mean 'extras'?
+Traceback (most recent call last):
+  File "C:\Environments\Hotkey-Helper\src\bug_reporting.py", line 37, in send_report_and_exit
+    sentry_sdk.capture_message(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        f"User-reported crash: {desc}",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        level="error",
+        ^^^^^^^^^^^^^^
+        extra={"log_content": log_content}
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\api.py", line 172, in capture_message
+    return get_current_scope().capture_message(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        message, level, scope=scope, **scope_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\scope.py", line 1220, in capture_message
+    return self.capture_event(event, scope=scope, **scope_kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\scope.py", line 1182, in capture_event
+    scope = self._merge_scopes(scope, scope_kwargs)
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\scope.py", line 376, in _merge_scopes
+    final_scope.update_from_kwargs(**additional_scope_kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Scope.update_from_kwargs() got an unexpected keyword argument 'extra'. Did you mean 'extras'?
+2025-03-06 21:59:59,419 - bug_reporting - ERROR - Unhandled exception: <class 'TypeError'>, Scope.update_from_kwargs() got an unexpected keyword argument 'extra'. Did you mean 'extras'?
+Traceback (most recent call last):
+  File "C:\Environments\Hotkey-Helper\src\bug_reporting.py", line 37, in send_report_and_exit
+    sentry_sdk.capture_message(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        f"User-reported crash: {desc}",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        level="error",
+        ^^^^^^^^^^^^^^
+        extra={"log_content": log_content}
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\api.py", line 172, in capture_message
+    return get_current_scope().capture_message(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        message, level, scope=scope, **scope_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\scope.py", line 1220, in capture_message
+    return self.capture_event(event, scope=scope, **scope_kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\scope.py", line 1182, in capture_event
+    scope = self._merge_scopes(scope, scope_kwargs)
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\scope.py", line 376, in _merge_scopes
+    final_scope.update_from_kwargs(**additional_scope_kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Scope.update_from_kwargs() got an unexpected keyword argument 'extra'. Did you mean 'extras'?
+2025-03-06 22:11:50,752 - settings_manager - INFO - Settings loaded successfully
+2025-03-06 22:11:52,685 - ui_settings - INFO - Triggering test crash
+2025-03-06 22:11:52,685 - bug_reporting - ERROR - Unhandled exception: <class 'ValueError'>, This is a test crash to simulate an error
+Traceback (most recent call last):
+  File "C:\Environments\Hotkey-Helper\src\ui_window_manager.py", line 222, in open_settings
+    self.initialize_settings_window()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Environments\Hotkey-Helper\src\ui_window_manager.py", line 66, in initialize_settings_window
+    self.settings_window = SettingsWindow(self.settings_manager)
+                           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Environments\Hotkey-Helper\src\ui_settings.py", line 33, in __init__
+    raise ValueError("This is a test crash to simulate an error")
+ValueError: This is a test crash to simulate an error
+2025-03-06 22:11:57,418 - bug_reporting - ERROR - Unhandled exception: <class 'TypeError'>, Scope.update_from_kwargs() got an unexpected keyword argument 'extra'. Did you mean 'extras'?
+Traceback (most recent call last):
+  File "C:\Environments\Hotkey-Helper\src\bug_reporting.py", line 37, in send_report_and_exit
+    sentry_sdk.capture_message(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        f"User-reported crash: {desc}",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        level="error",
+        ^^^^^^^^^^^^^^
+        extra={"log_content": log_content}
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\api.py", line 172, in capture_message
+    return get_current_scope().capture_message(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        message, level, scope=scope, **scope_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\scope.py", line 1220, in capture_message
+    return self.capture_event(event, scope=scope, **scope_kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\scope.py", line 1182, in capture_event
+    scope = self._merge_scopes(scope, scope_kwargs)
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\scope.py", line 376, in _merge_scopes
+    final_scope.update_from_kwargs(**additional_scope_kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Scope.update_from_kwargs() got an unexpected keyword argument 'extra'. Did you mean 'extras'?
+2025-03-06 22:12:05,841 - bug_reporting - ERROR - Unhandled exception: <class 'TypeError'>, Scope.update_from_kwargs() got an unexpected keyword argument 'extra'. Did you mean 'extras'?
+Traceback (most recent call last):
+  File "C:\Environments\Hotkey-Helper\src\bug_reporting.py", line 37, in send_report_and_exit
+    sentry_sdk.capture_message(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        f"User-reported crash: {desc}",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        level="error",
+        ^^^^^^^^^^^^^^
+        extra={"log_content": log_content}
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\api.py", line 172, in capture_message
+    return get_current_scope().capture_message(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        message, level, scope=scope, **scope_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\scope.py", line 1220, in capture_message
+    return self.capture_event(event, scope=scope, **scope_kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\scope.py", line 1182, in capture_event
+    scope = self._merge_scopes(scope, scope_kwargs)
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\scope.py", line 376, in _merge_scopes
+    final_scope.update_from_kwargs(**additional_scope_kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Scope.update_from_kwargs() got an unexpected keyword argument 'extra'. Did you mean 'extras'?
+2025-03-06 22:14:38,993 - settings_manager - INFO - Settings loaded successfully
+2025-03-06 22:14:40,760 - ui_settings - INFO - Triggering test crash
+2025-03-06 22:14:40,760 - bug_reporting - ERROR - Unhandled exception: <class 'ValueError'>, This is a test crash to simulate an error
+Traceback (most recent call last):
+  File "C:\Environments\Hotkey-Helper\src\ui_window_manager.py", line 222, in open_settings
+    self.initialize_settings_window()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Environments\Hotkey-Helper\src\ui_window_manager.py", line 66, in initialize_settings_window
+    self.settings_window = SettingsWindow(self.settings_manager)
+                           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Environments\Hotkey-Helper\src\ui_settings.py", line 33, in __init__
+    raise ValueError("This is a test crash to simulate an error")
+ValueError: This is a test crash to simulate an error
+2025-03-06 22:14:42,841 - bug_reporting - ERROR - Unhandled exception: <class 'TypeError'>, Scope.update_from_kwargs() got an unexpected keyword argument 'extra'. Did you mean 'extras'?
+Traceback (most recent call last):
+  File "C:\Environments\Hotkey-Helper\src\bug_reporting.py", line 37, in send_report_and_exit
+    sentry_sdk.capture_message(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        f"User-reported crash: {desc}",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        level="error",
+        ^^^^^^^^^^^^^^
+        extra={"log_content": log_content}
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\api.py", line 172, in capture_message
+    return get_current_scope().capture_message(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        message, level, scope=scope, **scope_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\scope.py", line 1220, in capture_message
+    return self.capture_event(event, scope=scope, **scope_kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\scope.py", line 1182, in capture_event
+    scope = self._merge_scopes(scope, scope_kwargs)
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\scope.py", line 376, in _merge_scopes
+    final_scope.update_from_kwargs(**additional_scope_kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Scope.update_from_kwargs() got an unexpected keyword argument 'extra'. Did you mean 'extras'?
+2025-03-06 22:14:44,450 - bug_reporting - ERROR - Unhandled exception: <class 'TypeError'>, Scope.update_from_kwargs() got an unexpected keyword argument 'extra'. Did you mean 'extras'?
+Traceback (most recent call last):
+  File "C:\Environments\Hotkey-Helper\src\bug_reporting.py", line 37, in send_report_and_exit
+    sentry_sdk.capture_message(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        f"User-reported crash: {desc}",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        level="error",
+        ^^^^^^^^^^^^^^
+        extra={"log_content": log_content}
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\api.py", line 172, in capture_message
+    return get_current_scope().capture_message(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        message, level, scope=scope, **scope_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\scope.py", line 1220, in capture_message
+    return self.capture_event(event, scope=scope, **scope_kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\scope.py", line 1182, in capture_event
+    scope = self._merge_scopes(scope, scope_kwargs)
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\scope.py", line 376, in _merge_scopes
+    final_scope.update_from_kwargs(**additional_scope_kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Scope.update_from_kwargs() got an unexpected keyword argument 'extra'. Did you mean 'extras'?
+2025-03-06 22:15:11,595 - settings_manager - INFO - Settings loaded successfully
+2025-03-06 22:15:13,400 - ui_settings - INFO - Triggering test crash
+2025-03-06 22:15:13,400 - bug_reporting - ERROR - Unhandled exception: <class 'ValueError'>, This is a test crash to simulate an error
+Traceback (most recent call last):
+  File "C:\Environments\Hotkey-Helper\src\ui_window_manager.py", line 222, in open_settings
+    self.initialize_settings_window()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Environments\Hotkey-Helper\src\ui_window_manager.py", line 66, in initialize_settings_window
+    self.settings_window = SettingsWindow(self.settings_manager)
+                           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Environments\Hotkey-Helper\src\ui_settings.py", line 33, in __init__
+    raise ValueError("This is a test crash to simulate an error")
+ValueError: This is a test crash to simulate an error
+2025-03-06 22:15:16,007 - bug_reporting - ERROR - Unhandled exception: <class 'TypeError'>, Scope.update_from_kwargs() got an unexpected keyword argument 'extra'. Did you mean 'extras'?
+Traceback (most recent call last):
+  File "C:\Environments\Hotkey-Helper\src\bug_reporting.py", line 37, in send_report_and_exit
+    sentry_sdk.capture_message(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        f"User-reported crash: {desc}",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        level="error",
+        ^^^^^^^^^^^^^^
+        extra={"log_content": log_content}
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\api.py", line 172, in capture_message
+    return get_current_scope().capture_message(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        message, level, scope=scope, **scope_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\scope.py", line 1220, in capture_message
+    return self.capture_event(event, scope=scope, **scope_kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\scope.py", line 1182, in capture_event
+    scope = self._merge_scopes(scope, scope_kwargs)
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\scope.py", line 376, in _merge_scopes
+    final_scope.update_from_kwargs(**additional_scope_kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Scope.update_from_kwargs() got an unexpected keyword argument 'extra'. Did you mean 'extras'?
+2025-03-06 22:15:17,215 - bug_reporting - ERROR - Unhandled exception: <class 'TypeError'>, Scope.update_from_kwargs() got an unexpected keyword argument 'extra'. Did you mean 'extras'?
+Traceback (most recent call last):
+  File "C:\Environments\Hotkey-Helper\src\bug_reporting.py", line 37, in send_report_and_exit
+    sentry_sdk.capture_message(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        f"User-reported crash: {desc}",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        level="error",
+        ^^^^^^^^^^^^^^
+        extra={"log_content": log_content}
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\api.py", line 172, in capture_message
+    return get_current_scope().capture_message(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        message, level, scope=scope, **scope_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\scope.py", line 1220, in capture_message
+    return self.capture_event(event, scope=scope, **scope_kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\scope.py", line 1182, in capture_event
+    scope = self._merge_scopes(scope, scope_kwargs)
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\scope.py", line 376, in _merge_scopes
+    final_scope.update_from_kwargs(**additional_scope_kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Scope.update_from_kwargs() got an unexpected keyword argument 'extra'. Did you mean 'extras'?
+2025-03-06 22:24:52,557 - settings_manager - INFO - Settings loaded successfully
+2025-03-06 22:24:54,812 - ui_settings - INFO - Triggering test crash
+2025-03-06 22:24:54,812 - bug_reporting - ERROR - Unhandled exception: <class 'ValueError'>, This is a test crash to simulate an error
+Traceback (most recent call last):
+  File "C:\Environments\Hotkey-Helper\src\ui_window_manager.py", line 222, in open_settings
+    self.initialize_settings_window()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Environments\Hotkey-Helper\src\ui_window_manager.py", line 66, in initialize_settings_window
+    self.settings_window = SettingsWindow(self.settings_manager)
+                           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Environments\Hotkey-Helper\src\ui_settings.py", line 33, in __init__
+    raise ValueError("This is a test crash to simulate an error")
+ValueError: This is a test crash to simulate an error
+2025-03-06 22:24:57,338 - bug_reporting - ERROR - Unhandled exception: <class 'TypeError'>, Scope.update_from_kwargs() got an unexpected keyword argument 'extra'. Did you mean 'extras'?
+Traceback (most recent call last):
+  File "C:\Environments\Hotkey-Helper\src\bug_reporting.py", line 37, in send_report_and_exit
+    sentry_sdk.capture_message(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        f"User-reported crash: {desc}",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        level="error",
+        ^^^^^^^^^^^^^^
+        extra={"log_content": log_content}
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\api.py", line 172, in capture_message
+    return get_current_scope().capture_message(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        message, level, scope=scope, **scope_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\scope.py", line 1220, in capture_message
+    return self.capture_event(event, scope=scope, **scope_kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\scope.py", line 1182, in capture_event
+    scope = self._merge_scopes(scope, scope_kwargs)
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\scope.py", line 376, in _merge_scopes
+    final_scope.update_from_kwargs(**additional_scope_kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Scope.update_from_kwargs() got an unexpected keyword argument 'extra'. Did you mean 'extras'?
+2025-03-06 22:24:58,944 - bug_reporting - ERROR - Unhandled exception: <class 'TypeError'>, Scope.update_from_kwargs() got an unexpected keyword argument 'extra'. Did you mean 'extras'?
+Traceback (most recent call last):
+  File "C:\Environments\Hotkey-Helper\src\bug_reporting.py", line 37, in send_report_and_exit
+    sentry_sdk.capture_message(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        f"User-reported crash: {desc}",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        level="error",
+        ^^^^^^^^^^^^^^
+        extra={"log_content": log_content}
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\api.py", line 172, in capture_message
+    return get_current_scope().capture_message(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        message, level, scope=scope, **scope_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\scope.py", line 1220, in capture_message
+    return self.capture_event(event, scope=scope, **scope_kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\scope.py", line 1182, in capture_event
+    scope = self._merge_scopes(scope, scope_kwargs)
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\scope.py", line 376, in _merge_scopes
+    final_scope.update_from_kwargs(**additional_scope_kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Scope.update_from_kwargs() got an unexpected keyword argument 'extra'. Did you mean 'extras'?
+2025-03-07 00:39:23,644 - settings_manager - INFO - Settings loaded successfully
+2025-03-07 00:39:26,821 - ui_settings - INFO - Triggering test crash
+2025-03-07 00:39:26,822 - bug_reporting - ERROR - Unhandled exception: <class 'ValueError'>, This is a test crash to simulate an error
+Traceback (most recent call last):
+  File "C:\Environments\Hotkey-Helper\src\ui_window_manager.py", line 222, in open_settings
+    self.initialize_settings_window()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Environments\Hotkey-Helper\src\ui_window_manager.py", line 66, in initialize_settings_window
+    self.settings_window = SettingsWindow(self.settings_manager)
+                           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Environments\Hotkey-Helper\src\ui_settings.py", line 33, in __init__
+    raise ValueError("This is a test crash to simulate an error")
+ValueError: This is a test crash to simulate an error
+2025-03-07 00:39:33,567 - bug_reporting - ERROR - Unhandled exception: <class 'TypeError'>, Scope.update_from_kwargs() got an unexpected keyword argument 'extra'. Did you mean 'extras'?
+Traceback (most recent call last):
+  File "C:\Environments\Hotkey-Helper\src\bug_reporting.py", line 37, in send_report
+    sentry_sdk.capture_message(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        f"User-reported crash: {desc}",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        level="error",
+        ^^^^^^^^^^^^^^
+        extra={"log_content": log_content}
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\api.py", line 172, in capture_message
+    return get_current_scope().capture_message(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        message, level, scope=scope, **scope_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\scope.py", line 1220, in capture_message
+    return self.capture_event(event, scope=scope, **scope_kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\scope.py", line 1182, in capture_event
+    scope = self._merge_scopes(scope, scope_kwargs)
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\scope.py", line 376, in _merge_scopes
+    final_scope.update_from_kwargs(**additional_scope_kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Scope.update_from_kwargs() got an unexpected keyword argument 'extra'. Did you mean 'extras'?
+2025-03-07 00:39:41,120 - bug_reporting - ERROR - Unhandled exception: <class 'TypeError'>, Scope.update_from_kwargs() got an unexpected keyword argument 'extra'. Did you mean 'extras'?
+Traceback (most recent call last):
+  File "C:\Environments\Hotkey-Helper\src\bug_reporting.py", line 37, in send_report
+    sentry_sdk.capture_message(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        f"User-reported crash: {desc}",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        level="error",
+        ^^^^^^^^^^^^^^
+        extra={"log_content": log_content}
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\api.py", line 172, in capture_message
+    return get_current_scope().capture_message(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        message, level, scope=scope, **scope_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\scope.py", line 1220, in capture_message
+    return self.capture_event(event, scope=scope, **scope_kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\scope.py", line 1182, in capture_event
+    scope = self._merge_scopes(scope, scope_kwargs)
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\scope.py", line 376, in _merge_scopes
+    final_scope.update_from_kwargs(**additional_scope_kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Scope.update_from_kwargs() got an unexpected keyword argument 'extra'. Did you mean 'extras'?
+2025-03-07 00:53:23,297 - settings_manager - INFO - Settings loaded successfully
+2025-03-07 00:53:25,581 - ui_settings - INFO - Triggering test crash
+2025-03-07 00:53:25,581 - bug_reporting - ERROR - Unhandled exception: <class 'ValueError'>, This is a test crash to simulate an error
+Traceback (most recent call last):
+  File "C:\Environments\Hotkey-Helper\src\ui_window_manager.py", line 222, in open_settings
+    self.initialize_settings_window()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Environments\Hotkey-Helper\src\ui_window_manager.py", line 66, in initialize_settings_window
+    self.settings_window = SettingsWindow(self.settings_manager)
+                           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Environments\Hotkey-Helper\src\ui_settings.py", line 33, in __init__
+    raise ValueError("This is a test crash to simulate an error")
+ValueError: This is a test crash to simulate an error
+2025-03-07 00:58:20,937 - settings_manager - INFO - Settings loaded successfully
+2025-03-07 00:58:22,860 - ui_settings - INFO - Triggering test crash
+2025-03-07 00:58:22,860 - bug_reporting - ERROR - Unhandled exception: <class 'ValueError'>, This is a test crash to simulate an error
+Traceback (most recent call last):
+  File "C:\Environments\Hotkey-Helper\src\ui_window_manager.py", line 222, in open_settings
+    self.initialize_settings_window()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Environments\Hotkey-Helper\src\ui_window_manager.py", line 66, in initialize_settings_window
+    self.settings_window = SettingsWindow(self.settings_manager)
+                           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Environments\Hotkey-Helper\src\ui_settings.py", line 33, in __init__
+    raise ValueError("This is a test crash to simulate an error")
+ValueError: This is a test crash to simulate an error
+2025-03-07 00:58:41,079 - bug_reporting - ERROR - Additional unhandled exception while dialog is shown: <class 'TypeError'>, Scope.update_from_kwargs() got an unexpected keyword argument 'extra'. Did you mean 'extras'?
+Traceback (most recent call last):
+  File "C:\Environments\Hotkey-Helper\src\bug_reporting.py", line 40, in send_report
+    sentry_sdk.capture_message(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        f"User-reported crash: {desc}",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        level="error",
+        ^^^^^^^^^^^^^^
+        extra={"log_content": log_content}
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\api.py", line 172, in capture_message
+    return get_current_scope().capture_message(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        message, level, scope=scope, **scope_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\scope.py", line 1220, in capture_message
+    return self.capture_event(event, scope=scope, **scope_kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\scope.py", line 1182, in capture_event
+    scope = self._merge_scopes(scope, scope_kwargs)
+  File "C:\Users\rober\AppData\Local\Programs\Python\Python313\Lib\site-packages\sentry_sdk\scope.py", line 376, in _merge_scopes
+    final_scope.update_from_kwargs(**additional_scope_kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Scope.update_from_kwargs() got an unexpected keyword argument 'extra'. Did you mean 'extras'?
