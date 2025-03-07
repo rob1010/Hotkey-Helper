@@ -67,7 +67,8 @@ class StartupDialog(QDialog):
         # Add version label at the bottom
         if self.update_status:
             version_label = QLabel(f"Version: {self.current_version} (Update available!)")
-        version_label = QLabel(f"Version: {self.current_version} (Up to date)")
+        else:
+            version_label = QLabel(f"Version: {self.current_version} (Up to date)")
         version_label.setAlignment(Qt.AlignLeft)
         layout.addWidget(version_label)
         
