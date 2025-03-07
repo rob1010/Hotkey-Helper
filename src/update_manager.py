@@ -49,7 +49,7 @@ def load_latest_version():
     
 def check_for_updates(current_version):
     try:
-        url = "https://raw.githubusercontent.com/yourusername/yourrepo/main/latest_version.txt"
+        url = "https://github.com/rob1010/Hotkey-Helper/blob/main/latest_version.txt"
         response = requests.get(url)
         latest_version = response.text.strip()
         if latest_version > current_version:

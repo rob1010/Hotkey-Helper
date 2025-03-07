@@ -1127,3 +1127,28 @@ UnboundLocalError: cannot access local variable 'window_title' where it is not a
 2025-03-07 15:04:05,389 - shortcuts_manager - INFO - Available apps in shortcut_cache: ['Adobe Acrobat', 'Adobe After Effects', 'Adobe Illustrator', 'Adobe InDesign', 'Adobe Lightroom', 'Adobe Photoshop', 'Adobe Premiere Pro', 'Affinity Designer', 'Affinity Photo', 'Airtable', 'Asana', 'Atom', 'Audacity', 'AutoCAD', 'Basecamp', 'Blender', 'Canva', 'Chrome', 'Confluence', 'DaVinci Resolve', 'Discord', 'Docker Desktop', 'Dropbox', 'Evernote', 'Figma', 'Final Cut Pro', 'GIMP', 'GitHub', 'GitHub Desktop', 'Google Calendar', 'Google Chrome', 'Google Docs', 'Google Keep', 'Google Meet', 'Google Sheets', 'Google Slides', 'Grammarly', 'HubSpot', 'Inkscape', 'IntelliJ IDEA', 'Jira', 'Jupyter Notebook', 'LibreOffice Calc', 'LibreOffice Writer', 'Mailchimp', 'Microsoft Access', 'Microsoft Edge', 'Microsoft Excel', 'Microsoft OneNote', 'Microsoft Outlook', 'Microsoft Power BI', 'Microsoft PowerPoint', 'Microsoft Project', 'Microsoft Teams', 'Microsoft Word', 'Miro', 'Monday.com', 'Mozilla Firefox', 'Mozilla Thunderbird', 'Notepad++', 'Notion', 'OBS Studio', 'Obsidian', 'OneNote', 'Outlook', 'PyCharm', 'QuickBooks', 'Quip', 'Salesforce', 'Sketch', 'Slack', 'Spotify', 'Sublime Text', 'Tableau', 'Thunderbird', 'Toggl', 'Trello', 'Unity', 'VLC Media Player', 'VS Code', 'Visual Studio', 'Visual Studio Code', 'Xcode', 'Zendesk', 'Zoom', 'hotkeys_metadata', 'iTerm2']
 2025-03-07 15:04:05,640 - shortcuts_manager - INFO - Available apps in shortcut_cache: ['Adobe Acrobat', 'Adobe After Effects', 'Adobe Illustrator', 'Adobe InDesign', 'Adobe Lightroom', 'Adobe Photoshop', 'Adobe Premiere Pro', 'Affinity Designer', 'Affinity Photo', 'Airtable', 'Asana', 'Atom', 'Audacity', 'AutoCAD', 'Basecamp', 'Blender', 'Canva', 'Chrome', 'Confluence', 'DaVinci Resolve', 'Discord', 'Docker Desktop', 'Dropbox', 'Evernote', 'Figma', 'Final Cut Pro', 'GIMP', 'GitHub', 'GitHub Desktop', 'Google Calendar', 'Google Chrome', 'Google Docs', 'Google Keep', 'Google Meet', 'Google Sheets', 'Google Slides', 'Grammarly', 'HubSpot', 'Inkscape', 'IntelliJ IDEA', 'Jira', 'Jupyter Notebook', 'LibreOffice Calc', 'LibreOffice Writer', 'Mailchimp', 'Microsoft Access', 'Microsoft Edge', 'Microsoft Excel', 'Microsoft OneNote', 'Microsoft Outlook', 'Microsoft Power BI', 'Microsoft PowerPoint', 'Microsoft Project', 'Microsoft Teams', 'Microsoft Word', 'Miro', 'Monday.com', 'Mozilla Firefox', 'Mozilla Thunderbird', 'Notepad++', 'Notion', 'OBS Studio', 'Obsidian', 'OneNote', 'Outlook', 'PyCharm', 'QuickBooks', 'Quip', 'Salesforce', 'Sketch', 'Slack', 'Spotify', 'Sublime Text', 'Tableau', 'Thunderbird', 'Toggl', 'Trello', 'Unity', 'VLC Media Player', 'VS Code', 'Visual Studio', 'Visual Studio Code', 'Xcode', 'Zendesk', 'Zoom', 'hotkeys_metadata', 'iTerm2']
 2025-03-07 15:21:25,731 - settings_manager - INFO - Settings loaded successfully
+2025-03-07 22:08:05,691 - settings_manager - INFO - Settings loaded successfully
+2025-03-07 22:08:07,677 - bug_reporting - ERROR - Unhandled exception: <class 'AttributeError'>, type object 'PySide6.QtGui.Qt' has no attribute 'AligbLeft'
+Traceback (most recent call last):
+  File "C:\Environments\Hotkey-Helper\src\main.py", line 48, in <module>
+    main()
+    ~~~~^^
+  File "C:\Environments\Hotkey-Helper\src\main.py", line 41, in main
+    window_manager.run()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Environments\Hotkey-Helper\src\ui_window_manager.py", line 111, in run
+    QCoreApplication.processEvents()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Environments\Hotkey-Helper\src\ui_window_manager.py", line 129, in first_run
+    self.initialize_startup_dialog()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Environments\Hotkey-Helper\src\ui_window_manager.py", line 49, in initialize_startup_dialog
+    self.startup_dialog = StartupDialog()
+                          ~~~~~~~~~~~~~^^
+  File "C:\Environments\Hotkey-Helper\src\ui_startup.py", line 36, in __init__
+    self.init_ui()
+    ~~~~~~~~~~~~^^
+  File "C:\Environments\Hotkey-Helper\src\ui_startup.py", line 71, in init_ui
+    version_label.setAlignment(Qt.AligbLeft)
+                               ^^^^^^^^^^^^
+AttributeError: type object 'PySide6.QtGui.Qt' has no attribute 'AligbLeft'

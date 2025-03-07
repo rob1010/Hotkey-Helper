@@ -5,9 +5,10 @@ import time
 import psutil
 import platform
 import difflib
-from threading import Lock
 import json
 import logging
+
+from threading import Lock
 
 # Get a logger for this module
 logger = logging.getLogger(__name__)
