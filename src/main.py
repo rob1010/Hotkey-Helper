@@ -1,4 +1,3 @@
-import os
 import sys
 import logging
 import sentry_sdk

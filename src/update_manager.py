@@ -4,9 +4,6 @@ import json
 import shutil
 import logging
 import requests
-import firebase_admin
-
-from firebase_admin import credentials, firestore
 
 # Get a logger for this module
 logger = logging.getLogger(__name__)
@@ -16,25 +13,18 @@ LOCAL_DB_PATH = os.path.join(os.path.dirname(__file__), "data/shortcut_db.json")
 UPDATE_LOG_PATH = os.path.join(os.path.dirname(__file__), "data/update_log.json")  # Converted to relative path
 TEMP_DB_PATH = os.path.join(os.path.dirname(__file__), "data/temp_shortcut_db.json")
 
-# Relative path for Firebase credentials
-CRED_PATH = os.path.join(os.path.dirname(__file__), "data/hotkey-helper-firebase-adminsdk-qhk5p-a146688617.json")
+PROJECT_ID = "hotkey-helper"
+API_KEY = "AIzaSyCgC2a0o86oCR41QkY_bGWx6ChTIoEBe84"
+FIRESTORE_URL = f"https://firestore.googleapis.com/v1/projects/{PROJECT_ID}/databases/(default)/documents"
 
 # Cache settings for Firestore reads
 CACHE_DURATION = 30  # Cache duration in seconds, adjust as needed for development.
+db = None
 
 cache = {
     "total_shortcuts": None,
     "last_updated": 0
 }
-
-# Initialize Firebase using relative path for the credentials
-try:
-    cred = credentials.Certificate(CRED_PATH)
-    firebase_admin.initialize_app(cred)
-    db = firestore.client()
-except Exception as e:
-    logger.info(f"Error initializing Firebase: {e}")
-    db = None
 
 def load_latest_version():
     version_file = "data/latest_version.txt"

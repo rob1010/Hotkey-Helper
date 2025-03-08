@@ -1,3 +1,5 @@
 pywin32
 PySide6
 firebase-admin
+sentry-sdk
+requests
