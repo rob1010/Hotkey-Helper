@@ -4,7 +4,7 @@ import logging
 from PySide6.QtCore import Signal
 from PySide6.QtGui import Qt, QPixmap
 from PySide6.QtWidgets import QDialog, QLabel, QVBoxLayout, QHBoxLayout, QPushButton
-from update_manager import load_latest_version, check_for_updates
+from update_manager import load_latest_version, check_for_application_updates
 
 # Get a logger for this module
 logger = logging.getLogger(__name__)
@@ -31,7 +31,7 @@ class StartupDialog(QDialog):
         """
         super().__init__(parent)
         self.current_version = load_latest_version()
-        self.update_status = check_for_updates(self.current_version)
+        self.update_status = check_for_application_updates(self.current_version)
         self.is_action_in_progress = is_action_in_progress
         self.init_ui()
 

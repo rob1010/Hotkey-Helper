@@ -1,3894 +1,2178 @@
 {
     "Adobe Acrobat": {
-        "Ctrl + +": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Zoom in",
-                "Category": "View"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + -": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Zoom out",
-                "Category": "View"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + F": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Find text",
-                "Category": "Search"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + N": {
-            "fields": {
-                "Platform": "Windows",
+        "Windows": {
+            "Ctrl + N": {
                 "Description": "Create new PDF",
                 "Category": "File Management"
             },
-            "subcollections": {}
-        },
-        "Ctrl + S": {
-            "fields": {
-                "Platform": "Windows",
+            "Ctrl + +": {
+                "Description": "Zoom in",
+                "Category": "View"
+            },
+            "Ctrl + -": {
+                "Description": "Zoom out",
+                "Category": "View"
+            },
+            "Ctrl + F": {
+                "Description": "Find text",
+                "Category": "Search"
+            },
+            "Ctrl + S": {
                 "Description": "Save document",
                 "Category": "File Management"
-            },
-            "subcollections": {}
+            }
         }
     },
     "Adobe After Effects": {
-        "0 (Numpad)": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Preview composition",
-                "Category": "Playback"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + D": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Duplicate layer",
-                "Category": "Editing"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + M": {
-            "fields": {
-                "Platform": "Windows",
+        "Windows": {
+            "Ctrl + M": {
                 "Description": "Add to render queue",
                 "Category": "Rendering"
             },
-            "subcollections": {}
-        },
-        "U": {
-            "fields": {
-                "Platform": "Windows",
+            "0 (Numpad)": {
+                "Description": "Preview composition",
+                "Category": "Playback"
+            },
+            "U": {
                 "Description": "Reveal properties",
                 "Category": "Layer Management"
             },
-            "subcollections": {}
-        },
-        "U U": {
-            "fields": {
-                "Platform": "Windows",
+            "U U": {
                 "Description": "Show keyframes only",
                 "Category": "Animation"
             },
-            "subcollections": {}
+            "Ctrl + D": {
+                "Description": "Duplicate layer",
+                "Category": "Editing"
+            }
         }
     },
     "Adobe Illustrator": {
-        "Ctrl + +": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Zoom in",
-                "Category": "View"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + -": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Zoom out",
-                "Category": "View"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + C": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Copy",
-                "Category": "Editing"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + N": {
-            "fields": {
-                "Platform": "Windows",
+        "Windows": {
+            "Ctrl + N": {
                 "Description": "New document",
                 "Category": "File Management"
             },
-            "subcollections": {}
-        },
-        "Ctrl + V": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Paste",
+            "Ctrl + C": {
+                "Description": "Copy",
                 "Category": "Editing"
             },
-            "subcollections": {}
+            "Ctrl + +": {
+                "Description": "Zoom in",
+                "Category": "View"
+            },
+            "Ctrl + -": {
+                "Description": "Zoom out",
+                "Category": "View"
+            },
+            "Ctrl + V": {
+                "Description": "Paste",
+                "Category": "Editing"
+            }
         }
     },
     "Adobe InDesign": {
-        "Ctrl + Alt + L": {
-            "fields": {
-                "Platform": "Windows",
+        "Windows": {
+            "Ctrl + Alt + L": {
                 "Description": "Unlock all on spread",
                 "Category": "Object Management"
             },
-            "subcollections": {}
-        },
-        "Ctrl + Alt + Shift + E": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Fit content proportionally",
-                "Category": "Layout"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + D": {
-            "fields": {
-                "Platform": "Windows",
+            "Ctrl + D": {
                 "Description": "Place file",
                 "Category": "File Management"
             },
-            "subcollections": {}
-        },
-        "Ctrl + L": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Lock object",
-                "Category": "Object Management"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + N": {
-            "fields": {
-                "Platform": "Windows",
+            "Ctrl + N": {
                 "Description": "New document",
                 "Category": "File Management"
             },
-            "subcollections": {}
+            "Ctrl + Alt + Shift + E": {
+                "Description": "Fit content proportionally",
+                "Category": "Layout"
+            },
+            "Ctrl + L": {
+                "Description": "Lock object",
+                "Category": "Object Management"
+            }
         }
     },
     "Adobe Lightroom": {
-        "Ctrl + Alt + 1": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Switch to Library module",
-                "Category": "Navigation"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Alt + 2": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Switch to Develop module",
-                "Category": "Navigation"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + D": {
-            "fields": {
-                "Platform": "Windows",
+        "Windows": {
+            "Ctrl + Shift + D": {
                 "Description": "Deselect all photos",
                 "Category": "Selection"
             },
-            "subcollections": {}
-        },
-        "P": {
-            "fields": {
-                "Platform": "Windows",
+            "P": {
                 "Description": "Flag photo as pick",
                 "Category": "Flagging"
             },
-            "subcollections": {}
-        },
-        "R": {
-            "fields": {
-                "Platform": "Windows",
+            "Ctrl + Alt + 1": {
+                "Description": "Switch to Library module",
+                "Category": "Navigation"
+            },
+            "Ctrl + Alt + 2": {
+                "Description": "Switch to Develop module",
+                "Category": "Navigation"
+            },
+            "R": {
                 "Description": "Crop photo",
                 "Category": "Editing"
-            },
-            "subcollections": {}
+            }
         }
     },
     "Adobe Photoshop": {
-        "Ctrl + +": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Zoom in",
-                "Category": "View"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + A": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Select all",
-                "Category": "Selection"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + D": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Deselect",
-                "Category": "Selection"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + T": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Free transform",
-                "Category": "Editing"
-            },
-            "subcollections": {}
-        },
-        "Shift + Ctrl + N": {
-            "fields": {
-                "Platform": "Windows",
+        "Windows": {
+            "Shift + Ctrl + N": {
                 "Description": "New layer",
                 "Category": "Layers"
             },
-            "subcollections": {}
+            "Ctrl + A": {
+                "Description": "Select all",
+                "Category": "Selection"
+            },
+            "Ctrl + D": {
+                "Description": "Deselect",
+                "Category": "Selection"
+            },
+            "Ctrl + T": {
+                "Description": "Free transform",
+                "Category": "Editing"
+            },
+            "Ctrl + +": {
+                "Description": "Zoom in",
+                "Category": "View"
+            }
         }
     },
     "Adobe Premiere Pro": {
-        "Ctrl + D": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Add video transition",
-                "Category": "Editing"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + K": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Cut clip at playhead",
-                "Category": "Editing"
-            },
-            "subcollections": {}
-        },
-        "I": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Mark in",
-                "Category": "Markers"
-            },
-            "subcollections": {}
-        },
-        "O": {
-            "fields": {
-                "Platform": "Windows",
+        "Windows": {
+            "O": {
                 "Description": "Mark out",
                 "Category": "Markers"
             },
-            "subcollections": {}
-        },
-        "Space": {
-            "fields": {
-                "Platform": "Windows",
+            "Space": {
                 "Description": "Play/Stop playback",
                 "Category": "Playback"
             },
-            "subcollections": {}
+            "Ctrl + D": {
+                "Description": "Add video transition",
+                "Category": "Editing"
+            },
+            "I": {
+                "Description": "Mark in",
+                "Category": "Markers"
+            },
+            "Ctrl + K": {
+                "Description": "Cut clip at playhead",
+                "Category": "Editing"
+            }
         }
     },
     "Affinity Designer": {
-        "Ctrl + 0": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Zoom to fit",
-                "Category": "View"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + C": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Copy",
-                "Category": "Editing"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + J": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Duplicate object",
-                "Category": "Editing"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + N": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "New document",
-                "Category": "File Management"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + V": {
-            "fields": {
-                "Platform": "Windows",
+        "Windows": {
+            "Ctrl + V": {
                 "Description": "Paste",
                 "Category": "Editing"
             },
-            "subcollections": {}
+            "Ctrl + N": {
+                "Description": "New document",
+                "Category": "File Management"
+            },
+            "Ctrl + C": {
+                "Description": "Copy",
+                "Category": "Editing"
+            },
+            "Ctrl + J": {
+                "Description": "Duplicate object",
+                "Category": "Editing"
+            },
+            "Ctrl + 0": {
+                "Description": "Zoom to fit",
+                "Category": "View"
+            }
         }
     },
     "Affinity Photo": {
-        "Ctrl + E": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Merge layers",
-                "Category": "Layers"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + J": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Duplicate layer",
-                "Category": "Layers"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + N": {
-            "fields": {
-                "Platform": "Windows",
+        "Windows": {
+            "Ctrl + N": {
                 "Description": "New document",
                 "Category": "File Management"
             },
-            "subcollections": {}
-        },
-        "Ctrl + O": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Open document",
-                "Category": "File Management"
+            "Ctrl + E": {
+                "Description": "Merge layers",
+                "Category": "Layers"
             },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + I": {
-            "fields": {
-                "Platform": "Windows",
+            "Ctrl + Shift + I": {
                 "Description": "Invert selection",
                 "Category": "Selection"
             },
-            "subcollections": {}
+            "Ctrl + J": {
+                "Description": "Duplicate layer",
+                "Category": "Layers"
+            },
+            "Ctrl + O": {
+                "Description": "Open document",
+                "Category": "File Management"
+            }
         }
     },
     "Airtable": {
-        "Ctrl + Alt + N": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Add a new record",
-                "Category": "Data Entry"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + D": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Duplicate selected record",
-                "Category": "Data Management"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + F": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Search records",
-                "Category": "Search"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + G": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Toggle grid/list view",
-                "Category": "View"
-            },
-            "subcollections": {}
-        },
-        "Shift + Space": {
-            "fields": {
-                "Platform": "Windows",
+        "Windows": {
+            "Shift + Space": {
                 "Description": "Expand selected record",
                 "Category": "View"
             },
-            "subcollections": {}
+            "Ctrl + Shift + G": {
+                "Description": "Toggle grid/list view",
+                "Category": "View"
+            },
+            "Ctrl + D": {
+                "Description": "Duplicate selected record",
+                "Category": "Data Management"
+            },
+            "Ctrl + Alt + N": {
+                "Description": "Add a new record",
+                "Category": "Data Entry"
+            },
+            "Ctrl + F": {
+                "Description": "Search records",
+                "Category": "Search"
+            }
         }
     },
     "Asana": {
-        "Tab + D": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Set due date",
-                "Category": "Tasks"
-            },
-            "subcollections": {}
-        },
-        "Tab + Enter": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Toggle task details",
-                "Category": "Navigation"
-            },
-            "subcollections": {}
-        },
-        "Tab + H": {
-            "fields": {
-                "Platform": "Windows",
+        "Windows": {
+            "Tab + H": {
                 "Description": "Assign task to yourself",
                 "Category": "Tasks"
             },
-            "subcollections": {}
-        },
-        "Tab + Q": {
-            "fields": {
-                "Platform": "Windows",
+            "Tab + Q": {
                 "Description": "Add new task",
                 "Category": "Tasks"
             },
-            "subcollections": {}
-        },
-        "Tab + X": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Mark task as complete",
+            "Tab + Enter": {
+                "Description": "Toggle task details",
+                "Category": "Navigation"
+            },
+            "Tab + D": {
+                "Description": "Set due date",
                 "Category": "Tasks"
             },
-            "subcollections": {}
+            "Tab + X": {
+                "Description": "Mark task as complete",
+                "Category": "Tasks"
+            }
         }
     },
     "Atom": {
-        "Ctrl + ": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Toggle comment",
-                "Category": "Editing"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + G": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Go to line",
-                "Category": "Navigation"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + F": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Find in project",
-                "Category": "Search"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + P": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Open command palette",
-                "Category": "Tools"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + \\": {
-            "fields": {
-                "Platform": "Windows",
+        "Windows": {
+            "Ctrl + \\": {
                 "Description": "Toggle tree view",
                 "Category": "View"
             },
-            "subcollections": {}
-        }
-    },
-    "Audacity": {
-        "Ctrl + C": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Copy",
-                "Category": "Editing"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + V": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Paste",
-                "Category": "Editing"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + X": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Cut",
-                "Category": "Editing"
-            },
-            "subcollections": {}
-        },
-        "R": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Record",
-                "Category": "Recording"
-            },
-            "subcollections": {}
-        },
-        "Space": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Play or stop",
-                "Category": "Playback"
-            },
-            "subcollections": {}
-        }
-    },
-    "AutoCAD": {
-        "C": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Circle command",
-                "Category": "Drawing"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + S": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Save drawing",
-                "Category": "File Management"
-            },
-            "subcollections": {}
-        },
-        "E": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Erase objects",
-                "Category": "Editing"
-            },
-            "subcollections": {}
-        },
-        "L": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Line command",
-                "Category": "Drawing"
-            },
-            "subcollections": {}
-        },
-        "M": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Move objects",
-                "Category": "Editing"
-            },
-            "subcollections": {}
-        },
-        "RO": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Rotate objects",
-                "Category": "Editing"
-            },
-            "subcollections": {}
-        },
-        "Z": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Zoom",
-                "Category": "View"
-            },
-            "subcollections": {}
-        }
-    },
-    "Basecamp": {
-        "Ctrl + Alt + C": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Toggle calendar",
-                "Category": "View"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Alt + F": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Search Basecamp",
-                "Category": "Search"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Alt + G": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Go to notifications",
-                "Category": "Navigation"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Alt + N": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Add a new to-do",
-                "Category": "Tasks"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + R": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Mark all notifications as read",
-                "Category": "Notifications"
-            },
-            "subcollections": {}
-        }
-    },
-    "Blender": {
-        "G": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Grab/move object",
-                "Category": "Transform"
-            },
-            "subcollections": {}
-        },
-        "R": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Rotate object",
-                "Category": "Transform"
-            },
-            "subcollections": {}
-        },
-        "S": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Scale object",
-                "Category": "Transform"
-            },
-            "subcollections": {}
-        },
-        "Shift + A": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Add new mesh",
-                "Category": "Inserting"
-            },
-            "subcollections": {}
-        },
-        "Z": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Toggle wireframe mode",
-                "Category": "View"
-            },
-            "subcollections": {}
-        }
-    },
-    "Canva": {
-        "Ctrl + Enter": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Add a new page",
-                "Category": "Page Management"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + G": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Group elements",
-                "Category": "Editing"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + G": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Ungroup elements",
-                "Category": "Editing"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + [": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Send element backward",
-                "Category": "Layer Management"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + ]": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Bring element forward",
-                "Category": "Layer Management"
-            },
-            "subcollections": {}
-        }
-    },
-    "Chrome": {
-        "Ctl+M": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "New Tab",
-                "Category": "Editing"
-            },
-            "subcollections": {}
-        },
-        "Ctl+T": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "New Tab",
-                "Category": "Editing"
-            },
-            "subcollections": {}
-        }
-    },
-    "Confluence": {
-        "C": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Create new page",
-                "Category": "File Management"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + B": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Bold text",
-                "Category": "Formatting"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + K": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Insert link",
-                "Category": "Inserting"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + S": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Save page",
-                "Category": "File Management"
-            },
-            "subcollections": {}
-        }
-    },
-    "DaVinci Resolve": {
-        "Ctrl + Alt + V": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Toggle timeline view options",
-                "Category": "View"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + B": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Split clip",
-                "Category": "Editing"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + T": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Add transition",
-                "Category": "Editing"
-            },
-            "subcollections": {}
-        },
-        "M": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Add marker",
-                "Category": "Markers"
-            },
-            "subcollections": {}
-        },
-        "Space": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Play/Stop playback",
-                "Category": "Playback"
-            },
-            "subcollections": {}
-        }
-    },
-    "Discord": {
-        "Alt + Arrow Keys": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Navigate channels",
-                "Category": "Navigation"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + ": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Show keyboard shortcuts",
-                "Category": "Help"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + D": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Toggle deafen",
-                "Category": "Audio"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + M": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Toggle mute",
-                "Category": "Audio"
-            },
-            "subcollections": {}
-        },
-        "Escape": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Mark channel read",
-                "Category": "Message Management"
-            },
-            "subcollections": {}
-        }
-    },
-    "Docker Desktop": {
-        "Ctrl + Alt + C": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Open command line",
-                "Category": "Tools"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + D": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Open dashboard",
-                "Category": "Navigation"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + S": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Open settings",
-                "Category": "Settings"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + S": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Start container",
-                "Category": "Container Management"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + X": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Stop container",
-                "Category": "Container Management"
-            },
-            "subcollections": {}
-        }
-    },
-    "Dropbox": {
-        "Ctrl + Alt + D": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Open Dropbox folder",
-                "Category": "Navigation"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Alt + P": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Pause syncing",
-                "Category": "Sync"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + S": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Share selected file",
-                "Category": "File Management"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + V": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "View file versions",
-                "Category": "File Management"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + W": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Open Dropbox website",
-                "Category": "Navigation"
-            },
-            "subcollections": {}
-        }
-    },
-    "Evernote": {
-        "Ctrl + Alt + T": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Add tag",
-                "Category": "Tagging"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + B": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Bold text",
-                "Category": "Formatting"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + F": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Search notes",
-                "Category": "Search"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + N": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "New note",
-                "Category": "File Management"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + B": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Insert bullet list",
-                "Category": "Formatting"
-            },
-            "subcollections": {}
-        },
-        "F9": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Sync notes",
-                "Category": "Sync"
-            },
-            "subcollections": {}
-        }
-    },
-    "Figma": {
-        "Ctrl + ": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Open search",
-                "Category": "Search"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + +": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Zoom in",
-                "Category": "View"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + -": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Zoom out",
-                "Category": "View"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + G": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Group selection",
-                "Category": "Organization"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + 4": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Toggle layout grids",
-                "Category": "View"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + G": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Ungroup selection",
-                "Category": "Organization"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + O": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Outline text",
-                "Category": "Editing"
-            },
-            "subcollections": {}
-        },
-        "F11": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Toggle fullscreen",
-                "Category": "View"
-            },
-            "subcollections": {}
-        }
-    },
-    "Final Cut Pro": {
-        "Cmd + B": {
-            "fields": {
-                "Platform": "macOS",
-                "Description": "Blade tool",
-                "Category": "Editing"
-            },
-            "subcollections": {}
-        },
-        "S": {
-            "fields": {
-                "Platform": "macOS",
-                "Description": "Toggle skimming",
-                "Category": "Editing"
-            },
-            "subcollections": {}
-        },
-        "Shift + Z": {
-            "fields": {
-                "Platform": "macOS",
-                "Description": "Zoom to fit",
-                "Category": "View"
-            },
-            "subcollections": {}
-        },
-        "Space": {
-            "fields": {
-                "Platform": "macOS",
-                "Description": "Play/Pause",
-                "Category": "Playback"
-            },
-            "subcollections": {}
-        },
-        "W": {
-            "fields": {
-                "Platform": "macOS",
-                "Description": "Insert clip",
-                "Category": "Editing"
-            },
-            "subcollections": {}
-        }
-    },
-    "GIMP": {
-        "Ctrl + C": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Copy selection",
-                "Category": "Editing"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + N": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "New image",
-                "Category": "File Management"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + O": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Open image",
-                "Category": "File Management"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + V": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Paste selection",
-                "Category": "Editing"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Z": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Undo",
-                "Category": "Editing"
-            },
-            "subcollections": {}
-        }
-    },
-    "GitHub": {
-        "Alt + N": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Create new repository",
-                "Category": "Repository Management"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + B": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Toggle file explorer",
-                "Category": "Navigation"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + F": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Search in repository",
-                "Category": "Search"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + I": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "View issues",
-                "Category": "Issues"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + P": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Go to pull requests",
-                "Category": "Navigation"
-            },
-            "subcollections": {}
-        }
-    },
-    "GitHub Desktop": {
-        "Ctrl + 1": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Show changes",
-                "Category": "View"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + 2": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Switch to history view",
-                "Category": "View"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + O": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Open repository",
-                "Category": "File Management"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + P": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Push changes",
-                "Category": "Repository Management"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + F": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Fetch origin",
-                "Category": "Repository Management"
-            },
-            "subcollections": {}
-        }
-    },
-    "Google Calendar": {
-        "C": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Create new event",
-                "Category": "Event Management"
-            },
-            "subcollections": {}
-        },
-        "D": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Switch to day view",
-                "Category": "View"
-            },
-            "subcollections": {}
-        },
-        "T": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Go to today",
-                "Category": "Navigation"
-            },
-            "subcollections": {}
-        },
-        "W": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Switch to week view",
-                "Category": "View"
-            },
-            "subcollections": {}
-        }
-    },
-    "Google Chrome": {
-        "Ctrl + Shift + N": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Open incognito window",
-                "Category": "Privacy"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + O": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Open bookmarks manager",
-                "Category": "Bookmarks"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + T": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Reopen last closed tab",
-                "Category": "Navigation"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + T": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Open new tab",
-                "Category": "Navigation"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + W": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Close current tab",
-                "Category": "Navigation"
-            },
-            "subcollections": {}
-        }
-    },
-    "Google Docs": {
-        "Cmd + B": {
-            "fields": {
-                "Platform": "macOS",
-                "Description": "Bold text",
-                "Category": "Formatting"
-            },
-            "subcollections": {}
-        },
-        "Cmd + I": {
-            "fields": {
-                "Platform": "macOS",
-                "Description": "Italicize text",
-                "Category": "Formatting"
-            },
-            "subcollections": {}
-        },
-        "Cmd + K": {
-            "fields": {
-                "Platform": "macOS",
-                "Description": "Insert link",
-                "Category": "Inserting"
-            },
-            "subcollections": {}
-        },
-        "Cmd + Shift + H": {
-            "fields": {
-                "Platform": "macOS",
-                "Description": "Open find and replace",
-                "Category": "Editing"
-            },
-            "subcollections": {}
-        },
-        "Cmd + U": {
-            "fields": {
-                "Platform": "macOS",
-                "Description": "Underline text",
-                "Category": "Formatting"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + B": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Bold text",
-                "Category": "Formatting"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + H": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Open find and replace",
-                "Category": "Editing"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + I": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Italicize text",
-                "Category": "Formatting"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + K": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Insert link",
-                "Category": "Inserting"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + U": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Underline text",
-                "Category": "Formatting"
-            },
-            "subcollections": {}
-        }
-    },
-    "Google Keep": {
-        "Ctrl + Alt + A": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Archive note",
-                "Category": "Notes"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Alt + N": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Add new note",
-                "Category": "Notes"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Alt + P": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Pin note",
-                "Category": "Notes"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + F": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Search notes",
-                "Category": "Search"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + G": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Toggle list view/grid view",
-                "Category": "View"
-            },
-            "subcollections": {}
-        }
-    },
-    "Google Meet": {
-        "Ctrl + Alt + C": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Open chat",
-                "Category": "Communication"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Alt + P": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Show/hide people",
-                "Category": "View"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + D": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Mute/unmute microphone",
-                "Category": "Audio"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + E": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Turn camera on/off",
-                "Category": "Video"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + P": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Pin/unpin screen",
-                "Category": "View"
-            },
-            "subcollections": {}
-        }
-    },
-    "Google Sheets": {
-        "Alt + Shift + F": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Insert function",
-                "Category": "Formula"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + B": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Bold text",
-                "Category": "Formatting"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + H": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Open find and replace",
-                "Category": "Editing"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + L": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Toggle filter",
-                "Category": "Data"
-            },
-            "subcollections": {}
-        },
-        "Shift + F11": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Insert new sheet",
-                "Category": "Sheet Management"
-            },
-            "subcollections": {}
-        }
-    },
-    "Google Slides": {
-        "Ctrl + B": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Bold text",
-                "Category": "Formatting"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + D": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Duplicate slide",
-                "Category": "Slides"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + M": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "New slide",
-                "Category": "Slides"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + E": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Align center",
-                "Category": "Formatting"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + F5": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Present from beginning",
-                "Category": "Presentation"
-            },
-            "subcollections": {}
-        }
-    },
-    "Grammarly": {
-        "Ctrl + G": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Open Grammarly editor",
-                "Category": "Tools"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + S": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Open settings",
-                "Category": "Settings"
-            },
-            "subcollections": {}
-        },
-        "Enter": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Accept suggestion",
-                "Category": "Editing"
-            },
-            "subcollections": {}
-        },
-        "Esc": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Dismiss suggestion",
-                "Category": "Editing"
-            },
-            "subcollections": {}
-        },
-        "F7": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Check spelling and grammar",
-                "Category": "Editing"
-            },
-            "subcollections": {}
-        }
-    },
-    "HubSpot": {
-        "Ctrl + Alt + C": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Create new contact",
-                "Category": "Contacts"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Alt + D": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Go to dashboard",
-                "Category": "Navigation"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Alt + G": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "View deals",
-                "Category": "Deals"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Alt + T": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Open tasks",
-                "Category": "Tasks"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + F": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Search",
-                "Category": "Search"
-            },
-            "subcollections": {}
-        }
-    },
-    "Inkscape": {
-        "Ctrl + D": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Duplicate selected object",
-                "Category": "Editing"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + G": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Group selected objects",
-                "Category": "Editing"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + A": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Align selected objects",
-                "Category": "Alignment"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + G": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Ungroup selected objects",
-                "Category": "Editing"
-            },
-            "subcollections": {}
-        },
-        "Shift + Ctrl + F": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Toggle fill and stroke dialog",
-                "Category": "Formatting"
-            },
-            "subcollections": {}
-        }
-    },
-    "IntelliJ IDEA": {
-        "Alt + F7": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Find usages",
-                "Category": "Search"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + ": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Comment/uncomment line",
-                "Category": "Editing"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + E": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Open recent files",
-                "Category": "Navigation"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + N": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Navigate to class",
-                "Category": "Navigation"
-            },
-            "subcollections": {}
-        },
-        "Shift + F10": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Run program",
-                "Category": "Run"
-            },
-            "subcollections": {}
-        }
-    },
-    "Jira": {
-        "A": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Assign issue",
-                "Category": "Tasks"
-            },
-            "subcollections": {}
-        },
-        "C": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Create new issue",
-                "Category": "Tasks"
-            },
-            "subcollections": {}
-        }
-    },
-    "Jupyter Notebook": {
-        "B": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Insert new cell below",
-                "Category": "Editing"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + S": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Save notebook",
-                "Category": "File Management"
-            },
-            "subcollections": {}
-        },
-        "D D": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Delete cell",
-                "Category": "Editing"
-            },
-            "subcollections": {}
-        },
-        "Esc": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Switch to command mode",
-                "Category": "Navigation"
-            },
-            "subcollections": {}
-        },
-        "Shift + Enter": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Run cell",
-                "Category": "Execution"
-            },
-            "subcollections": {}
-        }
-    },
-    "LibreOffice Calc": {
-        "Ctrl + B": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Bold text",
-                "Category": "Formatting"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + N": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "New spreadsheet",
-                "Category": "File Management"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + S": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Save spreadsheet",
-                "Category": "File Management"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + B": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Add border",
-                "Category": "Formatting"
-            },
-            "subcollections": {}
-        },
-        "F11": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Insert chart",
-                "Category": "Inserting"
-            },
-            "subcollections": {}
-        }
-    },
-    "LibreOffice Writer": {
-        "Ctrl + B": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Bold text",
-                "Category": "Formatting"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + F": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Open find dialog",
-                "Category": "Editing"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + P": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Print document",
-                "Category": "File Management"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + S": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Save document",
-                "Category": "File Management"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + U": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Underline text",
-                "Category": "Formatting"
-            },
-            "subcollections": {}
-        }
-    },
-    "Mailchimp": {
-        "Ctrl + Alt + A": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Open audience settings",
-                "Category": "Audience Management"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + N": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Create new campaign",
-                "Category": "Campaign Management"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + P": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Preview campaign",
-                "Category": "Preview"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + R": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Open reports",
-                "Category": "Reports"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + S": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Schedule campaign",
-                "Category": "Campaign Management"
-            },
-            "subcollections": {}
-        }
-    },
-    "Microsoft Access": {
-        "Ctrl + +": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Insert new record",
-                "Category": "Data Management"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + -": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Delete record",
-                "Category": "Data Management"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + O": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Open database",
-                "Category": "File Management"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + S": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Save database",
-                "Category": "File Management"
-            },
-            "subcollections": {}
-        },
-        "Shift + F7": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Filter by selection",
-                "Category": "Data Management"
-            },
-            "subcollections": {}
-        }
-    },
-    "Microsoft Edge": {
-        "Ctrl + H": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Open history",
-                "Category": "Navigation"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + J": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Open downloads",
-                "Category": "Navigation"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + T": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Reopen closed tab",
-                "Category": "Navigation"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + T": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Open new tab",
-                "Category": "Navigation"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + W": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Close current tab",
-                "Category": "Navigation"
-            },
-            "subcollections": {}
-        }
-    },
-    "Microsoft Excel": {
-        "Alt + =": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "AutoSum",
-                "Category": "Formula"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + 1": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Open format cells dialog",
-                "Category": "Formatting"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + L": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Toggle filter",
-                "Category": "Data"
-            },
-            "subcollections": {}
-        },
-        "Shift + F11": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Insert a new worksheet",
-                "Category": "Sheet Management"
-            },
-            "subcollections": {}
-        },
-        "Shift + Space": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Select entire row",
-                "Category": "Selection"
-            },
-            "subcollections": {}
-        }
-    },
-    "Microsoft OneNote": {
-        "Ctrl + 1": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Tag as important",
-                "Category": "Tagging"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + E": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Search notebooks",
-                "Category": "Search"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + G": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Open notebook pane",
-                "Category": "Navigation"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + N": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Create new page",
-                "Category": "File Management"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + H": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Highlight text",
-                "Category": "Formatting"
-            },
-            "subcollections": {}
-        }
-    },
-    "Microsoft Outlook": {
-        "Ctrl + 2": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Open calendar",
-                "Category": "Navigation"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + F": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Forward email",
-                "Category": "Email Management"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + R": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Reply to email",
-                "Category": "Email Management"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + M": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "New email",
-                "Category": "Email Management"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + U": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Mark as read/unread",
-                "Category": "Message Management"
-            },
-            "subcollections": {}
-        }
-    },
-    "Microsoft Power BI": {
-        "Alt + N": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Add new visual",
-                "Category": "Visualization"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + S": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Save report",
-                "Category": "File Management"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + F": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Open fields pane",
-                "Category": "Navigation"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + L": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Toggle filter pane",
-                "Category": "Filters"
-            },
-            "subcollections": {}
-        },
-        "F5": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Refresh data",
-                "Category": "Data"
-            },
-            "subcollections": {}
-        }
-    },
-    "Microsoft PowerPoint": {
-        "Ctrl + B": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Bold text",
-                "Category": "Formatting"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + D": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Duplicate slide",
-                "Category": "Slides"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + M": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "New slide",
-                "Category": "Slides"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + S": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Save presentation",
-                "Category": "File Management"
-            },
-            "subcollections": {}
-        },
-        "F5": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Start presentation",
-                "Category": "Presentation"
-            },
-            "subcollections": {}
-        }
-    },
-    "Microsoft Project": {
-        "Alt + Right Arrow": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Move to next day",
-                "Category": "Navigation"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + F2": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Link tasks",
-                "Category": "Tasks"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + F2": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Split task",
-                "Category": "Tasks"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + F5": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Zoom in on timeline",
-                "Category": "View"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + N": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "New task",
-                "Category": "Tasks"
-            },
-            "subcollections": {}
-        }
-    },
-    "Microsoft Teams": {
-        "Ctrl + E": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Go to search",
-                "Category": "Search"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + N": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Start new chat",
-                "Category": "Communication"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + H": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "End call",
-                "Category": "Call Management"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + M": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Toggle mute",
-                "Category": "Audio"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + U": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Start video call",
-                "Category": "Video"
-            },
-            "subcollections": {}
-        }
-    },
-    "Microsoft Word": {
-        "Ctrl + B": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Bold text",
-                "Category": "Formatting"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + E": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Align text to center",
-                "Category": "Formatting"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + F": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Find text",
-                "Category": "Editing"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + O": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Open document",
-                "Category": "File Management"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + S": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Save document",
-                "Category": "File Management"
-            },
-            "subcollections": {}
-        }
-    },
-    "Miro": {
-        "Ctrl + +": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Zoom in",
-                "Category": "View"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Y": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Redo last action",
-                "Category": "Editing"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Z": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Undo last action",
-                "Category": "Editing"
-            },
-            "subcollections": {}
-        },
-        "N": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Add a sticky note",
-                "Category": "Inserting"
-            },
-            "subcollections": {}
-        },
-        "T": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Add a text box",
-                "Category": "Inserting"
-            },
-            "subcollections": {}
-        }
-    },
-    "Monday.com": {
-        "Ctrl + Alt + I": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Add new item",
-                "Category": "Tasks"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + F": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Search in board",
-                "Category": "Search"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + C": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Mark item as complete",
-                "Category": "Tasks"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + N": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Open notifications panel",
-                "Category": "Notifications"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + Right Arrow": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Navigate to next board",
-                "Category": "Navigation"
-            },
-            "subcollections": {}
-        }
-    },
-    "Mozilla Firefox": {
-        "Ctrl+N": {
-            "fields": {
-                "description": "New Tab",
-                "platform": "Windows",
-                "category": "Editing"
-            },
-            "subcollections": {}
-        },
-        "Ctrl+T": {
-            "fields": {
-                "description": "New Tab",
-                "platform": "Windows",
-                "category": "Editing"
-            },
-            "subcollections": {}
-        }
-    },
-    "Mozilla Thunderbird": {
-        "Ctrl + K": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Search messages",
-                "Category": "Search"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + L": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Forward",
-                "Category": "Email Management"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + N": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "New email",
-                "Category": "Email Management"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + R": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Reply",
-                "Category": "Email Management"
-            },
-            "subcollections": {}
-        },
-        "J": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Mark as junk",
-                "Category": "Message Management"
-            },
-            "subcollections": {}
-        }
-    },
-    "Notepad++": {
-        "Ctrl + D": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Duplicate current line",
-                "Category": "Editing"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + F": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Open find dialog",
-                "Category": "Search"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + G": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Go to line",
-                "Category": "Navigation"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + Down Arrow": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Move line down",
-                "Category": "Editing"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + Up Arrow": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Move line up",
-                "Category": "Editing"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + W": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Select word",
-                "Category": "Selection"
-            },
-            "subcollections": {}
-        },
-        "F11": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Toggle full screen",
-                "Category": "View"
-            },
-            "subcollections": {}
-        }
-    },
-    "Notion": {
-        "Cmd + D": {
-            "fields": {
-                "Platform": "macOS",
-                "Description": "Duplicate the current page",
-                "Category": "Editing"
-            },
-            "subcollections": {}
-        },
-        "Cmd + Shift + L": {
-            "fields": {
-                "Platform": "macOS",
-                "Description": "Switch to dark mode",
-                "Category": "View"
-            },
-            "subcollections": {}
-        },
-        "Cmd + \\": {
-            "fields": {
-                "Platform": "macOS",
-                "Description": "Toggle sidebar",
-                "Category": "Navigation"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Alt + T": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Insert toggle list",
-                "Category": "Inserting"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + D": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Duplicate the current page",
-                "Category": "Editing"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + N": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Create a new page",
-                "Category": "File Management"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + Arrow Down": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Move block down",
-                "Category": "Editing"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + Arrow Up": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Move block up",
-                "Category": "Editing"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + L": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Switch to dark mode",
-                "Category": "View"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + \\": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Toggle sidebar",
-                "Category": "Navigation"
-            },
-            "subcollections": {}
-        },
-        "Enter": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Insert a new block",
-                "Category": "Editing"
-            },
-            "subcollections": {}
-        }
-    },
-    "OBS Studio": {
-        "Ctrl + H": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Toggle sources visibility",
-                "Category": "View"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + M": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Mute/unmute mic",
-                "Category": "Audio"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Number Keys": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Switch scenes",
-                "Category": "Scenes"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + R": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Start/stop recording",
-                "Category": "Recording"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + S": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Start/stop streaming",
-                "Category": "Streaming"
-            },
-            "subcollections": {}
-        }
-    },
-    "Obsidian": {
-        "Ctrl + B": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Bold text",
-                "Category": "Formatting"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + E": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Toggle preview/edit mode",
-                "Category": "View"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + K": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Insert link",
-                "Category": "Inserting"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + O": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Open quick switcher",
-                "Category": "Navigation"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + P": {
-            "fields": {
-                "Platform": "Windows",
+            "Ctrl + Shift + P": {
                 "Description": "Open command palette",
                 "Category": "Tools"
             },
-            "subcollections": {}
-        }
-    },
-    "OneNote": {
-        "Ctrl + G": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Toggle notebook pane",
-                "Category": "Navigation"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + N": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Create new page",
-                "Category": "File Management"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + H": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Highlight text",
-                "Category": "Formatting"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + T": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Insert table",
-                "Category": "Editing"
-            },
-            "subcollections": {}
-        }
-    },
-    "Outlook": {
-        "Ctrl + 2": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Open calendar",
-                "Category": "Navigation"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + F": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Forward email",
-                "Category": "Email Management"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + R": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Reply",
-                "Category": "Email Management"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + M": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "New email",
-                "Category": "Email Management"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + U": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Mark as read/unread",
-                "Category": "Message Management"
-            },
-            "subcollections": {}
-        }
-    },
-    "PyCharm": {
-        "Cmd + Alt + L": {
-            "fields": {
-                "Platform": "macOS",
-                "Description": "Format code",
-                "Category": "Formatting"
-            },
-            "subcollections": {}
-        },
-        "Cmd + E": {
-            "fields": {
-                "Platform": "macOS",
-                "Description": "Open recent files",
-                "Category": "Navigation"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Alt + L": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Format code",
-                "Category": "Formatting"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + E": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Open recent files",
-                "Category": "Navigation"
-            },
-            "subcollections": {}
-        },
-        "Shift + Cmd + R": {
-            "fields": {
-                "Platform": "macOS",
-                "Description": "Rename variable",
-                "Category": "Editing"
-            },
-            "subcollections": {}
-        },
-        "Shift + F6": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Rename variable",
-                "Category": "Editing"
-            },
-            "subcollections": {}
-        }
-    },
-    "QuickBooks": {
-        "Ctrl + A": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Open chart of accounts",
-                "Category": "Data Management"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + I": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Create new invoice",
-                "Category": "Invoicing"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + J": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Go to customer list",
-                "Category": "Navigation"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + R": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Go to report center",
-                "Category": "Reports"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + T": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Create new transaction",
-                "Category": "Transactions"
-            },
-            "subcollections": {}
-        }
-    },
-    "Quip": {
-        "Ctrl + B": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Bold text",
-                "Category": "Formatting"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + I": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Italicize text",
-                "Category": "Formatting"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + K": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Insert link",
-                "Category": "Inserting"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + X": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Strikethrough text",
-                "Category": "Formatting"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + U": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Underline text",
-                "Category": "Formatting"
-            },
-            "subcollections": {}
-        }
-    },
-    "Salesforce": {
-        "Alt + G": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Open global search",
-                "Category": "Search"
-            },
-            "subcollections": {}
-        },
-        "Alt + N": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "New record",
-                "Category": "Data Management"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + D": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Delete record",
-                "Category": "Data Management"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + E": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Edit record",
-                "Category": "Data Management"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + S": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Save record",
-                "Category": "Data Management"
-            },
-            "subcollections": {}
-        }
-    },
-    "Sketch": {
-        "Cmd + G": {
-            "fields": {
-                "Platform": "macOS",
-                "Description": "Group layers",
-                "Category": "Layers"
-            },
-            "subcollections": {}
-        },
-        "Cmd + R": {
-            "fields": {
-                "Platform": "macOS",
-                "Description": "Toggle rulers",
-                "Category": "View"
-            },
-            "subcollections": {}
-        },
-        "Cmd + Shift + G": {
-            "fields": {
-                "Platform": "macOS",
-                "Description": "Ungroup layers",
-                "Category": "Layers"
-            },
-            "subcollections": {}
-        },
-        "O": {
-            "fields": {
-                "Platform": "macOS",
-                "Description": "Insert oval",
-                "Category": "Inserting"
-            },
-            "subcollections": {}
-        },
-        "R": {
-            "fields": {
-                "Platform": "macOS",
-                "Description": "Insert rectangle",
-                "Category": "Inserting"
-            },
-            "subcollections": {}
-        }
-    },
-    "Slack": {
-        "Alt + Shift + Up Arrow": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Jump to next unread channel",
-                "Category": "Navigation"
-            },
-            "subcollections": {}
-        },
-        "Cmd + F": {
-            "fields": {
-                "Platform": "macOS",
-                "Description": "Search conversations",
-                "Category": "Search"
-            },
-            "subcollections": {}
-        },
-        "Cmd + Shift + Esc": {
-            "fields": {
-                "Platform": "macOS",
-                "Description": "Mark all messages as read",
-                "Category": "Message Management"
-            },
-            "subcollections": {}
-        },
-        "Cmd + Shift + K": {
-            "fields": {
-                "Platform": "macOS",
-                "Description": "Open direct messages",
-                "Category": "Navigation"
-            },
-            "subcollections": {}
-        },
-        "Cmd + Shift + Y": {
-            "fields": {
-                "Platform": "macOS",
-                "Description": "Set status",
-                "Category": "User Settings"
-            },
-            "subcollections": {}
-        },
-        "Cmd + Tab": {
-            "fields": {
-                "Platform": "macOS",
-                "Description": "Switch to next workspace",
-                "Category": "Navigation"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + F": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Search conversations",
-                "Category": "Search"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + Esc": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Mark all messages as read",
-                "Category": "Message Management"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + K": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Open direct messages",
-                "Category": "Navigation"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + S": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Toggle starred items",
-                "Category": "Navigation"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + T": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Open threads view",
-                "Category": "Communication"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + Y": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Set status",
-                "Category": "User Settings"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + \\": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Add reaction",
-                "Category": "Messaging"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Tab": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Switch to next workspace",
-                "Category": "Navigation"
-            },
-            "subcollections": {}
-        },
-        "Esc": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Mark channel as read",
-                "Category": "Message Management"
-            },
-            "subcollections": {}
-        },
-        "Up Arrow": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Edit last message",
-                "Category": "Editing"
-            },
-            "subcollections": {}
-        }
-    },
-    "Spotify": {
-        "Ctrl + Down Arrow": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Decrease volume",
-                "Category": "Volume"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Left Arrow": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Previous track",
-                "Category": "Playback"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Right Arrow": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Next track",
-                "Category": "Playback"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Up Arrow": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Increase volume",
-                "Category": "Volume"
-            },
-            "subcollections": {}
-        },
-        "Space": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Play/Pause",
-                "Category": "Playback"
-            },
-            "subcollections": {}
-        }
-    },
-    "Sublime Text": {
-        "Ctrl + ": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Comment line",
-                "Category": "Editing"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + G": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Go to line",
-                "Category": "Navigation"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + D": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Duplicate line",
-                "Category": "Editing"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + L": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Select all occurrences",
-                "Category": "Selection"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + P": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Open command palette",
-                "Category": "Tools"
-            },
-            "subcollections": {}
-        }
-    },
-    "Tableau": {
-        "Ctrl + D": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Duplicate worksheet",
-                "Category": "File Management"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + M": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "New worksheet",
-                "Category": "File Management"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + A": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Sort ascending",
-                "Category": "Sorting"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + H": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Hide field",
-                "Category": "Data Management"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + Z": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Sort descending",
-                "Category": "Sorting"
-            },
-            "subcollections": {}
-        }
-    },
-    "Thunderbird": {
-        "Ctrl + K": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Search messages",
-                "Category": "Search"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + L": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Forward",
-                "Category": "Email Management"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + N": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "New email",
-                "Category": "Email Management"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + R": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Reply",
-                "Category": "Email Management"
-            },
-            "subcollections": {}
-        },
-        "J": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Mark as junk",
-                "Category": "Message Management"
-            },
-            "subcollections": {}
-        }
-    },
-    "Toggl": {
-        "Ctrl + F": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Search entries",
-                "Category": "Search"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + P": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Open project list",
-                "Category": "Project Management"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + R": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Go to reports",
-                "Category": "Navigation"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + T": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Stop timer",
-                "Category": "Time Tracking"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + T": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Start timer",
-                "Category": "Time Tracking"
-            },
-            "subcollections": {}
-        }
-    },
-    "Trello": {
-        "B": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Open board menu",
-                "Category": "Navigation"
-            },
-            "subcollections": {}
-        },
-        "C": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Archive card",
-                "Category": "Tasks"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Alt + C": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Add card",
-                "Category": "Tasks"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + C": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Add checklist",
-                "Category": "Tasks"
-            },
-            "subcollections": {}
-        },
-        "F": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Search cards",
-                "Category": "Search"
-            },
-            "subcollections": {}
-        }
-    },
-    "Unity": {
-        "Ctrl + D": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Duplicate object",
-                "Category": "Editing"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + P": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Play game",
-                "Category": "Playback"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Tab": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Toggle scene/game view",
-                "Category": "View"
-            },
-            "subcollections": {}
-        },
-        "E": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Rotate object",
-                "Category": "Transform"
-            },
-            "subcollections": {}
-        },
-        "W": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Move object",
-                "Category": "Transform"
-            },
-            "subcollections": {}
-        }
-    },
-    "VLC Media Player": {
-        "Cmd + .": {
-            "fields": {
-                "Platform": "macOS",
-                "Description": "Stop playback",
-                "Category": "Playback"
-            },
-            "subcollections": {}
-        },
-        "Cmd + Up Arrow": {
-            "fields": {
-                "Platform": "macOS",
-                "Description": "Increase volume",
-                "Category": "Audio"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Up Arrow": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Increase volume",
-                "Category": "Audio"
-            },
-            "subcollections": {}
-        },
-        "S": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Stop playback",
-                "Category": "Playback"
-            },
-            "subcollections": {}
-        },
-        "Space": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Play/Pause",
-                "Category": "Playback"
-            },
-            "subcollections": {}
-        }
-    },
-    "VS Code": {
-        "Ctrl + Shift + F": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Find in files",
-                "Category": "Search"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + L": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Select all occurrences of word",
-                "Category": "Selection"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + `": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Toggle terminal",
-                "Category": "Tools"
-            },
-            "subcollections": {}
-        },
-        "F12": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Go to definition",
-                "Category": "Navigation"
-            },
-            "subcollections": {}
-        },
-        "F2": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Rename symbol",
-                "Category": "Editing"
-            },
-            "subcollections": {}
-        }
-    },
-    "Visual Studio": {
-        "Ctrl + .": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Quick actions",
-                "Category": "Tools"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Alt + L": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Open solution explorer",
-                "Category": "Navigation"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + F": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Find",
-                "Category": "Search"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + K, Ctrl + C": {
-            "fields": {
-                "Platform": "Windows",
+            "Ctrl + /": {
                 "Description": "Toggle comment",
                 "Category": "Editing"
             },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + B": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Build solution",
-                "Category": "Build"
-            },
-            "subcollections": {}
-        },
-        "F10": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Step over",
-                "Category": "Debugging"
-            },
-            "subcollections": {}
-        },
-        "F11": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Step into",
-                "Category": "Debugging"
-            },
-            "subcollections": {}
-        },
-        "F12": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Go to definition",
+            "Ctrl + G": {
+                "Description": "Go to line",
                 "Category": "Navigation"
             },
-            "subcollections": {}
-        },
-        "F5": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Start debugging",
-                "Category": "Run"
-            },
-            "subcollections": {}
+            "Ctrl + Shift + F": {
+                "Description": "Find in project",
+                "Category": "Search"
+            }
         }
     },
-    "Visual Studio Code": {
-        "Cmd + N": {
-            "fields": {
-                "Platform": "macOS",
-                "Description": "Open new file",
-                "Category": "File Management"
+    "Audacity": {
+        "Windows": {
+            "Space": {
+                "Description": "Play or stop",
+                "Category": "Playback"
             },
-            "subcollections": {}
-        },
-        "Cmd + S": {
-            "fields": {
-                "Platform": "macOS",
-                "Description": "Save file",
-                "Category": "File Management"
-            },
-            "subcollections": {}
-        },
-        "Cmd + Shift + P": {
-            "fields": {
-                "Platform": "macOS",
-                "Description": "Open command palette",
-                "Category": "Tools"
-            },
-            "subcollections": {}
-        },
-        "Cmd + `": {
-            "fields": {
-                "Platform": "macOS",
-                "Description": "Toggle terminal",
-                "Category": "Tools"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + ": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Toggle comment line",
+            "Ctrl + X": {
+                "Description": "Cut",
                 "Category": "Editing"
             },
-            "subcollections": {}
-        },
-        "Ctrl + G": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Go to line",
-                "Category": "Navigation"
+            "Ctrl + C": {
+                "Description": "Copy",
+                "Category": "Editing"
             },
-            "subcollections": {}
-        },
-        "Ctrl + N": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Open new file",
+            "Ctrl + V": {
+                "Description": "Paste",
+                "Category": "Editing"
+            },
+            "R": {
+                "Description": "Record",
+                "Category": "Recording"
+            }
+        }
+    },
+    "AutoCAD": {
+        "Windows": {
+            "E": {
+                "Description": "Erase objects",
+                "Category": "Editing"
+            },
+            "Ctrl + S": {
+                "Description": "Save drawing",
                 "Category": "File Management"
             },
-            "subcollections": {}
-        },
-        "Ctrl + S": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Save file",
-                "Category": "File Management"
+            "M": {
+                "Description": "Move objects",
+                "Category": "Editing"
             },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + P": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Open command palette",
-                "Category": "Tools"
-            },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + X": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Show extensions",
+            "Z": {
+                "Description": "Zoom",
                 "Category": "View"
             },
-            "subcollections": {}
-        },
-        "Ctrl + `": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Toggle terminal",
-                "Category": "Tools"
+            "C": {
+                "Description": "Circle command",
+                "Category": "Drawing"
             },
-            "subcollections": {}
-        },
-        "Shift + Alt + F": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Format document",
-                "Category": "Formatting"
+            "L": {
+                "Description": "Line command",
+                "Category": "Drawing"
             },
-            "subcollections": {}
-        },
-        "Shift + Cmd + F": {
-            "fields": {
-                "Platform": "macOS",
-                "Description": "Format document",
-                "Category": "Formatting"
-            },
-            "subcollections": {}
-        },
-        "Shift + F12": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Find all references",
+            "RO": {
+                "Description": "Rotate objects",
+                "Category": "Editing"
+            }
+        }
+    },
+    "Basecamp": {
+        "Windows": {
+            "Ctrl + Alt + F": {
+                "Description": "Search Basecamp",
                 "Category": "Search"
             },
-            "subcollections": {}
-        }
-    },
-    "Xcode": {
-        "Cmd + 1": {
-            "fields": {
-                "Platform": "macOS",
-                "Description": "Open project navigator",
+            "Ctrl + Alt + N": {
+                "Description": "Add a new to-do",
+                "Category": "Tasks"
+            },
+            "Ctrl + Alt + C": {
+                "Description": "Toggle calendar",
+                "Category": "View"
+            },
+            "Ctrl + Alt + G": {
+                "Description": "Go to notifications",
                 "Category": "Navigation"
             },
-            "subcollections": {}
-        },
-        "Cmd + L": {
-            "fields": {
-                "Platform": "macOS",
-                "Description": "Go to line",
-                "Category": "Navigation"
-            },
-            "subcollections": {}
-        },
-        "Cmd + R": {
-            "fields": {
-                "Platform": "macOS",
-                "Description": "Build and run project",
-                "Category": "Run"
-            },
-            "subcollections": {}
-        },
-        "Cmd + Shift + 0": {
-            "fields": {
-                "Platform": "macOS",
-                "Description": "Show documentation",
-                "Category": "Help"
-            },
-            "subcollections": {}
-        },
-        "Cmd + \\": {
-            "fields": {
-                "Platform": "macOS",
-                "Description": "Toggle breakpoints",
-                "Category": "Debugging"
-            },
-            "subcollections": {}
+            "Ctrl + Shift + R": {
+                "Description": "Mark all notifications as read",
+                "Category": "Notifications"
+            }
         }
     },
-    "Zendesk": {
-        "A": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Assign ticket",
-                "Category": "Ticket Management"
+    "Blender": {
+        "Windows": {
+            "Z": {
+                "Description": "Toggle wireframe mode",
+                "Category": "View"
             },
-            "subcollections": {}
-        },
-        "Ctrl + Shift + C": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Close ticket",
-                "Category": "Ticket Management"
+            "G": {
+                "Description": "Grab/move object",
+                "Category": "Transform"
             },
-            "subcollections": {}
-        },
-        "M": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Merge ticket",
-                "Category": "Ticket Management"
+            "S": {
+                "Description": "Scale object",
+                "Category": "Transform"
             },
-            "subcollections": {}
-        },
-        "N": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Create a new ticket",
-                "Category": "Ticket Management"
+            "Shift + A": {
+                "Description": "Add new mesh",
+                "Category": "Inserting"
             },
-            "subcollections": {}
-        },
-        "R": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Reply to ticket",
-                "Category": "Ticket Management"
-            },
-            "subcollections": {}
+            "R": {
+                "Description": "Rotate object",
+                "Category": "Transform"
+            }
         }
     },
-    "Zoom": {
-        "Alt + A": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Mute/unmute audio",
+    "Canva": {
+        "Windows": {
+            "Ctrl + [": {
+                "Description": "Send element backward",
+                "Category": "Layer Management"
+            },
+            "Ctrl + G": {
+                "Description": "Group elements",
+                "Category": "Editing"
+            },
+            "Ctrl + Shift + G": {
+                "Description": "Ungroup elements",
+                "Category": "Editing"
+            },
+            "Ctrl + Enter": {
+                "Description": "Add a new page",
+                "Category": "Page Management"
+            },
+            "Ctrl + ]": {
+                "Description": "Bring element forward",
+                "Category": "Layer Management"
+            }
+        }
+    },
+    "Confluence": {
+        "Windows": {
+            "Ctrl + S": {
+                "Description": "Save page",
+                "Category": "File Management"
+            },
+            "C": {
+                "Description": "Create new page",
+                "Category": "File Management"
+            },
+            "Ctrl + K": {
+                "Description": "Insert link",
+                "Category": "Inserting"
+            },
+            "Ctrl + B": {
+                "Description": "Bold text",
+                "Category": "Formatting"
+            }
+        }
+    },
+    "DaVinci Resolve": {
+        "Windows": {
+            "Ctrl + B": {
+                "Description": "Split clip",
+                "Category": "Editing"
+            },
+            "Ctrl + T": {
+                "Description": "Add transition",
+                "Category": "Editing"
+            },
+            "Space": {
+                "Description": "Play/Stop playback",
+                "Category": "Playback"
+            },
+            "Ctrl + Alt + V": {
+                "Description": "Toggle timeline view options",
+                "Category": "View"
+            },
+            "M": {
+                "Description": "Add marker",
+                "Category": "Markers"
+            }
+        }
+    },
+    "Discord": {
+        "Windows": {
+            "Ctrl + Shift + D": {
+                "Description": "Toggle deafen",
                 "Category": "Audio"
             },
-            "subcollections": {}
-        },
-        "Alt + H": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Toggle chat panel",
-                "Category": "Communication"
+            "Escape": {
+                "Description": "Mark channel read",
+                "Category": "Message Management"
             },
-            "subcollections": {}
-        },
-        "Alt + N": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Switch camera",
-                "Category": "Video"
+            "Ctrl + /": {
+                "Description": "Show keyboard shortcuts",
+                "Category": "Help"
             },
-            "subcollections": {}
-        },
-        "Alt + Q": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "End meeting",
-                "Category": "Meeting Management"
+            "Alt + Arrow Keys": {
+                "Description": "Navigate channels",
+                "Category": "Navigation"
             },
-            "subcollections": {}
-        },
-        "Alt + S": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Share screen",
-                "Category": "Screen Sharing"
-            },
-            "subcollections": {}
-        },
-        "Alt + U": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Toggle participants panel",
-                "Category": "Communication"
-            },
-            "subcollections": {}
-        },
-        "Alt + V": {
-            "fields": {
-                "Platform": "Windows",
-                "Description": "Start/stop video",
-                "Category": "Video"
-            },
-            "subcollections": {}
+            "Ctrl + Shift + M": {
+                "Description": "Toggle mute",
+                "Category": "Audio"
+            }
         }
     },
-    "hotkeys_metadata": {
-        "counters": {
-            "fields": {
-                "total_shortcuts": 464
+    "Docker Desktop": {
+        "Windows": {
+            "Ctrl + S": {
+                "Description": "Open settings",
+                "Category": "Settings"
             },
-            "subcollections": {}
+            "Ctrl + Alt + C": {
+                "Description": "Open command line",
+                "Category": "Tools"
+            },
+            "Ctrl + D": {
+                "Description": "Open dashboard",
+                "Category": "Navigation"
+            },
+            "Ctrl + Shift + X": {
+                "Description": "Stop container",
+                "Category": "Container Management"
+            },
+            "Ctrl + Shift + S": {
+                "Description": "Start container",
+                "Category": "Container Management"
+            }
         }
     },
-    "iTerm2": {
-        "Cmd + Enter": {
-            "fields": {
-                "Platform": "macOS",
+    "Dropbox": {
+        "Windows": {
+            "Ctrl + Shift + S": {
+                "Description": "Share selected file",
+                "Category": "File Management"
+            },
+            "Ctrl + Alt + D": {
+                "Description": "Open Dropbox folder",
+                "Category": "Navigation"
+            },
+            "Ctrl + Shift + V": {
+                "Description": "View file versions",
+                "Category": "File Management"
+            },
+            "Ctrl + Alt + P": {
+                "Description": "Pause syncing",
+                "Category": "Sync"
+            },
+            "Ctrl + Shift + W": {
+                "Description": "Open Dropbox website",
+                "Category": "Navigation"
+            }
+        }
+    },
+    "Evernote": {
+        "Windows": {
+            "Ctrl + Shift + B": {
+                "Description": "Insert bullet list",
+                "Category": "Formatting"
+            },
+            "Ctrl + Alt + T": {
+                "Description": "Add tag",
+                "Category": "Tagging"
+            },
+            "Ctrl + F": {
+                "Description": "Search notes",
+                "Category": "Search"
+            },
+            "Ctrl + B": {
+                "Description": "Bold text",
+                "Category": "Formatting"
+            },
+            "F9": {
+                "Description": "Sync notes",
+                "Category": "Sync"
+            },
+            "Ctrl + N": {
+                "Description": "New note",
+                "Category": "File Management"
+            }
+        }
+    },
+    "Figma": {
+        "Windows": {
+            "Ctrl + Shift + O": {
+                "Description": "Outline text",
+                "Category": "Editing"
+            },
+            "Ctrl + G": {
+                "Description": "Group selection",
+                "Category": "Organization"
+            },
+            "Ctrl + Shift + G": {
+                "Description": "Ungroup selection",
+                "Category": "Organization"
+            },
+            "Ctrl + -": {
+                "Description": "Zoom out",
+                "Category": "View"
+            },
+            "Ctrl + +": {
+                "Description": "Zoom in",
+                "Category": "View"
+            },
+            "F11": {
+                "Description": "Toggle fullscreen",
+                "Category": "View"
+            },
+            "Ctrl + Shift + 4": {
+                "Description": "Toggle layout grids",
+                "Category": "View"
+            },
+            "Ctrl + /": {
+                "Description": "Open search",
+                "Category": "Search"
+            }
+        }
+    },
+    "Final Cut Pro": {
+        "MacOS": {
+            "W": {
+                "Description": "Insert clip",
+                "Category": "Editing"
+            },
+            "Space": {
+                "Description": "Play/Pause",
+                "Category": "Playback"
+            },
+            "S": {
+                "Description": "Toggle skimming",
+                "Category": "Editing"
+            },
+            "Cmd + B": {
+                "Description": "Blade tool",
+                "Category": "Editing"
+            },
+            "Shift + Z": {
+                "Description": "Zoom to fit",
+                "Category": "View"
+            }
+        }
+    },
+    "GIMP": {
+        "Windows": {
+            "Ctrl + O": {
+                "Description": "Open image",
+                "Category": "File Management"
+            },
+            "Ctrl + N": {
+                "Description": "New image",
+                "Category": "File Management"
+            },
+            "Ctrl + V": {
+                "Description": "Paste selection",
+                "Category": "Editing"
+            },
+            "Ctrl + C": {
+                "Description": "Copy selection",
+                "Category": "Editing"
+            },
+            "Ctrl + Z": {
+                "Description": "Undo",
+                "Category": "Editing"
+            }
+        }
+    },
+    "GitHub": {
+        "Windows": {
+            "Ctrl + F": {
+                "Description": "Search in repository",
+                "Category": "Search"
+            },
+            "Ctrl + Shift + P": {
+                "Description": "Go to pull requests",
+                "Category": "Navigation"
+            },
+            "Alt + N": {
+                "Description": "Create new repository",
+                "Category": "Repository Management"
+            },
+            "Ctrl + B": {
+                "Description": "Toggle file explorer",
+                "Category": "Navigation"
+            },
+            "Ctrl + Shift + I": {
+                "Description": "View issues",
+                "Category": "Issues"
+            }
+        }
+    },
+    "GitHub Desktop": {
+        "Windows": {
+            "Ctrl + Shift + F": {
+                "Description": "Fetch origin",
+                "Category": "Repository Management"
+            },
+            "Ctrl + 1": {
+                "Description": "Show changes",
+                "Category": "View"
+            },
+            "Ctrl + O": {
+                "Description": "Open repository",
+                "Category": "File Management"
+            },
+            "Ctrl + P": {
+                "Description": "Push changes",
+                "Category": "Repository Management"
+            },
+            "Ctrl + 2": {
+                "Description": "Switch to history view",
+                "Category": "View"
+            }
+        }
+    },
+    "Google Calendar": {
+        "Windows": {
+            "W": {
+                "Description": "Switch to week view",
+                "Category": "View"
+            },
+            "T": {
+                "Description": "Go to today",
+                "Category": "Navigation"
+            },
+            "C": {
+                "Description": "Create new event",
+                "Category": "Event Management"
+            },
+            "D": {
+                "Description": "Switch to day view",
+                "Category": "View"
+            }
+        }
+    },
+    "Google Chrome": {
+        "Windows": {
+            "Ctrl + Shift + O": {
+                "Description": "Open bookmarks manager",
+                "Category": "Bookmarks"
+            },
+            "Ctrl + T": {
+                "Description": "Open new tab",
+                "Category": "Navigation"
+            },
+            "Ctrl + Shift + N": {
+                "Description": "Open incognito window",
+                "Category": "Privacy"
+            },
+            "Ctrl + Shift + T": {
+                "Description": "Reopen last closed tab",
+                "Category": "Navigation"
+            },
+            "Ctrl + W": {
+                "Description": "Close current tab",
+                "Category": "Navigation"
+            }
+        }
+    },
+    "Google Docs": {
+        "MacOS": {
+            "Cmd + B": {
+                "Description": "Bold text",
+                "Category": "Formatting"
+            },
+            "Cmd + U": {
+                "Description": "Underline text",
+                "Category": "Formatting"
+            },
+            "Cmd + K": {
+                "Description": "Insert link",
+                "Category": "Inserting"
+            },
+            "Cmd + I": {
+                "Description": "Italicize text",
+                "Category": "Formatting"
+            },
+            "Cmd + Shift + H": {
+                "Description": "Open find and replace",
+                "Category": "Editing"
+            }
+        },
+        "Windows": {
+            "Ctrl + B": {
+                "Description": "Bold text",
+                "Category": "Formatting"
+            },
+            "Ctrl + K": {
+                "Description": "Insert link",
+                "Category": "Inserting"
+            },
+            "Ctrl + U": {
+                "Description": "Underline text",
+                "Category": "Formatting"
+            },
+            "Ctrl + I": {
+                "Description": "Italicize text",
+                "Category": "Formatting"
+            },
+            "Ctrl + H": {
+                "Description": "Open find and replace",
+                "Category": "Editing"
+            }
+        }
+    },
+    "Google Keep": {
+        "Windows": {
+            "Ctrl + Alt + N": {
+                "Description": "Add new note",
+                "Category": "Notes"
+            },
+            "Ctrl + Alt + P": {
+                "Description": "Pin note",
+                "Category": "Notes"
+            },
+            "Ctrl + F": {
+                "Description": "Search notes",
+                "Category": "Search"
+            },
+            "Ctrl + G": {
+                "Description": "Toggle list view/grid view",
+                "Category": "View"
+            },
+            "Ctrl + Alt + A": {
+                "Description": "Archive note",
+                "Category": "Notes"
+            }
+        }
+    },
+    "Google Meet": {
+        "Windows": {
+            "Ctrl + Alt + C": {
+                "Description": "Open chat",
+                "Category": "Communication"
+            },
+            "Ctrl + Shift + P": {
+                "Description": "Pin/unpin screen",
+                "Category": "View"
+            },
+            "Ctrl + E": {
+                "Description": "Turn camera on/off",
+                "Category": "Video"
+            },
+            "Ctrl + D": {
+                "Description": "Mute/unmute microphone",
+                "Category": "Audio"
+            },
+            "Ctrl + Alt + P": {
+                "Description": "Show/hide people",
+                "Category": "View"
+            }
+        }
+    },
+    "Google Sheets": {
+        "Windows": {
+            "Alt + Shift + F": {
+                "Description": "Insert function",
+                "Category": "Formula"
+            },
+            "Ctrl + B": {
+                "Description": "Bold text",
+                "Category": "Formatting"
+            },
+            "Ctrl + H": {
+                "Description": "Open find and replace",
+                "Category": "Editing"
+            },
+            "Ctrl + Shift + L": {
+                "Description": "Toggle filter",
+                "Category": "Data"
+            },
+            "Shift + F11": {
+                "Description": "Insert new sheet",
+                "Category": "Sheet Management"
+            }
+        }
+    },
+    "Google Slides": {
+        "Windows": {
+            "Ctrl + Shift + F5": {
+                "Description": "Present from beginning",
+                "Category": "Presentation"
+            },
+            "Ctrl + M": {
+                "Description": "New slide",
+                "Category": "Slides"
+            },
+            "Ctrl + Shift + E": {
+                "Description": "Align center",
+                "Category": "Formatting"
+            },
+            "Ctrl + D": {
+                "Description": "Duplicate slide",
+                "Category": "Slides"
+            },
+            "Ctrl + B": {
+                "Description": "Bold text",
+                "Category": "Formatting"
+            }
+        }
+    },
+    "Grammarly": {
+        "Windows": {
+            "F7": {
+                "Description": "Check spelling and grammar",
+                "Category": "Editing"
+            },
+            "Esc": {
+                "Description": "Dismiss suggestion",
+                "Category": "Editing"
+            },
+            "Enter": {
+                "Description": "Accept suggestion",
+                "Category": "Editing"
+            },
+            "Ctrl + Shift + S": {
+                "Description": "Open settings",
+                "Category": "Settings"
+            },
+            "Ctrl + G": {
+                "Description": "Open Grammarly editor",
+                "Category": "Tools"
+            }
+        }
+    },
+    "HubSpot": {
+        "Windows": {
+            "Ctrl + Alt + C": {
+                "Description": "Create new contact",
+                "Category": "Contacts"
+            },
+            "Ctrl + F": {
+                "Description": "Search",
+                "Category": "Search"
+            },
+            "Ctrl + Alt + T": {
+                "Description": "Open tasks",
+                "Category": "Tasks"
+            },
+            "Ctrl + Alt + D": {
+                "Description": "Go to dashboard",
+                "Category": "Navigation"
+            },
+            "Ctrl + Alt + G": {
+                "Description": "View deals",
+                "Category": "Deals"
+            }
+        }
+    },
+    "Inkscape": {
+        "Windows": {
+            "Shift + Ctrl + F": {
+                "Description": "Toggle fill and stroke dialog",
+                "Category": "Formatting"
+            },
+            "Ctrl + G": {
+                "Description": "Group selected objects",
+                "Category": "Editing"
+            },
+            "Ctrl + Shift + G": {
+                "Description": "Ungroup selected objects",
+                "Category": "Editing"
+            },
+            "Ctrl + D": {
+                "Description": "Duplicate selected object",
+                "Category": "Editing"
+            },
+            "Ctrl + Shift + A": {
+                "Description": "Align selected objects",
+                "Category": "Alignment"
+            }
+        }
+    },
+    "IntelliJ IDEA": {
+        "Windows": {
+            "Ctrl + E": {
+                "Description": "Open recent files",
+                "Category": "Navigation"
+            },
+            "Shift + F10": {
+                "Description": "Run program",
+                "Category": "Run"
+            },
+            "Ctrl + /": {
+                "Description": "Comment/uncomment line",
+                "Category": "Editing"
+            },
+            "Ctrl + N": {
+                "Description": "Navigate to class",
+                "Category": "Navigation"
+            },
+            "Alt + F7": {
+                "Description": "Find usages",
+                "Category": "Search"
+            }
+        }
+    },
+    "Jupyter Notebook": {
+        "Windows": {
+            "Shift + Enter": {
+                "Description": "Run cell",
+                "Category": "Execution"
+            },
+            "Ctrl + S": {
+                "Description": "Save notebook",
+                "Category": "File Management"
+            },
+            "Esc": {
+                "Description": "Switch to command mode",
+                "Category": "Navigation"
+            },
+            "D D": {
+                "Description": "Delete cell",
+                "Category": "Editing"
+            },
+            "B": {
+                "Description": "Insert new cell below",
+                "Category": "Editing"
+            }
+        }
+    },
+    "LibreOffice Calc": {
+        "Windows": {
+            "Ctrl + S": {
+                "Description": "Save spreadsheet",
+                "Category": "File Management"
+            },
+            "F11": {
+                "Description": "Insert chart",
+                "Category": "Inserting"
+            },
+            "Ctrl + Shift + B": {
+                "Description": "Add border",
+                "Category": "Formatting"
+            },
+            "Ctrl + N": {
+                "Description": "New spreadsheet",
+                "Category": "File Management"
+            },
+            "Ctrl + B": {
+                "Description": "Bold text",
+                "Category": "Formatting"
+            }
+        }
+    },
+    "LibreOffice Writer": {
+        "Windows": {
+            "Ctrl + S": {
+                "Description": "Save document",
+                "Category": "File Management"
+            },
+            "Ctrl + U": {
+                "Description": "Underline text",
+                "Category": "Formatting"
+            },
+            "Ctrl + P": {
+                "Description": "Print document",
+                "Category": "File Management"
+            },
+            "Ctrl + F": {
+                "Description": "Open find dialog",
+                "Category": "Editing"
+            },
+            "Ctrl + B": {
+                "Description": "Bold text",
+                "Category": "Formatting"
+            }
+        }
+    },
+    "Mailchimp": {
+        "Windows": {
+            "Ctrl + Alt + A": {
+                "Description": "Open audience settings",
+                "Category": "Audience Management"
+            },
+            "Ctrl + N": {
+                "Description": "Create new campaign",
+                "Category": "Campaign Management"
+            },
+            "Ctrl + R": {
+                "Description": "Open reports",
+                "Category": "Reports"
+            },
+            "Ctrl + P": {
+                "Description": "Preview campaign",
+                "Category": "Preview"
+            },
+            "Ctrl + Shift + S": {
+                "Description": "Schedule campaign",
+                "Category": "Campaign Management"
+            }
+        }
+    },
+    "Microsoft Access": {
+        "Windows": {
+            "Ctrl + O": {
+                "Description": "Open database",
+                "Category": "File Management"
+            },
+            "Ctrl + S": {
+                "Description": "Save database",
+                "Category": "File Management"
+            },
+            "Shift + F7": {
+                "Description": "Filter by selection",
+                "Category": "Data Management"
+            },
+            "Ctrl + +": {
+                "Description": "Insert new record",
+                "Category": "Data Management"
+            },
+            "Ctrl + -": {
+                "Description": "Delete record",
+                "Category": "Data Management"
+            }
+        }
+    },
+    "Microsoft Edge": {
+        "Windows": {
+            "Ctrl + J": {
+                "Description": "Open downloads",
+                "Category": "Navigation"
+            },
+            "Ctrl + T": {
+                "Description": "Open new tab",
+                "Category": "Navigation"
+            },
+            "Ctrl + H": {
+                "Description": "Open history",
+                "Category": "Navigation"
+            },
+            "Ctrl + Shift + T": {
+                "Description": "Reopen closed tab",
+                "Category": "Navigation"
+            },
+            "Ctrl + W": {
+                "Description": "Close current tab",
+                "Category": "Navigation"
+            }
+        }
+    },
+    "Microsoft Excel": {
+        "Windows": {
+            "Shift + F11": {
+                "Description": "Insert a new worksheet",
+                "Category": "Sheet Management"
+            },
+            "Alt + =": {
+                "Description": "AutoSum",
+                "Category": "Formula"
+            },
+            "Ctrl + 1": {
+                "Description": "Open format cells dialog",
+                "Category": "Formatting"
+            },
+            "Shift + Space": {
+                "Description": "Select entire row",
+                "Category": "Selection"
+            },
+            "Ctrl + Shift + L": {
+                "Description": "Toggle filter",
+                "Category": "Data"
+            }
+        }
+    },
+    "Microsoft OneNote": {
+        "Windows": {
+            "Ctrl + G": {
+                "Description": "Open notebook pane",
+                "Category": "Navigation"
+            },
+            "Ctrl + 1": {
+                "Description": "Tag as important",
+                "Category": "Tagging"
+            },
+            "Ctrl + E": {
+                "Description": "Search notebooks",
+                "Category": "Search"
+            },
+            "Ctrl + Shift + H": {
+                "Description": "Highlight text",
+                "Category": "Formatting"
+            },
+            "Ctrl + N": {
+                "Description": "Create new page",
+                "Category": "File Management"
+            }
+        }
+    },
+    "Microsoft Outlook": {
+        "Windows": {
+            "Ctrl + R": {
+                "Description": "Reply to email",
+                "Category": "Email Management"
+            },
+            "Ctrl + 2": {
+                "Description": "Open calendar",
+                "Category": "Navigation"
+            },
+            "Ctrl + U": {
+                "Description": "Mark as read/unread",
+                "Category": "Message Management"
+            },
+            "Ctrl + F": {
+                "Description": "Forward email",
+                "Category": "Email Management"
+            },
+            "Ctrl + Shift + M": {
+                "Description": "New email",
+                "Category": "Email Management"
+            }
+        }
+    },
+    "Microsoft Power BI": {
+        "Windows": {
+            "F5": {
+                "Description": "Refresh data",
+                "Category": "Data"
+            },
+            "Ctrl + Shift + F": {
+                "Description": "Open fields pane",
+                "Category": "Navigation"
+            },
+            "Ctrl + S": {
+                "Description": "Save report",
+                "Category": "File Management"
+            },
+            "Alt + N": {
+                "Description": "Add new visual",
+                "Category": "Visualization"
+            },
+            "Ctrl + Shift + L": {
+                "Description": "Toggle filter pane",
+                "Category": "Filters"
+            }
+        }
+    },
+    "Microsoft PowerPoint": {
+        "Windows": {
+            "Ctrl + D": {
+                "Description": "Duplicate slide",
+                "Category": "Slides"
+            },
+            "F5": {
+                "Description": "Start presentation",
+                "Category": "Presentation"
+            },
+            "Ctrl + B": {
+                "Description": "Bold text",
+                "Category": "Formatting"
+            },
+            "Ctrl + S": {
+                "Description": "Save presentation",
+                "Category": "File Management"
+            },
+            "Ctrl + M": {
+                "Description": "New slide",
+                "Category": "Slides"
+            }
+        }
+    },
+    "Microsoft Project": {
+        "Windows": {
+            "Alt + Right Arrow": {
+                "Description": "Move to next day",
+                "Category": "Navigation"
+            },
+            "Ctrl + Shift + N": {
+                "Description": "New task",
+                "Category": "Tasks"
+            },
+            "Ctrl + Shift + F2": {
+                "Description": "Split task",
+                "Category": "Tasks"
+            },
+            "Ctrl + Shift + F5": {
+                "Description": "Zoom in on timeline",
+                "Category": "View"
+            },
+            "Ctrl + F2": {
+                "Description": "Link tasks",
+                "Category": "Tasks"
+            }
+        }
+    },
+    "Microsoft Teams": {
+        "Windows": {
+            "Ctrl + E": {
+                "Description": "Go to search",
+                "Category": "Search"
+            },
+            "Ctrl + Shift + H": {
+                "Description": "End call",
+                "Category": "Call Management"
+            },
+            "Ctrl + Shift + M": {
+                "Description": "Toggle mute",
+                "Category": "Audio"
+            },
+            "Ctrl + Shift + U": {
+                "Description": "Start video call",
+                "Category": "Video"
+            },
+            "Ctrl + N": {
+                "Description": "Start new chat",
+                "Category": "Communication"
+            }
+        }
+    },
+    "Microsoft Word": {
+        "Windows": {
+            "Ctrl + E": {
+                "Description": "Align text to center",
+                "Category": "Formatting"
+            },
+            "Ctrl + O": {
+                "Description": "Open document",
+                "Category": "File Management"
+            },
+            "Ctrl + S": {
+                "Description": "Save document",
+                "Category": "File Management"
+            },
+            "Ctrl + F": {
+                "Description": "Find text",
+                "Category": "Editing"
+            },
+            "Ctrl + B": {
+                "Description": "Bold text",
+                "Category": "Formatting"
+            }
+        }
+    },
+    "Miro": {
+        "Windows": {
+            "Ctrl + Y": {
+                "Description": "Redo last action",
+                "Category": "Editing"
+            },
+            "T": {
+                "Description": "Add a text box",
+                "Category": "Inserting"
+            },
+            "Ctrl + Z": {
+                "Description": "Undo last action",
+                "Category": "Editing"
+            },
+            "N": {
+                "Description": "Add a sticky note",
+                "Category": "Inserting"
+            },
+            "Ctrl + +": {
+                "Description": "Zoom in",
+                "Category": "View"
+            }
+        }
+    },
+    "Monday.com": {
+        "Windows": {
+            "Ctrl + Shift + Right Arrow": {
+                "Description": "Navigate to next board",
+                "Category": "Navigation"
+            },
+            "Ctrl + F": {
+                "Description": "Search in board",
+                "Category": "Search"
+            },
+            "Ctrl + Shift + C": {
+                "Description": "Mark item as complete",
+                "Category": "Tasks"
+            },
+            "Ctrl + Alt + I": {
+                "Description": "Add new item",
+                "Category": "Tasks"
+            },
+            "Ctrl + Shift + N": {
+                "Description": "Open notifications panel",
+                "Category": "Notifications"
+            }
+        }
+    },
+    "Mozilla Thunderbird": {
+        "Windows": {
+            "Ctrl + L": {
+                "Description": "Forward",
+                "Category": "Email Management"
+            },
+            "Ctrl + R": {
+                "Description": "Reply",
+                "Category": "Email Management"
+            },
+            "Ctrl + K": {
+                "Description": "Search messages",
+                "Category": "Search"
+            },
+            "J": {
+                "Description": "Mark as junk",
+                "Category": "Message Management"
+            },
+            "Ctrl + N": {
+                "Description": "New email",
+                "Category": "Email Management"
+            }
+        }
+    },
+    "Notepad++": {
+        "Windows": {
+            "Ctrl + D": {
+                "Description": "Duplicate current line",
+                "Category": "Editing"
+            },
+            "F11": {
                 "Description": "Toggle full screen",
                 "Category": "View"
             },
-            "subcollections": {}
+            "Ctrl + Shift + W": {
+                "Description": "Select word",
+                "Category": "Selection"
+            },
+            "Ctrl + Shift + Down Arrow": {
+                "Description": "Move line down",
+                "Category": "Editing"
+            },
+            "Ctrl + F": {
+                "Description": "Open find dialog",
+                "Category": "Search"
+            },
+            "Ctrl + Shift + Up Arrow": {
+                "Description": "Move line up",
+                "Category": "Editing"
+            },
+            "Ctrl + G": {
+                "Description": "Go to line",
+                "Category": "Navigation"
+            }
+        }
+    },
+    "Notion": {
+        "Windows": {
+            "Ctrl + Shift + Arrow Up": {
+                "Description": "Move block up",
+                "Category": "Editing"
+            },
+            "Ctrl + Shift + Arrow Down": {
+                "Description": "Move block down",
+                "Category": "Editing"
+            },
+            "Ctrl + \\": {
+                "Description": "Toggle sidebar",
+                "Category": "Navigation"
+            },
+            "Ctrl + Shift + L": {
+                "Description": "Switch to dark mode",
+                "Category": "View"
+            },
+            "Ctrl + N": {
+                "Description": "Create a new page",
+                "Category": "File Management"
+            },
+            "Ctrl + Alt + T": {
+                "Description": "Insert toggle list",
+                "Category": "Inserting"
+            },
+            "Ctrl + D": {
+                "Description": "Duplicate the current page",
+                "Category": "Editing"
+            },
+            "Enter": {
+                "Description": "Insert a new block",
+                "Category": "Editing"
+            }
         },
-        "Cmd + K": {
-            "fields": {
-                "Platform": "macOS",
+        "MacOS": {
+            "Cmd + D": {
+                "Description": "Duplicate the current page",
+                "Category": "Editing"
+            },
+            "Cmd + \\": {
+                "Description": "Toggle sidebar",
+                "Category": "Navigation"
+            },
+            "Cmd + Shift + L": {
+                "Description": "Switch to dark mode",
+                "Category": "View"
+            }
+        }
+    },
+    "OBS Studio": {
+        "Windows": {
+            "Ctrl + S": {
+                "Description": "Start/stop streaming",
+                "Category": "Streaming"
+            },
+            "Ctrl + Number Keys": {
+                "Description": "Switch scenes",
+                "Category": "Scenes"
+            },
+            "Ctrl + R": {
+                "Description": "Start/stop recording",
+                "Category": "Recording"
+            },
+            "Ctrl + H": {
+                "Description": "Toggle sources visibility",
+                "Category": "View"
+            },
+            "Ctrl + M": {
+                "Description": "Mute/unmute mic",
+                "Category": "Audio"
+            }
+        }
+    },
+    "Obsidian": {
+        "Windows": {
+            "Ctrl + E": {
+                "Description": "Toggle preview/edit mode",
+                "Category": "View"
+            },
+            "Ctrl + O": {
+                "Description": "Open quick switcher",
+                "Category": "Navigation"
+            },
+            "Ctrl + P": {
+                "Description": "Open command palette",
+                "Category": "Tools"
+            },
+            "Ctrl + K": {
+                "Description": "Insert link",
+                "Category": "Inserting"
+            },
+            "Ctrl + B": {
+                "Description": "Bold text",
+                "Category": "Formatting"
+            }
+        }
+    },
+    "OneNote": {
+        "Windows": {
+            "Ctrl + N": {
+                "Description": "Create new page",
+                "Category": "File Management"
+            },
+            "Ctrl + Shift + T": {
+                "Description": "Insert table",
+                "Category": "Editing"
+            },
+            "Ctrl + Shift + H": {
+                "Description": "Highlight text",
+                "Category": "Formatting"
+            },
+            "Ctrl + G": {
+                "Description": "Toggle notebook pane",
+                "Category": "Navigation"
+            }
+        }
+    },
+    "Outlook": {
+        "Windows": {
+            "Ctrl + F": {
+                "Description": "Forward email",
+                "Category": "Email Management"
+            },
+            "Ctrl + R": {
+                "Description": "Reply",
+                "Category": "Email Management"
+            },
+            "Ctrl + Shift + M": {
+                "Description": "New email",
+                "Category": "Email Management"
+            },
+            "Ctrl + U": {
+                "Description": "Mark as read/unread",
+                "Category": "Message Management"
+            },
+            "Ctrl + 2": {
+                "Description": "Open calendar",
+                "Category": "Navigation"
+            }
+        }
+    },
+    "PyCharm": {
+        "Windows": {
+            "Shift + F6": {
+                "Description": "Rename variable",
+                "Category": "Editing"
+            },
+            "Ctrl + Alt + L": {
+                "Description": "Format code",
+                "Category": "Formatting"
+            },
+            "Ctrl + E": {
+                "Description": "Open recent files",
+                "Category": "Navigation"
+            }
+        },
+        "MacOS": {
+            "Cmd + E": {
+                "Description": "Open recent files",
+                "Category": "Navigation"
+            },
+            "Shift + Cmd + R": {
+                "Description": "Rename variable",
+                "Category": "Editing"
+            },
+            "Cmd + Alt + L": {
+                "Description": "Format code",
+                "Category": "Formatting"
+            }
+        }
+    },
+    "QuickBooks": {
+        "Windows": {
+            "Ctrl + A": {
+                "Description": "Open chart of accounts",
+                "Category": "Data Management"
+            },
+            "Ctrl + I": {
+                "Description": "Create new invoice",
+                "Category": "Invoicing"
+            },
+            "Ctrl + J": {
+                "Description": "Go to customer list",
+                "Category": "Navigation"
+            },
+            "Ctrl + R": {
+                "Description": "Go to report center",
+                "Category": "Reports"
+            },
+            "Ctrl + T": {
+                "Description": "Create new transaction",
+                "Category": "Transactions"
+            }
+        }
+    },
+    "Quip": {
+        "Windows": {
+            "Ctrl + K": {
+                "Description": "Insert link",
+                "Category": "Inserting"
+            },
+            "Ctrl + B": {
+                "Description": "Bold text",
+                "Category": "Formatting"
+            },
+            "Ctrl + I": {
+                "Description": "Italicize text",
+                "Category": "Formatting"
+            },
+            "Ctrl + Shift + X": {
+                "Description": "Strikethrough text",
+                "Category": "Formatting"
+            },
+            "Ctrl + U": {
+                "Description": "Underline text",
+                "Category": "Formatting"
+            }
+        }
+    },
+    "Salesforce": {
+        "Windows": {
+            "Alt + G": {
+                "Description": "Open global search",
+                "Category": "Search"
+            },
+            "Ctrl + E": {
+                "Description": "Edit record",
+                "Category": "Data Management"
+            },
+            "Alt + N": {
+                "Description": "New record",
+                "Category": "Data Management"
+            },
+            "Ctrl + D": {
+                "Description": "Delete record",
+                "Category": "Data Management"
+            },
+            "Ctrl + S": {
+                "Description": "Save record",
+                "Category": "Data Management"
+            }
+        }
+    },
+    "Sketch": {
+        "MacOS": {
+            "O": {
+                "Description": "Insert oval",
+                "Category": "Inserting"
+            },
+            "Cmd + R": {
+                "Description": "Toggle rulers",
+                "Category": "View"
+            },
+            "R": {
+                "Description": "Insert rectangle",
+                "Category": "Inserting"
+            },
+            "Cmd + G": {
+                "Description": "Group layers",
+                "Category": "Layers"
+            },
+            "Cmd + Shift + G": {
+                "Description": "Ungroup layers",
+                "Category": "Layers"
+            }
+        }
+    },
+    "Slack": {
+        "Windows": {
+            "Ctrl + Shift + T": {
+                "Description": "Open threads view",
+                "Category": "Communication"
+            },
+            "Up Arrow": {
+                "Description": "Edit last message",
+                "Category": "Editing"
+            },
+            "Ctrl + F": {
+                "Description": "Search conversations",
+                "Category": "Search"
+            },
+            "Ctrl + Shift + \\": {
+                "Description": "Add reaction",
+                "Category": "Messaging"
+            },
+            "Ctrl + Shift + Y": {
+                "Description": "Set status",
+                "Category": "User Settings"
+            },
+            "Ctrl + Shift + K": {
+                "Description": "Open direct messages",
+                "Category": "Navigation"
+            },
+            "Ctrl + Shift + Esc": {
+                "Description": "Mark all messages as read",
+                "Category": "Message Management"
+            },
+            "Ctrl + Shift + S": {
+                "Description": "Toggle starred items",
+                "Category": "Navigation"
+            },
+            "Esc": {
+                "Description": "Mark channel as read",
+                "Category": "Message Management"
+            },
+            "Alt + Shift + Up Arrow": {
+                "Description": "Jump to next unread channel",
+                "Category": "Navigation"
+            },
+            "Ctrl + Tab": {
+                "Description": "Switch to next workspace",
+                "Category": "Navigation"
+            }
+        },
+        "MacOS": {
+            "Cmd + Shift + Y": {
+                "Description": "Set status",
+                "Category": "User Settings"
+            },
+            "Cmd + Shift + Esc": {
+                "Description": "Mark all messages as read",
+                "Category": "Message Management"
+            },
+            "Cmd + F": {
+                "Description": "Search conversations",
+                "Category": "Search"
+            },
+            "Cmd + Shift + K": {
+                "Description": "Open direct messages",
+                "Category": "Navigation"
+            },
+            "Cmd + Tab": {
+                "Description": "Switch to next workspace",
+                "Category": "Navigation"
+            }
+        }
+    },
+    "Spotify": {
+        "Windows": {
+            "Ctrl + Up Arrow": {
+                "Description": "Increase volume",
+                "Category": "Volume"
+            },
+            "Space": {
+                "Description": "Play/Pause",
+                "Category": "Playback"
+            },
+            "Ctrl + Right Arrow": {
+                "Description": "Next track",
+                "Category": "Playback"
+            },
+            "Ctrl + Left Arrow": {
+                "Description": "Previous track",
+                "Category": "Playback"
+            },
+            "Ctrl + Down Arrow": {
+                "Description": "Decrease volume",
+                "Category": "Volume"
+            }
+        }
+    },
+    "Sublime Text": {
+        "Windows": {
+            "Ctrl + Shift + L": {
+                "Description": "Select all occurrences",
+                "Category": "Selection"
+            },
+            "Ctrl + /": {
+                "Description": "Comment line",
+                "Category": "Editing"
+            },
+            "Ctrl + Shift + P": {
+                "Description": "Open command palette",
+                "Category": "Tools"
+            },
+            "Ctrl + Shift + D": {
+                "Description": "Duplicate line",
+                "Category": "Editing"
+            },
+            "Ctrl + G": {
+                "Description": "Go to line",
+                "Category": "Navigation"
+            }
+        }
+    },
+    "Tableau": {
+        "Windows": {
+            "Ctrl + Shift + Z": {
+                "Description": "Sort descending",
+                "Category": "Sorting"
+            },
+            "Ctrl + Shift + H": {
+                "Description": "Hide field",
+                "Category": "Data Management"
+            },
+            "Ctrl + Shift + A": {
+                "Description": "Sort ascending",
+                "Category": "Sorting"
+            },
+            "Ctrl + D": {
+                "Description": "Duplicate worksheet",
+                "Category": "File Management"
+            },
+            "Ctrl + M": {
+                "Description": "New worksheet",
+                "Category": "File Management"
+            }
+        }
+    },
+    "Thunderbird": {
+        "Windows": {
+            "J": {
+                "Description": "Mark as junk",
+                "Category": "Message Management"
+            },
+            "Ctrl + K": {
+                "Description": "Search messages",
+                "Category": "Search"
+            },
+            "Ctrl + R": {
+                "Description": "Reply",
+                "Category": "Email Management"
+            },
+            "Ctrl + N": {
+                "Description": "New email",
+                "Category": "Email Management"
+            },
+            "Ctrl + L": {
+                "Description": "Forward",
+                "Category": "Email Management"
+            }
+        }
+    },
+    "Toggl": {
+        "Windows": {
+            "Ctrl + Shift + T": {
+                "Description": "Stop timer",
+                "Category": "Time Tracking"
+            },
+            "Ctrl + T": {
+                "Description": "Start timer",
+                "Category": "Time Tracking"
+            },
+            "Ctrl + R": {
+                "Description": "Go to reports",
+                "Category": "Navigation"
+            },
+            "Ctrl + F": {
+                "Description": "Search entries",
+                "Category": "Search"
+            },
+            "Ctrl + P": {
+                "Description": "Open project list",
+                "Category": "Project Management"
+            }
+        }
+    },
+    "Trello": {
+        "Windows": {
+            "Ctrl + Alt + C": {
+                "Description": "Add card",
+                "Category": "Tasks"
+            },
+            "F": {
+                "Description": "Search cards",
+                "Category": "Search"
+            },
+            "Ctrl + Shift + C": {
+                "Description": "Add checklist",
+                "Category": "Tasks"
+            },
+            "C": {
+                "Description": "Archive card",
+                "Category": "Tasks"
+            },
+            "B": {
+                "Description": "Open board menu",
+                "Category": "Navigation"
+            }
+        }
+    },
+    "Unity": {
+        "Windows": {
+            "Ctrl + P": {
+                "Description": "Play game",
+                "Category": "Playback"
+            },
+            "W": {
+                "Description": "Move object",
+                "Category": "Transform"
+            },
+            "Ctrl + Tab": {
+                "Description": "Toggle scene/game view",
+                "Category": "View"
+            },
+            "E": {
+                "Description": "Rotate object",
+                "Category": "Transform"
+            },
+            "Ctrl + D": {
+                "Description": "Duplicate object",
+                "Category": "Editing"
+            }
+        }
+    },
+    "VLC Media Player": {
+        "Windows": {
+            "Space": {
+                "Description": "Play/Pause",
+                "Category": "Playback"
+            },
+            "S": {
+                "Description": "Stop playback",
+                "Category": "Playback"
+            },
+            "Ctrl + Up Arrow": {
+                "Description": "Increase volume",
+                "Category": "Audio"
+            }
+        },
+        "MacOS": {
+            "Cmd + Up Arrow": {
+                "Description": "Increase volume",
+                "Category": "Audio"
+            },
+            "Cmd + .": {
+                "Description": "Stop playback",
+                "Category": "Playback"
+            }
+        }
+    },
+    "VS Code": {
+        "Windows": {
+            "F2": {
+                "Description": "Rename symbol",
+                "Category": "Editing"
+            },
+            "Ctrl + `": {
+                "Description": "Toggle terminal",
+                "Category": "Tools"
+            },
+            "F12": {
+                "Description": "Go to definition",
+                "Category": "Navigation"
+            },
+            "Ctrl + Shift + F": {
+                "Description": "Find in files",
+                "Category": "Search"
+            },
+            "Ctrl + Shift + L": {
+                "Description": "Select all occurrences of word",
+                "Category": "Selection"
+            }
+        }
+    },
+    "Visual Studio": {
+        "Windows": {
+            "Ctrl + Alt + L": {
+                "Description": "Open solution explorer",
+                "Category": "Navigation"
+            },
+            "F11": {
+                "Description": "Step into",
+                "Category": "Debugging"
+            },
+            "F10": {
+                "Description": "Step over",
+                "Category": "Debugging"
+            },
+            "F12": {
+                "Description": "Go to definition",
+                "Category": "Navigation"
+            },
+            "Ctrl + Shift + B": {
+                "Description": "Build solution",
+                "Category": "Build"
+            },
+            "F5": {
+                "Description": "Start debugging",
+                "Category": "Run"
+            },
+            "Ctrl + K, Ctrl + C": {
+                "Description": "Toggle comment",
+                "Category": "Editing"
+            },
+            "Ctrl + .": {
+                "Description": "Quick actions",
+                "Category": "Tools"
+            },
+            "Ctrl + F": {
+                "Description": "Find",
+                "Category": "Search"
+            }
+        }
+    },
+    "Visual Studio Code": {
+        "MacOS": {
+            "Shift + Cmd + F": {
+                "Description": "Format document",
+                "Category": "Formatting"
+            },
+            "Cmd + N": {
+                "Description": "Open new file",
+                "Category": "File Management"
+            },
+            "Cmd + Shift + P": {
+                "Description": "Open command palette",
+                "Category": "Tools"
+            },
+            "Cmd + `": {
+                "Description": "Toggle terminal",
+                "Category": "Tools"
+            },
+            "Cmd + S": {
+                "Description": "Save file",
+                "Category": "File Management"
+            }
+        },
+        "Windows": {
+            "Ctrl + N": {
+                "Description": "Open new file",
+                "Category": "File Management"
+            },
+            "Shift + F12": {
+                "Description": "Find all references",
+                "Category": "Search"
+            },
+            "Ctrl + /": {
+                "Description": "Toggle comment line",
+                "Category": "Editing"
+            },
+            "Ctrl + G": {
+                "Description": "Go to line",
+                "Category": "Navigation"
+            },
+            "Ctrl + Shift + P": {
+                "Description": "Open command palette",
+                "Category": "Tools"
+            },
+            "Ctrl + `": {
+                "Description": "Toggle terminal",
+                "Category": "Tools"
+            },
+            "Ctrl + Shift + X": {
+                "Description": "Show extensions",
+                "Category": "View"
+            },
+            "Shift + Alt + F": {
+                "Description": "Format document",
+                "Category": "Formatting"
+            },
+            "Ctrl + S": {
+                "Description": "Save file",
+                "Category": "File Management"
+            }
+        }
+    },
+    "Xcode": {
+        "MacOS": {
+            "Cmd + \\": {
+                "Description": "Toggle breakpoints",
+                "Category": "Debugging"
+            },
+            "Cmd + R": {
+                "Description": "Build and run project",
+                "Category": "Run"
+            },
+            "Cmd + L": {
+                "Description": "Go to line",
+                "Category": "Navigation"
+            },
+            "Cmd + 1": {
+                "Description": "Open project navigator",
+                "Category": "Navigation"
+            },
+            "Cmd + Shift + 0": {
+                "Description": "Show documentation",
+                "Category": "Help"
+            }
+        }
+    },
+    "Zendesk": {
+        "Windows": {
+            "A": {
+                "Description": "Assign ticket",
+                "Category": "Ticket Management"
+            },
+            "Ctrl + Shift + C": {
+                "Description": "Close ticket",
+                "Category": "Ticket Management"
+            },
+            "R": {
+                "Description": "Reply to ticket",
+                "Category": "Ticket Management"
+            },
+            "N": {
+                "Description": "Create a new ticket",
+                "Category": "Ticket Management"
+            },
+            "M": {
+                "Description": "Merge ticket",
+                "Category": "Ticket Management"
+            }
+        }
+    },
+    "Zoom": {
+        "Windows": {
+            "Alt + V": {
+                "Description": "Start/stop video",
+                "Category": "Video"
+            },
+            "Alt + A": {
+                "Description": "Mute/unmute audio",
+                "Category": "Audio"
+            },
+            "Alt + N": {
+                "Description": "Switch camera",
+                "Category": "Video"
+            },
+            "Alt + H": {
+                "Description": "Toggle chat panel",
+                "Category": "Communication"
+            },
+            "Alt + U": {
+                "Description": "Toggle participants panel",
+                "Category": "Communication"
+            },
+            "Alt + Q": {
+                "Description": "End meeting",
+                "Category": "Meeting Management"
+            },
+            "Alt + S": {
+                "Description": "Share screen",
+                "Category": "Screen Sharing"
+            }
+        }
+    },
+    "iTerm2": {
+        "MacOS": {
+            "Cmd + K": {
                 "Description": "Clear buffer",
                 "Category": "Buffer Management"
             },
-            "subcollections": {}
-        },
-        "Cmd + Shift + D": {
-            "fields": {
-                "Platform": "macOS",
-                "Description": "Split pane horizontally",
-                "Category": "Pane Management"
-            },
-            "subcollections": {}
-        },
-        "Cmd + T": {
-            "fields": {
-                "Platform": "macOS",
+            "Cmd + T": {
                 "Description": "Create new tab",
                 "Category": "Tab Management"
             },
-            "subcollections": {}
-        },
-        "Cmd + W": {
-            "fields": {
-                "Platform": "macOS",
+            "Cmd + Enter": {
+                "Description": "Toggle full screen",
+                "Category": "View"
+            },
+            "Cmd + Shift + D": {
+                "Description": "Split pane horizontally",
+                "Category": "Pane Management"
+            },
+            "Cmd + W": {
                 "Description": "Close current tab",
                 "Category": "Tab Management"
-            },
-            "subcollections": {}
+            }
         }
     }
 }

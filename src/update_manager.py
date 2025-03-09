@@ -7,86 +7,121 @@ import requests
 
 # Get a logger for this module
 logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
 
 # Define local storage paths for shortcut data and update log files
-LOCAL_DB_PATH = os.path.join(os.path.dirname(__file__), "data/shortcut_db.json")
-UPDATE_LOG_PATH = os.path.join(os.path.dirname(__file__), "data/update_log.json")  # Converted to relative path
-TEMP_DB_PATH = os.path.join(os.path.dirname(__file__), "data/temp_shortcut_db.json")
+BASE_DIR = os.path.dirname(__file__)
+LOCAL_DB_PATH = os.path.join(BASE_DIR, "data/local_shortcut_db.json")
+TEMP_DB_PATH = os.path.join(BASE_DIR, "data/temp_shortcut_db.json")
+UPDATE_LOG_PATH = os.path.join(BASE_DIR, "data/update_log.json")
 
 PROJECT_ID = "hotkey-helper"
-API_KEY = "AIzaSyCgC2a0o86oCR41QkY_bGWx6ChTIoEBe84"
+API_KEY = "AIzaSyA3wM1a8sCinFCKmL4KBxfiuhhwENscWkw"
 FIRESTORE_URL = f"https://firestore.googleapis.com/v1/projects/{PROJECT_ID}/databases/(default)/documents"
-
-# Cache settings for Firestore reads
-CACHE_DURATION = 30  # Cache duration in seconds, adjust as needed for development.
-db = None
-
-cache = {
-    "total_shortcuts": None,
-    "last_updated": 0
-}
-
-def load_latest_version():
-    version_file = "data/latest_version.txt"
-    try:
-        with open(version_file, "r") as f:
-            return f.read().strip()
-    except FileNotFoundError:
-        return "1.0.0"  # Default if file is missing
-    except IOError as e:
-        logger.error(f"Error reading {version_file}: {e}")
-        return "1.0.0"
     
-def check_for_updates(current_version):
-    try:
-        url = "https://github.com/rob1010/Hotkey-Helper/blob/main/latest_version.txt"
-        response = requests.get(url)
-        latest_version = response.text.strip()
-        if latest_version > current_version:
-            return True
-        else:
-            return False
-    except Exception:
-        logger.error("Couldn’t check for updates.")
-        
-# Function to get the total number of shortcuts
-def get_total_shortcuts():
+def fetch_hotkeys():
     """
-    Get the total number of shortcuts from Firestore.
+    Fetch the 'hotkeys' collection from Firestore, transform it, and save to local storage.
+    
+    Args:
+        cancel (callable, optional): A function to call to determine if the process should be canceled.
+    
+    Returns:
+        bool: True if completed successfully, False if canceled or an error occurred.
+    """
+    
+    # Fetch data from Firestore with error handling
+    try:
+        hotkeys_response = requests.get(f"{FIRESTORE_URL}/hotkeys/?key={API_KEY}")
+        hotkeys_response.raise_for_status()  # Raise an exception for HTTP errors
+        db_temp = hotkeys_response.json()
+    except requests.RequestException as e:
+        logger.error(f"Error fetching hotkeys from Firestore: {e}")
+        return False
+    except json.JSONDecodeError as e:
+        logger.error(f"Error decoding JSON response: {e}")
+        return False
+    
+    # Transform the data from Firestore format to a simplified structure
+    db = transform_firestore_data(db_temp)
+    
+    # Write the transformed data to a file
+    try:
+        with open(LOCAL_DB_PATH, 'w') as db_file:
+            json.dump(db, db_file, indent=4)
+    except Exception as e:
+        logger.error(f"Error writing to temporary file {LOCAL_DB_PATH}: {e}")
+        return False
+    
+    # Load temporary data from the file
+    try:
+        with open(LOCAL_DB_PATH, 'r') as temp_db_file:
+            db_temp = json.load(temp_db_file)
+    except Exception as e:
+        logger.error(f"Error reading temporary file {TEMP_DB_PATH}: {e}") 
+        return False
+    
+    # Update update log with the number of processed shortcuts
+    db_lenght = get_total_shortcuts_count()
+    log_update(db_lenght)
+    return True
+
+def transform_firestore_data(firestore_data):
+    simplified_data = {}
+
+    # Iterate through each document in the Firestore response
+    for doc in firestore_data.get("documents", []):
+        # Extract the document name (e.g., "Adobe Acrobat" from the path)
+        doc_name = doc["name"].split("/")[-1]
+
+        # Initialize the structure for this document
+        simplified_data[doc_name] = {}
+
+        # Process the fields (e.g., "Windows", "macOS")
+        for os_key, os_value in doc["fields"].items():
+            simplified_data[doc_name][os_key] = {}
+
+            # Extract the map of hotkeys
+            hotkeys_map = os_value.get("mapValue", {}).get("fields", {})
+
+            # Process each hotkey
+            for hotkey, hotkey_details in hotkeys_map.items():
+                details = hotkey_details.get("mapValue", {}).get("fields", {})
+                simplified_hotkey = {
+                    "Description": details.get("Description", {}).get("stringValue", ""),
+                    "Category": details.get("Category", {}).get("stringValue", "")
+                }
+                simplified_data[doc_name][os_key][hotkey] = simplified_hotkey
+
+    return simplified_data
+
+def get_total_shortcuts_count():
+    """
+    Get the total number of shortcuts from Firestore's 'hotkeys_metadata/counters'
+    document (reading the 'total_shortcuts' field).
 
     Returns:
-    int: The total number of shortcuts, or local database count,
-    if an error occurs so it would not start the update.
+        int: Total number of shortcuts, or 0 if an error occurs.
     """
-    if db is None:
-        return get_local_shortcuts()
-
-    current_time = time.time()
-
-    # Use cached value if it's recent enough.
-    if cache["total_shortcuts"] is not None and (current_time - cache["last_updated"]) < CACHE_DURATION:
-        return cache["total_shortcuts"]
-
     try:
-        # Fetching the data from Firestore
-        counter_ref = db.collection('hotkeys_metadata').document('counters')
-        counter_doc = counter_ref.get()
-        
-        # If the document exists, retrieve the number of total shortcuts.
-        if counter_doc.exists:
-            total_shortcuts = counter_doc.to_dict().get('total_shortcuts', 0)
-            # Update the cache with the new value.
-            cache["total_shortcuts"] = total_shortcuts
-            cache["last_updated"] = current_time
-            return total_shortcuts
+        url = f"{FIRESTORE_URL}/hotkeys_metadata/counters?key={API_KEY}"
+        response = requests.get(url)
+        if response.status_code == 200:
+            data = response.json()
+            total = data.get("fields", {}).get("total_shortcuts", {}).get("integerValue")
+            if total is not None:
+                return int(total)
+            else:
+                logger.error("Total shortcuts field not found in the response.")
         else:
-            return 0
+            logger.error(f"Error getting total shortcuts count: {response.status_code} {response.text}")
+        return 0
     except Exception as e:
-        logger.error(f"Error fetching counter document: {e}")
+        logger.error(f"Exception in get_total_shortcuts_count: {e}")
         return 0
 
 # Function to get the stored count of shortcuts from a local file
-def get_local_shortcuts():
+def get_local_shortcuts_count():
     """
     Get the total number of shortcuts from the local update log file.
 
@@ -127,8 +162,8 @@ def check_for_db_updates():
     Returns:
     bool: True if an update is needed, False otherwise.
     """
-    stored_count = get_local_shortcuts()
-    current_count = get_total_shortcuts()
+    stored_count = get_local_shortcuts_count()
+    current_count = get_total_shortcuts_count()
 
     # Determine if the local count matches the current count in the database
     if stored_count == current_count:
@@ -136,96 +171,8 @@ def check_for_db_updates():
     else:
         return True
     
-def get_all_documents_recursive(collection_ref):
-    """
-    Recursively fetch all documents and subcollections from a Firestore collection.
 
-    Parameters:
-    collection_ref (CollectionReference): A reference to the Firestore collection.
-
-    Returns:
-    dict: A dictionary containing document data and subcollections.
-    """
-    data = {}
-    try:
-        docs = collection_ref.stream()
-        for doc in docs:
-            sub_data = {}
-            subcollections = doc.reference.collections()
-            for subcollection in subcollections:
-                sub_data[subcollection.id] = get_all_documents_recursive(subcollection)
-            # Unified format: Application name as the collection, shortcut name as the document
-            data[doc.id] = {
-                "fields": doc.to_dict(),
-                "subcollections": sub_data
-            }
-    except Exception as e:
-        logger.error(f"Error fetching documents in collection {collection_ref.id}: {e}")
-    return data
-
-def download_all_collections(callback=None, cancel=None):
-    """
-    Download all Firestore collections, updating local storage with the latest data.
-
-    Parameters:
-    callback (callable, optional): A function to call with progress updates.
-    cancel (callable, optional): A function to call to determine if the process should be canceled.
-
-    Returns:
-    bool: True if the download completed successfully, False if it was canceled or an error occurred.
-    """
-    try:
-        # Copy existing data from local to temp if it exists
-        if os.path.exists(LOCAL_DB_PATH):
-            shutil.copy(LOCAL_DB_PATH, TEMP_DB_PATH)
-            with open(TEMP_DB_PATH, 'r') as temp_json_file:
-                all_data = json.load(temp_json_file)
-        else:
-            all_data = {}
-
-        collections = db.collections()
-        total_shortcuts = get_total_shortcuts()
-        processed_shortcuts = 0
-
-        # Start the download process, updating only new or changed data
-        for collection in collections:
-            # Check if a cancellation request has been made
-            if cancel and cancel():
-                log_update("cancelled", processed_shortcuts)
-                return False  # Indicate that the process was canceled
-
-            collection_data = get_all_documents_recursive(collection)
-
-            # Adjusting structure to match JS format
-            if collection.id not in all_data or all_data[collection.id] != collection_data:
-                all_data[collection.id] = collection_data
-
-            # Update the progress for each document retrieved
-            for document in collection_data:
-                processed_shortcuts += 1
-                if callback:
-                    progress = (processed_shortcuts / total_shortcuts) * 100
-                    callback(progress)
-
-                # Check for cancellation during processing of each document
-                if cancel and cancel():
-                    log_update("cancelled", processed_shortcuts)
-                    return False
-
-        # Write updated data to the temporary JSON file
-        with open(TEMP_DB_PATH, 'w') as temp_json_file:
-            json.dump(all_data, temp_json_file, indent=4)
-
-        # Move the temporary file to the final location
-        shutil.move(TEMP_DB_PATH, LOCAL_DB_PATH)
-        log_update("completed", processed_shortcuts)
-        return True
-    except Exception as e:
-        logger.error(f"Error while downloading Firestore data: {e}")
-        log_update("failed", processed_shortcuts)
-        return False
-
-def log_update(status, processed_shortcuts):
+def log_update(processed_shortcuts):
     """
     Log the update status and processed shortcuts to a JSON file.
 
@@ -234,8 +181,7 @@ def log_update(status, processed_shortcuts):
     processed_shortcuts (int): The number of shortcuts processed during the update.
     """
     log_entry = {
-        "status": status,
-        "processed_shortcuts": processed_shortcuts - 1,  # Subtract 1 to account for the final increment
+        "processed_shortcuts": processed_shortcuts,  # Subtract 1 to account for the final increment
     }
     try:
         # Write log entry to the file, overriding existing content
@@ -244,3 +190,28 @@ def log_update(status, processed_shortcuts):
         logger.error(f"Update log saved to {UPDATE_LOG_PATH}")
     except Exception as e:
         logger.error(f"Failed to write update log: {e}")
+        
+def load_latest_version():
+    version_file = "data/latest_version.txt"
+    try:
+        with open(version_file, "r") as f:
+            return f.read().strip()
+    except FileNotFoundError:
+        return "1.0.0"
+    except IOError as e:
+        logger.error(f"Error reading {version_file}: {e}")
+        return "1.0.0"
+    
+def check_for_application_updates(current_version):
+    try:
+        url = "https://raw.githubusercontent.com/rob1010/Hotkey-Helper/main/latest_version.txt"
+        response = requests.get(url)
+        latest_version = response.text.strip()
+        if latest_version > current_version:
+            print(f"New version available: {latest_version}\n and current version: {current_version}")
+            return True
+        else:
+            #print("Latest and current versions: {latest_version} and {current_version}")
+            return False
+    except Exception:
+        logger.error("Couldn’t check for updates.")

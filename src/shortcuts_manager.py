@@ -7,6 +7,7 @@ import platform
 import difflib
 import json
 import logging
+import re
 
 from threading import Lock
 
@@ -114,7 +115,7 @@ class ShortcutManager:
             best_match = close_matches[0]
             return self.app_map_cache[best_match].get("name", best_match)
         return None
-    
+
     def get_shortcuts(self, window_title):
         """
         Retrieve shortcuts for the active window.
@@ -131,16 +132,61 @@ class ShortcutManager:
             self.load_shortcut_cache()  # Ensure the cache is loaded
             logger.info(f"Available apps in shortcut_cache: {list(self.shortcut_cache.keys())}")
             
+            # First try exact match
             if app_name in self.shortcut_cache:
+                logger.info(f"Exact match found for: '{app_name}'")
                 shortcuts = self.shortcut_cache[app_name]
                 return shortcuts
-            else:
-                logger.info(f"No shortcuts for: '{app_name}' in the cache")
-                return {}
-        else:
-            logger.info(f"No app matched for: '{window_title}'")
+            
+            # Normalize app name for comparison
+            normalized_input = normalize_app_name(app_name)
+            available_apps = list(self.shortcut_cache.keys())
+            
+            # First pass: Look for strict matches (cutoff 0.9) with normalized names
+            normalized_apps = {app: normalize_app_name(app) for app in available_apps}
+            close_matches = difflib.get_close_matches(
+                normalized_input,
+                list(normalized_apps.values()),
+                n=1,
+                cutoff=0.9
+            )
+            
+            if close_matches:
+                matched_normalized = close_matches[0]
+                # Find the original app name that corresponds to this normalized match
+                matched_app = next(app for app, norm in normalized_apps.items() if norm == matched_normalized)
+                similarity = difflib.SequenceMatcher(None, normalized_input, matched_normalized).ratio()
+                logger.info(f"Strict fuzzy matched '{app_name}' to '{matched_app}' with similarity {similarity:.2f}")
+                shortcuts = self.shortcut_cache[matched_app]
+                return shortcuts
+            
+            # Second pass: Look for partial matches (specifically for cases like "Chrome" -> "Google Chrome")
+            best_match = None
+            best_score = 0
+            for app in available_apps:
+                normalized_app = normalize_app_name(app)
+                # Check if the input is a significant substring of the app name
+                if normalized_input in normalized_app:
+                    # Calculate a custom score based on length ratio and position
+                    score = len(normalized_input) / len(normalized_app)
+                    if normalized_app.startswith(normalized_input):
+                        score += 0.2  # Bonus for starting match
+                    if score > best_score and score >= 0.5:  # Require at least 50% length match
+                        best_score = score
+                        best_match = app
+            
+            if best_match:
+                logger.info(f"Partial match found: '{app_name}' matched to '{best_match}' with score {best_score:.2f}")
+                shortcuts = self.shortcut_cache[best_match]
+                return shortcuts
+            
+            logger.info(f"No exact or close matches for: '{app_name}' in the cache")
             return {}
-                
+
+def normalize_app_name(name):
+        """Normalize app names for better matching by removing spaces and converting to lowercase"""
+        return re.sub(r'\s+', '', name.lower())
+      
 def get_active_window_info():
     """
     Retrieves the title and process name of the currently active window.

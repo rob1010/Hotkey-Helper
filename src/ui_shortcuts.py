@@ -142,6 +142,7 @@ class ShortcutDisplay(QWidget):
         self.interval = interval
         self.timer = QTimer()
         self.text = ""
+        self.current_os = platform.system()
         self.is_search_active = False
         self.last_active_app_name = None
         self.current_shortcuts = {}
@@ -203,6 +204,7 @@ class ShortcutDisplay(QWidget):
 
         # Step 3: Match the active window title to an application name
         app_name = self.shortcut_manager.find_best_match(window_title)
+        print(app_name)
         if not app_name:
             return
 
@@ -240,12 +242,6 @@ class ShortcutDisplay(QWidget):
 
         # Step 7: Adjust the window's size and position
         self.adjust_size_and_position()
-        """
-        if self.last_active_app_name == self.shortcut_manager.find_best_match(window_title):
-            self.timer.setInterval(500)  # Slow down if stable
-        else:
-            self.timer.setInterval(250)  # Speed up on change
-        """
 
     def apply_styles_from_settings(self):
         """
@@ -372,13 +368,22 @@ class ShortcutDisplay(QWidget):
         - shortcuts (dict): Dictionary containing shortcuts and their metadata.
         """
         if shortcuts:
-            descriptions = "\n".join(
-                shortcut_data.get("fields", {}).get("Description", "No Description")
-                for shortcut_data in shortcuts.values()
-            )
-            shortcuts_text = "\n".join(shortcut for shortcut in shortcuts.keys())
-
-            self.descriptionLabel.setText(descriptions)
+            # Get descriptions and shortcuts for the current OS
+            descriptions = []
+            shortcut_keys = []
+            
+            # Iterate through each shortcut in the current OS
+            if self.current_os in shortcuts:
+                for shortcut, data in shortcuts[self.current_os].items():
+                    description = data.get("Description", "No Description")
+                    descriptions.append(description)
+                    shortcut_keys.append(shortcut)
+            
+            # Join the lists into strings
+            descriptions_text = "\n".join(descriptions) if descriptions else "No shortcuts available"
+            shortcuts_text = "\n".join(shortcut_keys) if shortcut_keys else "No shortcuts available"
+            
+            self.descriptionLabel.setText(descriptions_text)
             self.shortcutLabel.setText(shortcuts_text)
         else:
             self.descriptionLabel.setText("No matching shortcuts found")
