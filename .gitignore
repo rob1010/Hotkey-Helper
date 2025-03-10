@@ -3,3 +3,5 @@ src/data/api_key.txt
 src/dist/
 src/build/
 src/Hotkey Helper.spec
+/Hotkey Helper.exe/
+/data/
