@@ -1,8 +1,11 @@
 import webbrowser
 import logging
+import os
+import platform
 
 from PySide6.QtCore import QCoreApplication, QTimer
 from PySide6.QtWidgets import QApplication
+from PySide6.QtGui import QIcon
 from ui_startup import StartupDialog
 from ui_shortcuts import ShortcutDisplay
 from ui_settings import SettingsWindow
@@ -40,6 +43,26 @@ class WindowManager:
         self.settings_window = None
         self.shortcut_display = None
         self.loading_window = None
+        
+        self.base_dir = os.path.dirname(__file__)
+        self.app.setWindowIcon(QIcon(self.setup_icon_paths(self.base_dir)))
+    
+    def setup_icon_paths(self, base_dir):
+        """
+        Configures the appropriate icon path based on the operating system.
+
+        Parameters:
+        - base_dir (str): Base directory containing icon files.
+        """
+        self.icon_path_win = os.path.join(base_dir, "data/icon.ico")
+        self.icon_path_mac = os.path.join(base_dir, "data/icon.icns")
+        self.icon_path_linux = os.path.join(base_dir, "data/icon.png")
+
+        self.icon_path = (
+            self.icon_path_win if platform.system() == "Windows"
+            else self.icon_path_mac if platform.system() == "Darwin"
+            else self.icon_path_linux
+        )
         
     def initialize_startup_dialog(self):
         """

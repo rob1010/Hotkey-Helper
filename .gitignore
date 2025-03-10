@@ -1,1 +1,5 @@
 src/__pycache__/
+src/data/api_key.txt
+src/dist/
+src/build/
+src/Hotkey Helper.spec

@@ -5,9 +5,9 @@
                 "Description": "Create new PDF",
                 "Category": "File Management"
             },
-            "Ctrl + +": {
-                "Description": "Zoom in",
-                "Category": "View"
+            "Ctrl + S": {
+                "Description": "Save document",
+                "Category": "File Management"
             },
             "Ctrl + -": {
                 "Description": "Zoom out",
@@ -17,81 +17,81 @@
                 "Description": "Find text",
                 "Category": "Search"
             },
-            "Ctrl + S": {
-                "Description": "Save document",
-                "Category": "File Management"
+            "Ctrl + +": {
+                "Description": "Zoom in",
+                "Category": "View"
             }
         }
     },
     "Adobe After Effects": {
         "Windows": {
-            "Ctrl + M": {
-                "Description": "Add to render queue",
-                "Category": "Rendering"
+            "U U": {
+                "Description": "Show keyframes only",
+                "Category": "Animation"
             },
             "0 (Numpad)": {
                 "Description": "Preview composition",
                 "Category": "Playback"
             },
-            "U": {
-                "Description": "Reveal properties",
-                "Category": "Layer Management"
-            },
-            "U U": {
-                "Description": "Show keyframes only",
-                "Category": "Animation"
+            "Ctrl + M": {
+                "Description": "Add to render queue",
+                "Category": "Rendering"
             },
             "Ctrl + D": {
                 "Description": "Duplicate layer",
                 "Category": "Editing"
+            },
+            "U": {
+                "Description": "Reveal properties",
+                "Category": "Layer Management"
             }
         }
     },
     "Adobe Illustrator": {
         "Windows": {
-            "Ctrl + N": {
-                "Description": "New document",
-                "Category": "File Management"
-            },
-            "Ctrl + C": {
-                "Description": "Copy",
-                "Category": "Editing"
-            },
             "Ctrl + +": {
                 "Description": "Zoom in",
-                "Category": "View"
-            },
-            "Ctrl + -": {
-                "Description": "Zoom out",
                 "Category": "View"
             },
             "Ctrl + V": {
                 "Description": "Paste",
                 "Category": "Editing"
-            }
-        }
-    },
-    "Adobe InDesign": {
-        "Windows": {
-            "Ctrl + Alt + L": {
-                "Description": "Unlock all on spread",
-                "Category": "Object Management"
             },
-            "Ctrl + D": {
-                "Description": "Place file",
-                "Category": "File Management"
+            "Ctrl + C": {
+                "Description": "Copy",
+                "Category": "Editing"
             },
             "Ctrl + N": {
                 "Description": "New document",
                 "Category": "File Management"
             },
+            "Ctrl + -": {
+                "Description": "Zoom out",
+                "Category": "View"
+            }
+        }
+    },
+    "Adobe InDesign": {
+        "Windows": {
+            "Ctrl + L": {
+                "Description": "Lock object",
+                "Category": "Object Management"
+            },
+            "Ctrl + Alt + L": {
+                "Description": "Unlock all on spread",
+                "Category": "Object Management"
+            },
             "Ctrl + Alt + Shift + E": {
                 "Description": "Fit content proportionally",
                 "Category": "Layout"
             },
-            "Ctrl + L": {
-                "Description": "Lock object",
-                "Category": "Object Management"
+            "Ctrl + N": {
+                "Description": "New document",
+                "Category": "File Management"
+            },
+            "Ctrl + D": {
+                "Description": "Place file",
+                "Category": "File Management"
             }
         }
     },
@@ -101,21 +101,21 @@
                 "Description": "Deselect all photos",
                 "Category": "Selection"
             },
-            "P": {
-                "Description": "Flag photo as pick",
-                "Category": "Flagging"
+            "Ctrl + Alt + 2": {
+                "Description": "Switch to Develop module",
+                "Category": "Navigation"
             },
             "Ctrl + Alt + 1": {
                 "Description": "Switch to Library module",
                 "Category": "Navigation"
             },
-            "Ctrl + Alt + 2": {
-                "Description": "Switch to Develop module",
-                "Category": "Navigation"
-            },
             "R": {
                 "Description": "Crop photo",
                 "Category": "Editing"
+            },
+            "P": {
+                "Description": "Flag photo as pick",
+                "Category": "Flagging"
             }
         }
     },
@@ -125,12 +125,12 @@
                 "Description": "New layer",
                 "Category": "Layers"
             },
-            "Ctrl + A": {
-                "Description": "Select all",
-                "Category": "Selection"
-            },
             "Ctrl + D": {
                 "Description": "Deselect",
+                "Category": "Selection"
+            },
+            "Ctrl + A": {
+                "Description": "Select all",
                 "Category": "Selection"
             },
             "Ctrl + T": {
@@ -145,33 +145,33 @@
     },
     "Adobe Premiere Pro": {
         "Windows": {
-            "O": {
-                "Description": "Mark out",
-                "Category": "Markers"
-            },
-            "Space": {
-                "Description": "Play/Stop playback",
-                "Category": "Playback"
+            "Ctrl + K": {
+                "Description": "Cut clip at playhead",
+                "Category": "Editing"
             },
             "Ctrl + D": {
                 "Description": "Add video transition",
                 "Category": "Editing"
             },
+            "O": {
+                "Description": "Mark out",
+                "Category": "Markers"
+            },
             "I": {
                 "Description": "Mark in",
                 "Category": "Markers"
             },
-            "Ctrl + K": {
-                "Description": "Cut clip at playhead",
-                "Category": "Editing"
+            "Space": {
+                "Description": "Play/Stop playback",
+                "Category": "Playback"
             }
         }
     },
     "Affinity Designer": {
         "Windows": {
-            "Ctrl + V": {
-                "Description": "Paste",
-                "Category": "Editing"
+            "Ctrl + 0": {
+                "Description": "Zoom to fit",
+                "Category": "View"
             },
             "Ctrl + N": {
                 "Description": "New document",
@@ -185,21 +185,25 @@
                 "Description": "Duplicate object",
                 "Category": "Editing"
             },
-            "Ctrl + 0": {
-                "Description": "Zoom to fit",
-                "Category": "View"
+            "Ctrl + V": {
+                "Description": "Paste",
+                "Category": "Editing"
             }
         }
     },
     "Affinity Photo": {
         "Windows": {
-            "Ctrl + N": {
-                "Description": "New document",
-                "Category": "File Management"
-            },
             "Ctrl + E": {
                 "Description": "Merge layers",
                 "Category": "Layers"
+            },
+            "Ctrl + O": {
+                "Description": "Open document",
+                "Category": "File Management"
+            },
+            "Ctrl + N": {
+                "Description": "New document",
+                "Category": "File Management"
             },
             "Ctrl + Shift + I": {
                 "Description": "Invert selection",
@@ -208,15 +212,19 @@
             "Ctrl + J": {
                 "Description": "Duplicate layer",
                 "Category": "Layers"
-            },
-            "Ctrl + O": {
-                "Description": "Open document",
-                "Category": "File Management"
             }
         }
     },
     "Airtable": {
         "Windows": {
+            "Ctrl + Alt + N": {
+                "Description": "Add a new record",
+                "Category": "Data Entry"
+            },
+            "Ctrl + D": {
+                "Description": "Duplicate selected record",
+                "Category": "Data Management"
+            },
             "Shift + Space": {
                 "Description": "Expand selected record",
                 "Category": "View"
@@ -224,14 +232,6 @@
             "Ctrl + Shift + G": {
                 "Description": "Toggle grid/list view",
                 "Category": "View"
-            },
-            "Ctrl + D": {
-                "Description": "Duplicate selected record",
-                "Category": "Data Management"
-            },
-            "Ctrl + Alt + N": {
-                "Description": "Add a new record",
-                "Category": "Data Entry"
             },
             "Ctrl + F": {
                 "Description": "Search records",
@@ -241,18 +241,6 @@
     },
     "Asana": {
         "Windows": {
-            "Tab + H": {
-                "Description": "Assign task to yourself",
-                "Category": "Tasks"
-            },
-            "Tab + Q": {
-                "Description": "Add new task",
-                "Category": "Tasks"
-            },
-            "Tab + Enter": {
-                "Description": "Toggle task details",
-                "Category": "Navigation"
-            },
             "Tab + D": {
                 "Description": "Set due date",
                 "Category": "Tasks"
@@ -260,22 +248,30 @@
             "Tab + X": {
                 "Description": "Mark task as complete",
                 "Category": "Tasks"
+            },
+            "Tab + H": {
+                "Description": "Assign task to yourself",
+                "Category": "Tasks"
+            },
+            "Tab + Enter": {
+                "Description": "Toggle task details",
+                "Category": "Navigation"
+            },
+            "Tab + Q": {
+                "Description": "Add new task",
+                "Category": "Tasks"
             }
         }
     },
     "Atom": {
         "Windows": {
-            "Ctrl + \\": {
-                "Description": "Toggle tree view",
-                "Category": "View"
+            "Ctrl + /": {
+                "Description": "Toggle comment",
+                "Category": "Editing"
             },
             "Ctrl + Shift + P": {
                 "Description": "Open command palette",
                 "Category": "Tools"
-            },
-            "Ctrl + /": {
-                "Description": "Toggle comment",
-                "Category": "Editing"
             },
             "Ctrl + G": {
                 "Description": "Go to line",
@@ -284,6 +280,10 @@
             "Ctrl + Shift + F": {
                 "Description": "Find in project",
                 "Category": "Search"
+            },
+            "Ctrl + \\": {
+                "Description": "Toggle tree view",
+                "Category": "View"
             }
         }
     },
@@ -293,45 +293,37 @@
                 "Description": "Play or stop",
                 "Category": "Playback"
             },
-            "Ctrl + X": {
-                "Description": "Cut",
+            "R": {
+                "Description": "Record",
+                "Category": "Recording"
+            },
+            "Ctrl + V": {
+                "Description": "Paste",
                 "Category": "Editing"
             },
             "Ctrl + C": {
                 "Description": "Copy",
                 "Category": "Editing"
             },
-            "Ctrl + V": {
-                "Description": "Paste",
+            "Ctrl + X": {
+                "Description": "Cut",
                 "Category": "Editing"
-            },
-            "R": {
-                "Description": "Record",
-                "Category": "Recording"
             }
         }
     },
     "AutoCAD": {
         "Windows": {
-            "E": {
-                "Description": "Erase objects",
-                "Category": "Editing"
-            },
             "Ctrl + S": {
                 "Description": "Save drawing",
                 "Category": "File Management"
-            },
-            "M": {
-                "Description": "Move objects",
-                "Category": "Editing"
             },
             "Z": {
                 "Description": "Zoom",
                 "Category": "View"
             },
-            "C": {
-                "Description": "Circle command",
-                "Category": "Drawing"
+            "M": {
+                "Description": "Move objects",
+                "Category": "Editing"
             },
             "L": {
                 "Description": "Line command",
@@ -339,6 +331,14 @@
             },
             "RO": {
                 "Description": "Rotate objects",
+                "Category": "Editing"
+            },
+            "C": {
+                "Description": "Circle command",
+                "Category": "Drawing"
+            },
+            "E": {
+                "Description": "Erase objects",
                 "Category": "Editing"
             }
         }
@@ -349,6 +349,10 @@
                 "Description": "Search Basecamp",
                 "Category": "Search"
             },
+            "Ctrl + Alt + G": {
+                "Description": "Go to notifications",
+                "Category": "Navigation"
+            },
             "Ctrl + Alt + N": {
                 "Description": "Add a new to-do",
                 "Category": "Tasks"
@@ -356,10 +360,6 @@
             "Ctrl + Alt + C": {
                 "Description": "Toggle calendar",
                 "Category": "View"
-            },
-            "Ctrl + Alt + G": {
-                "Description": "Go to notifications",
-                "Category": "Navigation"
             },
             "Ctrl + Shift + R": {
                 "Description": "Mark all notifications as read",
@@ -369,9 +369,9 @@
     },
     "Blender": {
         "Windows": {
-            "Z": {
-                "Description": "Toggle wireframe mode",
-                "Category": "View"
+            "Shift + A": {
+                "Description": "Add new mesh",
+                "Category": "Inserting"
             },
             "G": {
                 "Description": "Grab/move object",
@@ -381,33 +381,33 @@
                 "Description": "Scale object",
                 "Category": "Transform"
             },
-            "Shift + A": {
-                "Description": "Add new mesh",
-                "Category": "Inserting"
-            },
             "R": {
                 "Description": "Rotate object",
                 "Category": "Transform"
+            },
+            "Z": {
+                "Description": "Toggle wireframe mode",
+                "Category": "View"
             }
         }
     },
     "Canva": {
         "Windows": {
-            "Ctrl + [": {
-                "Description": "Send element backward",
-                "Category": "Layer Management"
+            "Ctrl + Shift + G": {
+                "Description": "Ungroup elements",
+                "Category": "Editing"
             },
             "Ctrl + G": {
                 "Description": "Group elements",
                 "Category": "Editing"
             },
-            "Ctrl + Shift + G": {
-                "Description": "Ungroup elements",
-                "Category": "Editing"
-            },
             "Ctrl + Enter": {
                 "Description": "Add a new page",
                 "Category": "Page Management"
+            },
+            "Ctrl + [": {
+                "Description": "Send element backward",
+                "Category": "Layer Management"
             },
             "Ctrl + ]": {
                 "Description": "Bring element forward",
@@ -417,10 +417,6 @@
     },
     "Confluence": {
         "Windows": {
-            "Ctrl + S": {
-                "Description": "Save page",
-                "Category": "File Management"
-            },
             "C": {
                 "Description": "Create new page",
                 "Category": "File Management"
@@ -432,42 +428,46 @@
             "Ctrl + B": {
                 "Description": "Bold text",
                 "Category": "Formatting"
+            },
+            "Ctrl + S": {
+                "Description": "Save page",
+                "Category": "File Management"
             }
         }
     },
     "DaVinci Resolve": {
         "Windows": {
-            "Ctrl + B": {
-                "Description": "Split clip",
-                "Category": "Editing"
+            "M": {
+                "Description": "Add marker",
+                "Category": "Markers"
             },
             "Ctrl + T": {
                 "Description": "Add transition",
                 "Category": "Editing"
             },
-            "Space": {
-                "Description": "Play/Stop playback",
-                "Category": "Playback"
-            },
             "Ctrl + Alt + V": {
                 "Description": "Toggle timeline view options",
                 "Category": "View"
             },
-            "M": {
-                "Description": "Add marker",
-                "Category": "Markers"
+            "Space": {
+                "Description": "Play/Stop playback",
+                "Category": "Playback"
+            },
+            "Ctrl + B": {
+                "Description": "Split clip",
+                "Category": "Editing"
             }
         }
     },
     "Discord": {
         "Windows": {
+            "Ctrl + Shift + M": {
+                "Description": "Toggle mute",
+                "Category": "Audio"
+            },
             "Ctrl + Shift + D": {
                 "Description": "Toggle deafen",
                 "Category": "Audio"
-            },
-            "Escape": {
-                "Description": "Mark channel read",
-                "Category": "Message Management"
             },
             "Ctrl + /": {
                 "Description": "Show keyboard shortcuts",
@@ -477,21 +477,17 @@
                 "Description": "Navigate channels",
                 "Category": "Navigation"
             },
-            "Ctrl + Shift + M": {
-                "Description": "Toggle mute",
-                "Category": "Audio"
+            "Escape": {
+                "Description": "Mark channel read",
+                "Category": "Message Management"
             }
         }
     },
     "Docker Desktop": {
         "Windows": {
-            "Ctrl + S": {
-                "Description": "Open settings",
-                "Category": "Settings"
-            },
-            "Ctrl + Alt + C": {
-                "Description": "Open command line",
-                "Category": "Tools"
+            "Ctrl + Shift + S": {
+                "Description": "Start container",
+                "Category": "Container Management"
             },
             "Ctrl + D": {
                 "Description": "Open dashboard",
@@ -501,9 +497,13 @@
                 "Description": "Stop container",
                 "Category": "Container Management"
             },
-            "Ctrl + Shift + S": {
-                "Description": "Start container",
-                "Category": "Container Management"
+            "Ctrl + S": {
+                "Description": "Open settings",
+                "Category": "Settings"
+            },
+            "Ctrl + Alt + C": {
+                "Description": "Open command line",
+                "Category": "Tools"
             }
         }
     },
@@ -533,6 +533,14 @@
     },
     "Evernote": {
         "Windows": {
+            "Ctrl + F": {
+                "Description": "Search notes",
+                "Category": "Search"
+            },
+            "F9": {
+                "Description": "Sync notes",
+                "Category": "Sync"
+            },
             "Ctrl + Shift + B": {
                 "Description": "Insert bullet list",
                 "Category": "Formatting"
@@ -541,17 +549,9 @@
                 "Description": "Add tag",
                 "Category": "Tagging"
             },
-            "Ctrl + F": {
-                "Description": "Search notes",
-                "Category": "Search"
-            },
             "Ctrl + B": {
                 "Description": "Bold text",
                 "Category": "Formatting"
-            },
-            "F9": {
-                "Description": "Sync notes",
-                "Category": "Sync"
             },
             "Ctrl + N": {
                 "Description": "New note",
@@ -561,66 +561,70 @@
     },
     "Figma": {
         "Windows": {
-            "Ctrl + Shift + O": {
-                "Description": "Outline text",
-                "Category": "Editing"
-            },
             "Ctrl + G": {
                 "Description": "Group selection",
                 "Category": "Organization"
-            },
-            "Ctrl + Shift + G": {
-                "Description": "Ungroup selection",
-                "Category": "Organization"
-            },
-            "Ctrl + -": {
-                "Description": "Zoom out",
-                "Category": "View"
-            },
-            "Ctrl + +": {
-                "Description": "Zoom in",
-                "Category": "View"
             },
             "F11": {
                 "Description": "Toggle fullscreen",
                 "Category": "View"
             },
-            "Ctrl + Shift + 4": {
-                "Description": "Toggle layout grids",
+            "Ctrl + Shift + O": {
+                "Description": "Outline text",
+                "Category": "Editing"
+            },
+            "Ctrl + Shift + G": {
+                "Description": "Ungroup selection",
+                "Category": "Organization"
+            },
+            "Ctrl + +": {
+                "Description": "Zoom in",
                 "Category": "View"
             },
             "Ctrl + /": {
                 "Description": "Open search",
                 "Category": "Search"
+            },
+            "Ctrl + -": {
+                "Description": "Zoom out",
+                "Category": "View"
+            },
+            "Ctrl + Shift + 4": {
+                "Description": "Toggle layout grids",
+                "Category": "View"
             }
         }
     },
     "Final Cut Pro": {
-        "MacOS": {
-            "W": {
-                "Description": "Insert clip",
-                "Category": "Editing"
+        "macOS": {
+            "Shift + Z": {
+                "Description": "Zoom to fit",
+                "Category": "View"
             },
             "Space": {
                 "Description": "Play/Pause",
                 "Category": "Playback"
             },
-            "S": {
-                "Description": "Toggle skimming",
-                "Category": "Editing"
-            },
             "Cmd + B": {
                 "Description": "Blade tool",
                 "Category": "Editing"
             },
-            "Shift + Z": {
-                "Description": "Zoom to fit",
-                "Category": "View"
+            "S": {
+                "Description": "Toggle skimming",
+                "Category": "Editing"
+            },
+            "W": {
+                "Description": "Insert clip",
+                "Category": "Editing"
             }
         }
     },
     "GIMP": {
         "Windows": {
+            "Ctrl + C": {
+                "Description": "Copy selection",
+                "Category": "Editing"
+            },
             "Ctrl + O": {
                 "Description": "Open image",
                 "Category": "File Management"
@@ -629,54 +633,42 @@
                 "Description": "New image",
                 "Category": "File Management"
             },
-            "Ctrl + V": {
-                "Description": "Paste selection",
-                "Category": "Editing"
-            },
-            "Ctrl + C": {
-                "Description": "Copy selection",
-                "Category": "Editing"
-            },
             "Ctrl + Z": {
                 "Description": "Undo",
+                "Category": "Editing"
+            },
+            "Ctrl + V": {
+                "Description": "Paste selection",
                 "Category": "Editing"
             }
         }
     },
     "GitHub": {
         "Windows": {
-            "Ctrl + F": {
-                "Description": "Search in repository",
-                "Category": "Search"
-            },
-            "Ctrl + Shift + P": {
-                "Description": "Go to pull requests",
-                "Category": "Navigation"
+            "Ctrl + Shift + I": {
+                "Description": "View issues",
+                "Category": "Issues"
             },
             "Alt + N": {
                 "Description": "Create new repository",
                 "Category": "Repository Management"
             },
+            "Ctrl + Shift + P": {
+                "Description": "Go to pull requests",
+                "Category": "Navigation"
+            },
             "Ctrl + B": {
                 "Description": "Toggle file explorer",
                 "Category": "Navigation"
             },
-            "Ctrl + Shift + I": {
-                "Description": "View issues",
-                "Category": "Issues"
+            "Ctrl + F": {
+                "Description": "Search in repository",
+                "Category": "Search"
             }
         }
     },
     "GitHub Desktop": {
         "Windows": {
-            "Ctrl + Shift + F": {
-                "Description": "Fetch origin",
-                "Category": "Repository Management"
-            },
-            "Ctrl + 1": {
-                "Description": "Show changes",
-                "Category": "View"
-            },
             "Ctrl + O": {
                 "Description": "Open repository",
                 "Category": "File Management"
@@ -685,45 +677,49 @@
                 "Description": "Push changes",
                 "Category": "Repository Management"
             },
+            "Ctrl + 1": {
+                "Description": "Show changes",
+                "Category": "View"
+            },
             "Ctrl + 2": {
                 "Description": "Switch to history view",
                 "Category": "View"
+            },
+            "Ctrl + Shift + F": {
+                "Description": "Fetch origin",
+                "Category": "Repository Management"
             }
         }
     },
     "Google Calendar": {
         "Windows": {
-            "W": {
-                "Description": "Switch to week view",
-                "Category": "View"
-            },
             "T": {
                 "Description": "Go to today",
                 "Category": "Navigation"
             },
-            "C": {
-                "Description": "Create new event",
-                "Category": "Event Management"
-            },
             "D": {
                 "Description": "Switch to day view",
                 "Category": "View"
+            },
+            "W": {
+                "Description": "Switch to week view",
+                "Category": "View"
+            },
+            "C": {
+                "Description": "Create new event",
+                "Category": "Event Management"
             }
         }
     },
     "Google Chrome": {
         "Windows": {
-            "Ctrl + Shift + O": {
-                "Description": "Open bookmarks manager",
-                "Category": "Bookmarks"
-            },
-            "Ctrl + T": {
-                "Description": "Open new tab",
-                "Category": "Navigation"
-            },
             "Ctrl + Shift + N": {
                 "Description": "Open incognito window",
                 "Category": "Privacy"
+            },
+            "Ctrl + Shift + O": {
+                "Description": "Open bookmarks manager",
+                "Category": "Bookmarks"
             },
             "Ctrl + Shift + T": {
                 "Description": "Reopen last closed tab",
@@ -732,17 +728,17 @@
             "Ctrl + W": {
                 "Description": "Close current tab",
                 "Category": "Navigation"
+            },
+            "Ctrl + T": {
+                "Description": "Open new tab",
+                "Category": "Navigation"
             }
         }
     },
     "Google Docs": {
-        "MacOS": {
+        "macOS": {
             "Cmd + B": {
                 "Description": "Bold text",
-                "Category": "Formatting"
-            },
-            "Cmd + U": {
-                "Description": "Underline text",
                 "Category": "Formatting"
             },
             "Cmd + K": {
@@ -756,9 +752,17 @@
             "Cmd + Shift + H": {
                 "Description": "Open find and replace",
                 "Category": "Editing"
+            },
+            "Cmd + U": {
+                "Description": "Underline text",
+                "Category": "Formatting"
             }
         },
         "Windows": {
+            "Ctrl + U": {
+                "Description": "Underline text",
+                "Category": "Formatting"
+            },
             "Ctrl + B": {
                 "Description": "Bold text",
                 "Category": "Formatting"
@@ -767,49 +771,53 @@
                 "Description": "Insert link",
                 "Category": "Inserting"
             },
-            "Ctrl + U": {
-                "Description": "Underline text",
-                "Category": "Formatting"
+            "Ctrl + H": {
+                "Description": "Open find and replace",
+                "Category": "Editing"
             },
             "Ctrl + I": {
                 "Description": "Italicize text",
                 "Category": "Formatting"
-            },
-            "Ctrl + H": {
-                "Description": "Open find and replace",
-                "Category": "Editing"
             }
         }
     },
     "Google Keep": {
         "Windows": {
-            "Ctrl + Alt + N": {
-                "Description": "Add new note",
+            "Ctrl + Alt + A": {
+                "Description": "Archive note",
                 "Category": "Notes"
             },
-            "Ctrl + Alt + P": {
-                "Description": "Pin note",
+            "Ctrl + Alt + N": {
+                "Description": "Add new note",
                 "Category": "Notes"
             },
             "Ctrl + F": {
                 "Description": "Search notes",
                 "Category": "Search"
             },
+            "Ctrl + Alt + P": {
+                "Description": "Pin note",
+                "Category": "Notes"
+            },
             "Ctrl + G": {
                 "Description": "Toggle list view/grid view",
                 "Category": "View"
-            },
-            "Ctrl + Alt + A": {
-                "Description": "Archive note",
-                "Category": "Notes"
             }
         }
     },
     "Google Meet": {
         "Windows": {
+            "Ctrl + Alt + P": {
+                "Description": "Show/hide people",
+                "Category": "View"
+            },
             "Ctrl + Alt + C": {
                 "Description": "Open chat",
                 "Category": "Communication"
+            },
+            "Ctrl + D": {
+                "Description": "Mute/unmute microphone",
+                "Category": "Audio"
             },
             "Ctrl + Shift + P": {
                 "Description": "Pin/unpin screen",
@@ -818,38 +826,30 @@
             "Ctrl + E": {
                 "Description": "Turn camera on/off",
                 "Category": "Video"
-            },
-            "Ctrl + D": {
-                "Description": "Mute/unmute microphone",
-                "Category": "Audio"
-            },
-            "Ctrl + Alt + P": {
-                "Description": "Show/hide people",
-                "Category": "View"
             }
         }
     },
     "Google Sheets": {
         "Windows": {
-            "Alt + Shift + F": {
-                "Description": "Insert function",
-                "Category": "Formula"
-            },
-            "Ctrl + B": {
-                "Description": "Bold text",
-                "Category": "Formatting"
+            "Shift + F11": {
+                "Description": "Insert new sheet",
+                "Category": "Sheet Management"
             },
             "Ctrl + H": {
                 "Description": "Open find and replace",
                 "Category": "Editing"
             },
+            "Ctrl + B": {
+                "Description": "Bold text",
+                "Category": "Formatting"
+            },
+            "Alt + Shift + F": {
+                "Description": "Insert function",
+                "Category": "Formula"
+            },
             "Ctrl + Shift + L": {
                 "Description": "Toggle filter",
                 "Category": "Data"
-            },
-            "Shift + F11": {
-                "Description": "Insert new sheet",
-                "Category": "Sheet Management"
             }
         }
     },
@@ -859,38 +859,26 @@
                 "Description": "Present from beginning",
                 "Category": "Presentation"
             },
-            "Ctrl + M": {
-                "Description": "New slide",
-                "Category": "Slides"
-            },
-            "Ctrl + Shift + E": {
-                "Description": "Align center",
-                "Category": "Formatting"
-            },
             "Ctrl + D": {
                 "Description": "Duplicate slide",
                 "Category": "Slides"
             },
+            "Ctrl + M": {
+                "Description": "New slide",
+                "Category": "Slides"
+            },
             "Ctrl + B": {
                 "Description": "Bold text",
+                "Category": "Formatting"
+            },
+            "Ctrl + Shift + E": {
+                "Description": "Align center",
                 "Category": "Formatting"
             }
         }
     },
     "Grammarly": {
         "Windows": {
-            "F7": {
-                "Description": "Check spelling and grammar",
-                "Category": "Editing"
-            },
-            "Esc": {
-                "Description": "Dismiss suggestion",
-                "Category": "Editing"
-            },
-            "Enter": {
-                "Description": "Accept suggestion",
-                "Category": "Editing"
-            },
             "Ctrl + Shift + S": {
                 "Description": "Open settings",
                 "Category": "Settings"
@@ -898,54 +886,66 @@
             "Ctrl + G": {
                 "Description": "Open Grammarly editor",
                 "Category": "Tools"
+            },
+            "Enter": {
+                "Description": "Accept suggestion",
+                "Category": "Editing"
+            },
+            "Esc": {
+                "Description": "Dismiss suggestion",
+                "Category": "Editing"
+            },
+            "F7": {
+                "Description": "Check spelling and grammar",
+                "Category": "Editing"
             }
         }
     },
     "HubSpot": {
         "Windows": {
-            "Ctrl + Alt + C": {
-                "Description": "Create new contact",
-                "Category": "Contacts"
-            },
             "Ctrl + F": {
                 "Description": "Search",
                 "Category": "Search"
             },
-            "Ctrl + Alt + T": {
-                "Description": "Open tasks",
-                "Category": "Tasks"
+            "Ctrl + Alt + G": {
+                "Description": "View deals",
+                "Category": "Deals"
             },
             "Ctrl + Alt + D": {
                 "Description": "Go to dashboard",
                 "Category": "Navigation"
             },
-            "Ctrl + Alt + G": {
-                "Description": "View deals",
-                "Category": "Deals"
+            "Ctrl + Alt + C": {
+                "Description": "Create new contact",
+                "Category": "Contacts"
+            },
+            "Ctrl + Alt + T": {
+                "Description": "Open tasks",
+                "Category": "Tasks"
             }
         }
     },
     "Inkscape": {
         "Windows": {
+            "Ctrl + Shift + A": {
+                "Description": "Align selected objects",
+                "Category": "Alignment"
+            },
             "Shift + Ctrl + F": {
                 "Description": "Toggle fill and stroke dialog",
                 "Category": "Formatting"
             },
-            "Ctrl + G": {
-                "Description": "Group selected objects",
+            "Ctrl + D": {
+                "Description": "Duplicate selected object",
                 "Category": "Editing"
             },
             "Ctrl + Shift + G": {
                 "Description": "Ungroup selected objects",
                 "Category": "Editing"
             },
-            "Ctrl + D": {
-                "Description": "Duplicate selected object",
+            "Ctrl + G": {
+                "Description": "Group selected objects",
                 "Category": "Editing"
-            },
-            "Ctrl + Shift + A": {
-                "Description": "Align selected objects",
-                "Category": "Alignment"
             }
         }
     },
@@ -954,10 +954,6 @@
             "Ctrl + E": {
                 "Description": "Open recent files",
                 "Category": "Navigation"
-            },
-            "Shift + F10": {
-                "Description": "Run program",
-                "Category": "Run"
             },
             "Ctrl + /": {
                 "Description": "Comment/uncomment line",
@@ -970,6 +966,10 @@
             "Alt + F7": {
                 "Description": "Find usages",
                 "Category": "Search"
+            },
+            "Shift + F10": {
+                "Description": "Run program",
+                "Category": "Run"
             }
         }
     },
@@ -979,14 +979,6 @@
                 "Description": "Run cell",
                 "Category": "Execution"
             },
-            "Ctrl + S": {
-                "Description": "Save notebook",
-                "Category": "File Management"
-            },
-            "Esc": {
-                "Description": "Switch to command mode",
-                "Category": "Navigation"
-            },
             "D D": {
                 "Description": "Delete cell",
                 "Category": "Editing"
@@ -994,6 +986,14 @@
             "B": {
                 "Description": "Insert new cell below",
                 "Category": "Editing"
+            },
+            "Ctrl + S": {
+                "Description": "Save notebook",
+                "Category": "File Management"
+            },
+            "Esc": {
+                "Description": "Switch to command mode",
+                "Category": "Navigation"
             }
         }
     },
@@ -1003,13 +1003,13 @@
                 "Description": "Save spreadsheet",
                 "Category": "File Management"
             },
-            "F11": {
-                "Description": "Insert chart",
-                "Category": "Inserting"
-            },
             "Ctrl + Shift + B": {
                 "Description": "Add border",
                 "Category": "Formatting"
+            },
+            "F11": {
+                "Description": "Insert chart",
+                "Category": "Inserting"
             },
             "Ctrl + N": {
                 "Description": "New spreadsheet",
@@ -1027,20 +1027,20 @@
                 "Description": "Save document",
                 "Category": "File Management"
             },
-            "Ctrl + U": {
-                "Description": "Underline text",
-                "Category": "Formatting"
+            "Ctrl + F": {
+                "Description": "Open find dialog",
+                "Category": "Editing"
             },
             "Ctrl + P": {
                 "Description": "Print document",
                 "Category": "File Management"
             },
-            "Ctrl + F": {
-                "Description": "Open find dialog",
-                "Category": "Editing"
-            },
             "Ctrl + B": {
                 "Description": "Bold text",
+                "Category": "Formatting"
+            },
+            "Ctrl + U": {
+                "Description": "Underline text",
                 "Category": "Formatting"
             }
         }
@@ -1050,6 +1050,10 @@
             "Ctrl + Alt + A": {
                 "Description": "Open audience settings",
                 "Category": "Audience Management"
+            },
+            "Ctrl + Shift + S": {
+                "Description": "Schedule campaign",
+                "Category": "Campaign Management"
             },
             "Ctrl + N": {
                 "Description": "Create new campaign",
@@ -1062,30 +1066,26 @@
             "Ctrl + P": {
                 "Description": "Preview campaign",
                 "Category": "Preview"
-            },
-            "Ctrl + Shift + S": {
-                "Description": "Schedule campaign",
-                "Category": "Campaign Management"
             }
         }
     },
     "Microsoft Access": {
         "Windows": {
-            "Ctrl + O": {
-                "Description": "Open database",
-                "Category": "File Management"
-            },
-            "Ctrl + S": {
-                "Description": "Save database",
-                "Category": "File Management"
-            },
             "Shift + F7": {
                 "Description": "Filter by selection",
                 "Category": "Data Management"
             },
+            "Ctrl + O": {
+                "Description": "Open database",
+                "Category": "File Management"
+            },
             "Ctrl + +": {
                 "Description": "Insert new record",
                 "Category": "Data Management"
+            },
+            "Ctrl + S": {
+                "Description": "Save database",
+                "Category": "File Management"
             },
             "Ctrl + -": {
                 "Description": "Delete record",
@@ -1095,6 +1095,14 @@
     },
     "Microsoft Edge": {
         "Windows": {
+            "Ctrl + H": {
+                "Description": "Open history",
+                "Category": "Navigation"
+            },
+            "Ctrl + W": {
+                "Description": "Close current tab",
+                "Category": "Navigation"
+            },
             "Ctrl + J": {
                 "Description": "Open downloads",
                 "Category": "Navigation"
@@ -1103,26 +1111,14 @@
                 "Description": "Open new tab",
                 "Category": "Navigation"
             },
-            "Ctrl + H": {
-                "Description": "Open history",
-                "Category": "Navigation"
-            },
             "Ctrl + Shift + T": {
                 "Description": "Reopen closed tab",
-                "Category": "Navigation"
-            },
-            "Ctrl + W": {
-                "Description": "Close current tab",
                 "Category": "Navigation"
             }
         }
     },
     "Microsoft Excel": {
         "Windows": {
-            "Shift + F11": {
-                "Description": "Insert a new worksheet",
-                "Category": "Sheet Management"
-            },
             "Alt + =": {
                 "Description": "AutoSum",
                 "Category": "Formula"
@@ -1131,13 +1127,17 @@
                 "Description": "Open format cells dialog",
                 "Category": "Formatting"
             },
-            "Shift + Space": {
-                "Description": "Select entire row",
-                "Category": "Selection"
+            "Shift + F11": {
+                "Description": "Insert a new worksheet",
+                "Category": "Sheet Management"
             },
             "Ctrl + Shift + L": {
                 "Description": "Toggle filter",
                 "Category": "Data"
+            },
+            "Shift + Space": {
+                "Description": "Select entire row",
+                "Category": "Selection"
             }
         }
     },
@@ -1147,41 +1147,41 @@
                 "Description": "Open notebook pane",
                 "Category": "Navigation"
             },
-            "Ctrl + 1": {
-                "Description": "Tag as important",
-                "Category": "Tagging"
-            },
             "Ctrl + E": {
                 "Description": "Search notebooks",
                 "Category": "Search"
             },
-            "Ctrl + Shift + H": {
-                "Description": "Highlight text",
-                "Category": "Formatting"
-            },
             "Ctrl + N": {
                 "Description": "Create new page",
                 "Category": "File Management"
+            },
+            "Ctrl + 1": {
+                "Description": "Tag as important",
+                "Category": "Tagging"
+            },
+            "Ctrl + Shift + H": {
+                "Description": "Highlight text",
+                "Category": "Formatting"
             }
         }
     },
     "Microsoft Outlook": {
         "Windows": {
-            "Ctrl + R": {
-                "Description": "Reply to email",
-                "Category": "Email Management"
-            },
             "Ctrl + 2": {
                 "Description": "Open calendar",
                 "Category": "Navigation"
             },
-            "Ctrl + U": {
-                "Description": "Mark as read/unread",
-                "Category": "Message Management"
-            },
             "Ctrl + F": {
                 "Description": "Forward email",
                 "Category": "Email Management"
+            },
+            "Ctrl + R": {
+                "Description": "Reply to email",
+                "Category": "Email Management"
+            },
+            "Ctrl + U": {
+                "Description": "Mark as read/unread",
+                "Category": "Message Management"
             },
             "Ctrl + Shift + M": {
                 "Description": "New email",
@@ -1191,104 +1191,104 @@
     },
     "Microsoft Power BI": {
         "Windows": {
-            "F5": {
-                "Description": "Refresh data",
-                "Category": "Data"
+            "Ctrl + S": {
+                "Description": "Save report",
+                "Category": "File Management"
             },
             "Ctrl + Shift + F": {
                 "Description": "Open fields pane",
                 "Category": "Navigation"
             },
-            "Ctrl + S": {
-                "Description": "Save report",
-                "Category": "File Management"
+            "Ctrl + Shift + L": {
+                "Description": "Toggle filter pane",
+                "Category": "Filters"
             },
             "Alt + N": {
                 "Description": "Add new visual",
                 "Category": "Visualization"
             },
-            "Ctrl + Shift + L": {
-                "Description": "Toggle filter pane",
-                "Category": "Filters"
+            "F5": {
+                "Description": "Refresh data",
+                "Category": "Data"
             }
         }
     },
     "Microsoft PowerPoint": {
         "Windows": {
-            "Ctrl + D": {
-                "Description": "Duplicate slide",
+            "Ctrl + M": {
+                "Description": "New slide",
                 "Category": "Slides"
             },
             "F5": {
                 "Description": "Start presentation",
                 "Category": "Presentation"
             },
-            "Ctrl + B": {
-                "Description": "Bold text",
-                "Category": "Formatting"
-            },
             "Ctrl + S": {
                 "Description": "Save presentation",
                 "Category": "File Management"
             },
-            "Ctrl + M": {
-                "Description": "New slide",
+            "Ctrl + D": {
+                "Description": "Duplicate slide",
                 "Category": "Slides"
+            },
+            "Ctrl + B": {
+                "Description": "Bold text",
+                "Category": "Formatting"
             }
         }
     },
     "Microsoft Project": {
         "Windows": {
+            "Ctrl + Shift + F2": {
+                "Description": "Split task",
+                "Category": "Tasks"
+            },
             "Alt + Right Arrow": {
                 "Description": "Move to next day",
                 "Category": "Navigation"
             },
-            "Ctrl + Shift + N": {
-                "Description": "New task",
-                "Category": "Tasks"
-            },
-            "Ctrl + Shift + F2": {
-                "Description": "Split task",
+            "Ctrl + F2": {
+                "Description": "Link tasks",
                 "Category": "Tasks"
             },
             "Ctrl + Shift + F5": {
                 "Description": "Zoom in on timeline",
                 "Category": "View"
             },
-            "Ctrl + F2": {
-                "Description": "Link tasks",
+            "Ctrl + Shift + N": {
+                "Description": "New task",
                 "Category": "Tasks"
             }
         }
     },
     "Microsoft Teams": {
         "Windows": {
-            "Ctrl + E": {
-                "Description": "Go to search",
-                "Category": "Search"
+            "Ctrl + Shift + U": {
+                "Description": "Start video call",
+                "Category": "Video"
             },
             "Ctrl + Shift + H": {
                 "Description": "End call",
                 "Category": "Call Management"
             },
-            "Ctrl + Shift + M": {
-                "Description": "Toggle mute",
-                "Category": "Audio"
-            },
-            "Ctrl + Shift + U": {
-                "Description": "Start video call",
-                "Category": "Video"
-            },
             "Ctrl + N": {
                 "Description": "Start new chat",
                 "Category": "Communication"
+            },
+            "Ctrl + E": {
+                "Description": "Go to search",
+                "Category": "Search"
+            },
+            "Ctrl + Shift + M": {
+                "Description": "Toggle mute",
+                "Category": "Audio"
             }
         }
     },
     "Microsoft Word": {
         "Windows": {
-            "Ctrl + E": {
-                "Description": "Align text to center",
+            "Ctrl + B": {
+                "Description": "Bold text",
                 "Category": "Formatting"
             },
             "Ctrl + O": {
@@ -1299,13 +1299,13 @@
                 "Description": "Save document",
                 "Category": "File Management"
             },
+            "Ctrl + E": {
+                "Description": "Align text to center",
+                "Category": "Formatting"
+            },
             "Ctrl + F": {
                 "Description": "Find text",
                 "Category": "Editing"
-            },
-            "Ctrl + B": {
-                "Description": "Bold text",
-                "Category": "Formatting"
             }
         }
     },
@@ -1315,21 +1315,21 @@
                 "Description": "Redo last action",
                 "Category": "Editing"
             },
-            "T": {
-                "Description": "Add a text box",
-                "Category": "Inserting"
-            },
             "Ctrl + Z": {
                 "Description": "Undo last action",
                 "Category": "Editing"
             },
-            "N": {
-                "Description": "Add a sticky note",
+            "T": {
+                "Description": "Add a text box",
                 "Category": "Inserting"
             },
             "Ctrl + +": {
                 "Description": "Zoom in",
                 "Category": "View"
+            },
+            "N": {
+                "Description": "Add a sticky note",
+                "Category": "Inserting"
             }
         }
     },
@@ -1339,21 +1339,21 @@
                 "Description": "Navigate to next board",
                 "Category": "Navigation"
             },
-            "Ctrl + F": {
-                "Description": "Search in board",
-                "Category": "Search"
-            },
-            "Ctrl + Shift + C": {
-                "Description": "Mark item as complete",
-                "Category": "Tasks"
+            "Ctrl + Shift + N": {
+                "Description": "Open notifications panel",
+                "Category": "Notifications"
             },
             "Ctrl + Alt + I": {
                 "Description": "Add new item",
                 "Category": "Tasks"
             },
-            "Ctrl + Shift + N": {
-                "Description": "Open notifications panel",
-                "Category": "Notifications"
+            "Ctrl + Shift + C": {
+                "Description": "Mark item as complete",
+                "Category": "Tasks"
+            },
+            "Ctrl + F": {
+                "Description": "Search in board",
+                "Category": "Search"
             }
         }
     },
@@ -1371,37 +1371,37 @@
                 "Description": "Search messages",
                 "Category": "Search"
             },
-            "J": {
-                "Description": "Mark as junk",
-                "Category": "Message Management"
-            },
             "Ctrl + N": {
                 "Description": "New email",
                 "Category": "Email Management"
+            },
+            "J": {
+                "Description": "Mark as junk",
+                "Category": "Message Management"
             }
         }
     },
     "Notepad++": {
         "Windows": {
-            "Ctrl + D": {
-                "Description": "Duplicate current line",
-                "Category": "Editing"
-            },
             "F11": {
                 "Description": "Toggle full screen",
                 "Category": "View"
             },
-            "Ctrl + Shift + W": {
-                "Description": "Select word",
-                "Category": "Selection"
+            "Ctrl + F": {
+                "Description": "Open find dialog",
+                "Category": "Search"
+            },
+            "Ctrl + D": {
+                "Description": "Duplicate current line",
+                "Category": "Editing"
             },
             "Ctrl + Shift + Down Arrow": {
                 "Description": "Move line down",
                 "Category": "Editing"
             },
-            "Ctrl + F": {
-                "Description": "Open find dialog",
-                "Category": "Search"
+            "Ctrl + Shift + W": {
+                "Description": "Select word",
+                "Category": "Selection"
             },
             "Ctrl + Shift + Up Arrow": {
                 "Description": "Move line up",
@@ -1419,22 +1419,6 @@
                 "Description": "Move block up",
                 "Category": "Editing"
             },
-            "Ctrl + Shift + Arrow Down": {
-                "Description": "Move block down",
-                "Category": "Editing"
-            },
-            "Ctrl + \\": {
-                "Description": "Toggle sidebar",
-                "Category": "Navigation"
-            },
-            "Ctrl + Shift + L": {
-                "Description": "Switch to dark mode",
-                "Category": "View"
-            },
-            "Ctrl + N": {
-                "Description": "Create a new page",
-                "Category": "File Management"
-            },
             "Ctrl + Alt + T": {
                 "Description": "Insert toggle list",
                 "Category": "Inserting"
@@ -1446,32 +1430,52 @@
             "Enter": {
                 "Description": "Insert a new block",
                 "Category": "Editing"
+            },
+            "Ctrl + \\": {
+                "Description": "Toggle sidebar",
+                "Category": "Navigation"
+            },
+            "Ctrl + Shift + Arrow Down": {
+                "Description": "Move block down",
+                "Category": "Editing"
+            },
+            "Ctrl + N": {
+                "Description": "Create a new page",
+                "Category": "File Management"
+            },
+            "Ctrl + Shift + L": {
+                "Description": "Switch to dark mode",
+                "Category": "View"
             }
         },
-        "MacOS": {
-            "Cmd + D": {
-                "Description": "Duplicate the current page",
-                "Category": "Editing"
+        "macOS": {
+            "Cmd + Shift + L": {
+                "Description": "Switch to dark mode",
+                "Category": "View"
             },
             "Cmd + \\": {
                 "Description": "Toggle sidebar",
                 "Category": "Navigation"
             },
-            "Cmd + Shift + L": {
-                "Description": "Switch to dark mode",
-                "Category": "View"
+            "Cmd + D": {
+                "Description": "Duplicate the current page",
+                "Category": "Editing"
             }
         }
     },
     "OBS Studio": {
         "Windows": {
+            "Ctrl + Number Keys": {
+                "Description": "Switch scenes",
+                "Category": "Scenes"
+            },
             "Ctrl + S": {
                 "Description": "Start/stop streaming",
                 "Category": "Streaming"
             },
-            "Ctrl + Number Keys": {
-                "Description": "Switch scenes",
-                "Category": "Scenes"
+            "Ctrl + M": {
+                "Description": "Mute/unmute mic",
+                "Category": "Audio"
             },
             "Ctrl + R": {
                 "Description": "Start/stop recording",
@@ -1480,15 +1484,15 @@
             "Ctrl + H": {
                 "Description": "Toggle sources visibility",
                 "Category": "View"
-            },
-            "Ctrl + M": {
-                "Description": "Mute/unmute mic",
-                "Category": "Audio"
             }
         }
     },
     "Obsidian": {
         "Windows": {
+            "Ctrl + P": {
+                "Description": "Open command palette",
+                "Category": "Tools"
+            },
             "Ctrl + E": {
                 "Description": "Toggle preview/edit mode",
                 "Category": "View"
@@ -1496,10 +1500,6 @@
             "Ctrl + O": {
                 "Description": "Open quick switcher",
                 "Category": "Navigation"
-            },
-            "Ctrl + P": {
-                "Description": "Open command palette",
-                "Category": "Tools"
             },
             "Ctrl + K": {
                 "Description": "Insert link",
@@ -1513,45 +1513,45 @@
     },
     "OneNote": {
         "Windows": {
-            "Ctrl + N": {
-                "Description": "Create new page",
-                "Category": "File Management"
-            },
             "Ctrl + Shift + T": {
                 "Description": "Insert table",
                 "Category": "Editing"
             },
-            "Ctrl + Shift + H": {
-                "Description": "Highlight text",
-                "Category": "Formatting"
-            },
             "Ctrl + G": {
                 "Description": "Toggle notebook pane",
                 "Category": "Navigation"
+            },
+            "Ctrl + N": {
+                "Description": "Create new page",
+                "Category": "File Management"
+            },
+            "Ctrl + Shift + H": {
+                "Description": "Highlight text",
+                "Category": "Formatting"
             }
         }
     },
     "Outlook": {
         "Windows": {
-            "Ctrl + F": {
-                "Description": "Forward email",
+            "Ctrl + Shift + M": {
+                "Description": "New email",
                 "Category": "Email Management"
             },
             "Ctrl + R": {
                 "Description": "Reply",
                 "Category": "Email Management"
             },
-            "Ctrl + Shift + M": {
-                "Description": "New email",
-                "Category": "Email Management"
+            "Ctrl + 2": {
+                "Description": "Open calendar",
+                "Category": "Navigation"
             },
             "Ctrl + U": {
                 "Description": "Mark as read/unread",
                 "Category": "Message Management"
             },
-            "Ctrl + 2": {
-                "Description": "Open calendar",
-                "Category": "Navigation"
+            "Ctrl + F": {
+                "Description": "Forward email",
+                "Category": "Email Management"
             }
         }
     },
@@ -1561,32 +1561,36 @@
                 "Description": "Rename variable",
                 "Category": "Editing"
             },
-            "Ctrl + Alt + L": {
-                "Description": "Format code",
-                "Category": "Formatting"
-            },
             "Ctrl + E": {
                 "Description": "Open recent files",
                 "Category": "Navigation"
+            },
+            "Ctrl + Alt + L": {
+                "Description": "Format code",
+                "Category": "Formatting"
             }
         },
-        "MacOS": {
+        "macOS": {
             "Cmd + E": {
                 "Description": "Open recent files",
                 "Category": "Navigation"
             },
-            "Shift + Cmd + R": {
-                "Description": "Rename variable",
-                "Category": "Editing"
-            },
             "Cmd + Alt + L": {
                 "Description": "Format code",
                 "Category": "Formatting"
+            },
+            "Shift + Cmd + R": {
+                "Description": "Rename variable",
+                "Category": "Editing"
             }
         }
     },
     "QuickBooks": {
         "Windows": {
+            "Ctrl + J": {
+                "Description": "Go to customer list",
+                "Category": "Navigation"
+            },
             "Ctrl + A": {
                 "Description": "Open chart of accounts",
                 "Category": "Data Management"
@@ -1594,10 +1598,6 @@
             "Ctrl + I": {
                 "Description": "Create new invoice",
                 "Category": "Invoicing"
-            },
-            "Ctrl + J": {
-                "Description": "Go to customer list",
-                "Category": "Navigation"
             },
             "Ctrl + R": {
                 "Description": "Go to report center",
@@ -1611,17 +1611,17 @@
     },
     "Quip": {
         "Windows": {
-            "Ctrl + K": {
-                "Description": "Insert link",
-                "Category": "Inserting"
+            "Ctrl + I": {
+                "Description": "Italicize text",
+                "Category": "Formatting"
             },
             "Ctrl + B": {
                 "Description": "Bold text",
                 "Category": "Formatting"
             },
-            "Ctrl + I": {
-                "Description": "Italicize text",
-                "Category": "Formatting"
+            "Ctrl + K": {
+                "Description": "Insert link",
+                "Category": "Inserting"
             },
             "Ctrl + Shift + X": {
                 "Description": "Strikethrough text",
@@ -1635,34 +1635,30 @@
     },
     "Salesforce": {
         "Windows": {
+            "Alt + N": {
+                "Description": "New record",
+                "Category": "Data Management"
+            },
             "Alt + G": {
                 "Description": "Open global search",
                 "Category": "Search"
             },
-            "Ctrl + E": {
-                "Description": "Edit record",
-                "Category": "Data Management"
-            },
-            "Alt + N": {
-                "Description": "New record",
+            "Ctrl + S": {
+                "Description": "Save record",
                 "Category": "Data Management"
             },
             "Ctrl + D": {
                 "Description": "Delete record",
                 "Category": "Data Management"
             },
-            "Ctrl + S": {
-                "Description": "Save record",
+            "Ctrl + E": {
+                "Description": "Edit record",
                 "Category": "Data Management"
             }
         }
     },
     "Sketch": {
-        "MacOS": {
-            "O": {
-                "Description": "Insert oval",
-                "Category": "Inserting"
-            },
+        "macOS": {
             "Cmd + R": {
                 "Description": "Toggle rulers",
                 "Category": "View"
@@ -1671,91 +1667,95 @@
                 "Description": "Insert rectangle",
                 "Category": "Inserting"
             },
-            "Cmd + G": {
-                "Description": "Group layers",
-                "Category": "Layers"
-            },
             "Cmd + Shift + G": {
                 "Description": "Ungroup layers",
+                "Category": "Layers"
+            },
+            "O": {
+                "Description": "Insert oval",
+                "Category": "Inserting"
+            },
+            "Cmd + G": {
+                "Description": "Group layers",
                 "Category": "Layers"
             }
         }
     },
     "Slack": {
         "Windows": {
-            "Ctrl + Shift + T": {
-                "Description": "Open threads view",
-                "Category": "Communication"
-            },
-            "Up Arrow": {
-                "Description": "Edit last message",
-                "Category": "Editing"
-            },
-            "Ctrl + F": {
-                "Description": "Search conversations",
-                "Category": "Search"
-            },
             "Ctrl + Shift + \\": {
                 "Description": "Add reaction",
                 "Category": "Messaging"
-            },
-            "Ctrl + Shift + Y": {
-                "Description": "Set status",
-                "Category": "User Settings"
             },
             "Ctrl + Shift + K": {
                 "Description": "Open direct messages",
                 "Category": "Navigation"
             },
-            "Ctrl + Shift + Esc": {
-                "Description": "Mark all messages as read",
-                "Category": "Message Management"
+            "Ctrl + Shift + T": {
+                "Description": "Open threads view",
+                "Category": "Communication"
             },
-            "Ctrl + Shift + S": {
-                "Description": "Toggle starred items",
+            "Ctrl + Shift + Y": {
+                "Description": "Set status",
+                "Category": "User Settings"
+            },
+            "Alt + Shift + Up Arrow": {
+                "Description": "Jump to next unread channel",
                 "Category": "Navigation"
             },
             "Esc": {
                 "Description": "Mark channel as read",
                 "Category": "Message Management"
             },
-            "Alt + Shift + Up Arrow": {
-                "Description": "Jump to next unread channel",
-                "Category": "Navigation"
+            "Ctrl + Shift + Esc": {
+                "Description": "Mark all messages as read",
+                "Category": "Message Management"
             },
             "Ctrl + Tab": {
                 "Description": "Switch to next workspace",
                 "Category": "Navigation"
+            },
+            "Ctrl + F": {
+                "Description": "Search conversations",
+                "Category": "Search"
+            },
+            "Ctrl + Shift + S": {
+                "Description": "Toggle starred items",
+                "Category": "Navigation"
+            },
+            "Up Arrow": {
+                "Description": "Edit last message",
+                "Category": "Editing"
             }
         },
-        "MacOS": {
-            "Cmd + Shift + Y": {
-                "Description": "Set status",
-                "Category": "User Settings"
-            },
-            "Cmd + Shift + Esc": {
-                "Description": "Mark all messages as read",
-                "Category": "Message Management"
-            },
+        "macOS": {
             "Cmd + F": {
                 "Description": "Search conversations",
                 "Category": "Search"
+            },
+            "Cmd + Tab": {
+                "Description": "Switch to next workspace",
+                "Category": "Navigation"
+            },
+            "Cmd + Shift + Y": {
+                "Description": "Set status",
+                "Category": "User Settings"
             },
             "Cmd + Shift + K": {
                 "Description": "Open direct messages",
                 "Category": "Navigation"
             },
-            "Cmd + Tab": {
-                "Description": "Switch to next workspace",
-                "Category": "Navigation"
+            "Cmd + Shift + Esc": {
+                "Description": "Mark all messages as read",
+                "Category": "Message Management"
             }
         }
     },
     "Spotify": {
         "Windows": {
-            "Ctrl + Up Arrow": {
-                "Description": "Increase volume",
-                "Category": "Volume"
+            "Ctrl + Left Arrow": {
+                "Description": "Previous track",
+                "Category": "Playback"
             },
             "Space": {
                 "Description": "Play/Pause",
@@ -1765,9 +1765,9 @@
                 "Description": "Next track",
                 "Category": "Playback"
             },
-            "Ctrl + Left Arrow": {
-                "Description": "Previous track",
-                "Category": "Playback"
+            "Ctrl + Up Arrow": {
+                "Description": "Increase volume",
+                "Category": "Volume"
             },
             "Ctrl + Down Arrow": {
                 "Description": "Decrease volume",
@@ -1777,34 +1777,30 @@
     },
     "Sublime Text": {
         "Windows": {
-            "Ctrl + Shift + L": {
-                "Description": "Select all occurrences",
-                "Category": "Selection"
-            },
             "Ctrl + /": {
                 "Description": "Comment line",
-                "Category": "Editing"
-            },
-            "Ctrl + Shift + P": {
-                "Description": "Open command palette",
-                "Category": "Tools"
-            },
-            "Ctrl + Shift + D": {
-                "Description": "Duplicate line",
                 "Category": "Editing"
             },
             "Ctrl + G": {
                 "Description": "Go to line",
                 "Category": "Navigation"
+            },
+            "Ctrl + Shift + L": {
+                "Description": "Select all occurrences",
+                "Category": "Selection"
+            },
+            "Ctrl + Shift + D": {
+                "Description": "Duplicate line",
+                "Category": "Editing"
+            },
+            "Ctrl + Shift + P": {
+                "Description": "Open command palette",
+                "Category": "Tools"
             }
         }
     },
     "Tableau": {
         "Windows": {
-            "Ctrl + Shift + Z": {
-                "Description": "Sort descending",
-                "Category": "Sorting"
-            },
             "Ctrl + Shift + H": {
                 "Description": "Hide field",
                 "Category": "Data Management"
@@ -1813,61 +1809,65 @@
                 "Description": "Sort ascending",
                 "Category": "Sorting"
             },
+            "Ctrl + M": {
+                "Description": "New worksheet",
+                "Category": "File Management"
+            },
             "Ctrl + D": {
                 "Description": "Duplicate worksheet",
                 "Category": "File Management"
             },
-            "Ctrl + M": {
-                "Description": "New worksheet",
-                "Category": "File Management"
+            "Ctrl + Shift + Z": {
+                "Description": "Sort descending",
+                "Category": "Sorting"
             }
         }
     },
     "Thunderbird": {
         "Windows": {
-            "J": {
-                "Description": "Mark as junk",
-                "Category": "Message Management"
-            },
             "Ctrl + K": {
                 "Description": "Search messages",
                 "Category": "Search"
             },
-            "Ctrl + R": {
-                "Description": "Reply",
+            "Ctrl + L": {
+                "Description": "Forward",
                 "Category": "Email Management"
             },
             "Ctrl + N": {
                 "Description": "New email",
                 "Category": "Email Management"
             },
-            "Ctrl + L": {
-                "Description": "Forward",
+            "Ctrl + R": {
+                "Description": "Reply",
                 "Category": "Email Management"
+            },
+            "J": {
+                "Description": "Mark as junk",
+                "Category": "Message Management"
             }
         }
     },
     "Toggl": {
         "Windows": {
-            "Ctrl + Shift + T": {
-                "Description": "Stop timer",
-                "Category": "Time Tracking"
+            "Ctrl + P": {
+                "Description": "Open project list",
+                "Category": "Project Management"
             },
             "Ctrl + T": {
                 "Description": "Start timer",
                 "Category": "Time Tracking"
             },
-            "Ctrl + R": {
-                "Description": "Go to reports",
-                "Category": "Navigation"
-            },
             "Ctrl + F": {
                 "Description": "Search entries",
                 "Category": "Search"
             },
-            "Ctrl + P": {
-                "Description": "Open project list",
-                "Category": "Project Management"
+            "Ctrl + R": {
+                "Description": "Go to reports",
+                "Category": "Navigation"
+            },
+            "Ctrl + Shift + T": {
+                "Description": "Stop timer",
+                "Category": "Time Tracking"
             }
         }
     },
@@ -1877,41 +1877,41 @@
                 "Description": "Add card",
                 "Category": "Tasks"
             },
-            "F": {
-                "Description": "Search cards",
-                "Category": "Search"
-            },
             "Ctrl + Shift + C": {
                 "Description": "Add checklist",
-                "Category": "Tasks"
-            },
-            "C": {
-                "Description": "Archive card",
                 "Category": "Tasks"
             },
             "B": {
                 "Description": "Open board menu",
                 "Category": "Navigation"
+            },
+            "C": {
+                "Description": "Archive card",
+                "Category": "Tasks"
+            },
+            "F": {
+                "Description": "Search cards",
+                "Category": "Search"
             }
         }
     },
     "Unity": {
         "Windows": {
-            "Ctrl + P": {
-                "Description": "Play game",
-                "Category": "Playback"
+            "E": {
+                "Description": "Rotate object",
+                "Category": "Transform"
             },
             "W": {
                 "Description": "Move object",
                 "Category": "Transform"
             },
+            "Ctrl + P": {
+                "Description": "Play game",
+                "Category": "Playback"
+            },
             "Ctrl + Tab": {
                 "Description": "Toggle scene/game view",
                 "Category": "View"
-            },
-            "E": {
-                "Description": "Rotate object",
-                "Category": "Transform"
             },
             "Ctrl + D": {
                 "Description": "Duplicate object",
@@ -1925,16 +1925,16 @@
                 "Description": "Play/Pause",
                 "Category": "Playback"
             },
-            "S": {
-                "Description": "Stop playback",
-                "Category": "Playback"
-            },
             "Ctrl + Up Arrow": {
                 "Description": "Increase volume",
                 "Category": "Audio"
+            },
+            "S": {
+                "Description": "Stop playback",
+                "Category": "Playback"
             }
         },
-        "MacOS": {
+        "macOS": {
             "Cmd + Up Arrow": {
                 "Description": "Increase volume",
                 "Category": "Audio"
@@ -1947,49 +1947,41 @@
     },
     "VS Code": {
         "Windows": {
-            "F2": {
-                "Description": "Rename symbol",
-                "Category": "Editing"
-            },
-            "Ctrl + `": {
-                "Description": "Toggle terminal",
-                "Category": "Tools"
-            },
             "F12": {
                 "Description": "Go to definition",
                 "Category": "Navigation"
+            },
+            "Ctrl + Shift + L": {
+                "Description": "Select all occurrences of word",
+                "Category": "Selection"
+            },
+            "F2": {
+                "Description": "Rename symbol",
+                "Category": "Editing"
             },
             "Ctrl + Shift + F": {
                 "Description": "Find in files",
                 "Category": "Search"
             },
-            "Ctrl + Shift + L": {
-                "Description": "Select all occurrences of word",
-                "Category": "Selection"
+            "Ctrl + `": {
+                "Description": "Toggle terminal",
+                "Category": "Tools"
             }
         }
     },
     "Visual Studio": {
         "Windows": {
-            "Ctrl + Alt + L": {
-                "Description": "Open solution explorer",
-                "Category": "Navigation"
-            },
-            "F11": {
-                "Description": "Step into",
-                "Category": "Debugging"
-            },
-            "F10": {
-                "Description": "Step over",
-                "Category": "Debugging"
+            "Ctrl + F": {
+                "Description": "Find",
+                "Category": "Search"
             },
             "F12": {
                 "Description": "Go to definition",
                 "Category": "Navigation"
             },
-            "Ctrl + Shift + B": {
-                "Description": "Build solution",
-                "Category": "Build"
+            "Ctrl + .": {
+                "Description": "Quick actions",
+                "Category": "Tools"
             },
             "F5": {
                 "Description": "Start debugging",
@@ -1999,18 +1991,76 @@
                 "Description": "Toggle comment",
                 "Category": "Editing"
             },
-            "Ctrl + .": {
-                "Description": "Quick actions",
-                "Category": "Tools"
+            "Ctrl + Shift + B": {
+                "Description": "Build solution",
+                "Category": "Build"
             },
-            "Ctrl + F": {
-                "Description": "Find",
-                "Category": "Search"
+            "F10": {
+                "Description": "Step over",
+                "Category": "Debugging"
+            },
+            "F11": {
+                "Description": "Step into",
+                "Category": "Debugging"
+            },
+            "Ctrl + Alt + L": {
+                "Description": "Open solution explorer",
+                "Category": "Navigation"
             }
         }
     },
     "Visual Studio Code": {
-        "MacOS": {
+        "Windows": {
+            "Shift + Alt + F": {
+                "Description": "Format document",
+                "Category": "Formatting"
+            },
+            "Ctrl + /": {
+                "Description": "Toggle comment line",
+                "Category": "Editing"
+            },
+            "Ctrl + `": {
+                "Description": "Toggle terminal",
+                "Category": "Tools"
+            },
+            "Ctrl + N": {
+                "Description": "Open new file",
+                "Category": "File Management"
+            },
+            "Ctrl + Shift + P": {
+                "Description": "Open command palette",
+                "Category": "Tools"
+            },
+            "Shift + F12": {
+                "Description": "Find all references",
+                "Category": "Search"
+            },
+            "Ctrl + S": {
+                "Description": "Save file",
+                "Category": "File Management"
+            },
+            "Ctrl + G": {
+                "Description": "Go to line",
+                "Category": "Navigation"
+            },
+            "Ctrl + Shift + X": {
+                "Description": "Show extensions",
+                "Category": "View"
+            }
+        },
+        "macOS": {
+            "Cmd + `": {
+                "Description": "Toggle terminal",
+                "Category": "Tools"
+            },
+            "Cmd + Shift + P": {
+                "Description": "Open command palette",
+                "Category": "Tools"
+            },
+            "Cmd + S": {
+                "Description": "Save file",
+                "Category": "File Management"
+            },
             "Shift + Cmd + F": {
                 "Description": "Format document",
                 "Category": "Formatting"
@@ -2018,80 +2068,30 @@
             "Cmd + N": {
                 "Description": "Open new file",
                 "Category": "File Management"
-            },
-            "Cmd + Shift + P": {
-                "Description": "Open command palette",
-                "Category": "Tools"
-            },
-            "Cmd + `": {
-                "Description": "Toggle terminal",
-                "Category": "Tools"
-            },
-            "Cmd + S": {
-                "Description": "Save file",
-                "Category": "File Management"
-            }
-        },
-        "Windows": {
-            "Ctrl + N": {
-                "Description": "Open new file",
-                "Category": "File Management"
-            },
-            "Shift + F12": {
-                "Description": "Find all references",
-                "Category": "Search"
-            },
-            "Ctrl + /": {
-                "Description": "Toggle comment line",
-                "Category": "Editing"
-            },
-            "Ctrl + G": {
-                "Description": "Go to line",
-                "Category": "Navigation"
-            },
-            "Ctrl + Shift + P": {
-                "Description": "Open command palette",
-                "Category": "Tools"
-            },
-            "Ctrl + `": {
-                "Description": "Toggle terminal",
-                "Category": "Tools"
-            },
-            "Ctrl + Shift + X": {
-                "Description": "Show extensions",
-                "Category": "View"
-            },
-            "Shift + Alt + F": {
-                "Description": "Format document",
-                "Category": "Formatting"
-            },
-            "Ctrl + S": {
-                "Description": "Save file",
-                "Category": "File Management"
             }
         }
     },
     "Xcode": {
-        "MacOS": {
-            "Cmd + \\": {
-                "Description": "Toggle breakpoints",
-                "Category": "Debugging"
-            },
+        "macOS": {
             "Cmd + R": {
                 "Description": "Build and run project",
                 "Category": "Run"
+            },
+            "Cmd + \\": {
+                "Description": "Toggle breakpoints",
+                "Category": "Debugging"
             },
             "Cmd + L": {
                 "Description": "Go to line",
                 "Category": "Navigation"
             },
-            "Cmd + 1": {
-                "Description": "Open project navigator",
-                "Category": "Navigation"
-            },
             "Cmd + Shift + 0": {
                 "Description": "Show documentation",
                 "Category": "Help"
+            },
+            "Cmd + 1": {
+                "Description": "Open project navigator",
+                "Category": "Navigation"
             }
         }
     },
@@ -2101,77 +2101,77 @@
                 "Description": "Assign ticket",
                 "Category": "Ticket Management"
             },
-            "Ctrl + Shift + C": {
-                "Description": "Close ticket",
-                "Category": "Ticket Management"
-            },
             "R": {
                 "Description": "Reply to ticket",
                 "Category": "Ticket Management"
             },
-            "N": {
-                "Description": "Create a new ticket",
+            "Ctrl + Shift + C": {
+                "Description": "Close ticket",
                 "Category": "Ticket Management"
             },
             "M": {
                 "Description": "Merge ticket",
+                "Category": "Ticket Management"
+            },
+            "N": {
+                "Description": "Create a new ticket",
                 "Category": "Ticket Management"
             }
         }
     },
     "Zoom": {
         "Windows": {
-            "Alt + V": {
-                "Description": "Start/stop video",
-                "Category": "Video"
+            "Alt + S": {
+                "Description": "Share screen",
+                "Category": "Screen Sharing"
             },
             "Alt + A": {
                 "Description": "Mute/unmute audio",
                 "Category": "Audio"
             },
-            "Alt + N": {
-                "Description": "Switch camera",
+            "Alt + V": {
+                "Description": "Start/stop video",
                 "Category": "Video"
             },
             "Alt + H": {
                 "Description": "Toggle chat panel",
                 "Category": "Communication"
             },
-            "Alt + U": {
-                "Description": "Toggle participants panel",
-                "Category": "Communication"
-            },
             "Alt + Q": {
                 "Description": "End meeting",
                 "Category": "Meeting Management"
             },
-            "Alt + S": {
-                "Description": "Share screen",
-                "Category": "Screen Sharing"
+            "Alt + N": {
+                "Description": "Switch camera",
+                "Category": "Video"
+            },
+            "Alt + U": {
+                "Description": "Toggle participants panel",
+                "Category": "Communication"
             }
         }
     },
     "iTerm2": {
-        "MacOS": {
-            "Cmd + K": {
-                "Description": "Clear buffer",
-                "Category": "Buffer Management"
+        "macOS": {
+            "Cmd + Enter": {
+                "Description": "Toggle full screen",
+                "Category": "View"
             },
             "Cmd + T": {
                 "Description": "Create new tab",
                 "Category": "Tab Management"
             },
-            "Cmd + Enter": {
-                "Description": "Toggle full screen",
-                "Category": "View"
+            "Cmd + W": {
+                "Description": "Close current tab",
+                "Category": "Tab Management"
             },
             "Cmd + Shift + D": {
                 "Description": "Split pane horizontally",
                 "Category": "Pane Management"
             },
-            "Cmd + W": {
-                "Description": "Close current tab",
-                "Category": "Tab Management"
+            "Cmd + K": {
+                "Description": "Clear buffer",
+                "Category": "Buffer Management"
             }
         }
     }

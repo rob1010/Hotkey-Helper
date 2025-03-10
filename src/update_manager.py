@@ -15,10 +15,18 @@ LOCAL_DB_PATH = os.path.join(BASE_DIR, "data/local_shortcut_db.json")
 TEMP_DB_PATH = os.path.join(BASE_DIR, "data/temp_shortcut_db.json")
 UPDATE_LOG_PATH = os.path.join(BASE_DIR, "data/update_log.json")
 
+def load_api_key():
+    api_file = "data/api_key.txt"
+    try:
+        with open(api_file, "r") as f:
+            return f.read().strip()
+    except FileNotFoundError:
+        logger.error(f"API key file not found: {api_file}")
+        
 PROJECT_ID = "hotkey-helper"
-API_KEY = "AIzaSyA3wM1a8sCinFCKmL4KBxfiuhhwENscWkw"
+API_KEY = load_api_key()
 FIRESTORE_URL = f"https://firestore.googleapis.com/v1/projects/{PROJECT_ID}/databases/(default)/documents"
-    
+
 def fetch_hotkeys():
     """
     Fetch the 'hotkeys' collection from Firestore, transform it, and save to local storage.
@@ -190,7 +198,7 @@ def log_update(processed_shortcuts):
         logger.error(f"Update log saved to {UPDATE_LOG_PATH}")
     except Exception as e:
         logger.error(f"Failed to write update log: {e}")
-        
+    
 def load_latest_version():
     version_file = "data/latest_version.txt"
     try:
@@ -201,7 +209,7 @@ def load_latest_version():
     except IOError as e:
         logger.error(f"Error reading {version_file}: {e}")
         return "1.0.0"
-    
+
 def check_for_application_updates(current_version):
     try:
         url = "https://raw.githubusercontent.com/rob1010/Hotkey-Helper/main/latest_version.txt"
