@@ -1,4 +1,5 @@
 import logging
+
 from PySide6.QtCore import Qt, Signal
 from PySide6.QtWidgets import QWidget, QVBoxLayout, QLabel, QComboBox, QCheckBox, QPushButton, QSlider, QColorDialog
 
@@ -11,6 +12,7 @@ class SettingsWindow(QWidget):
     for the application's shortcut display. Users can customize themes, 
     window dimensions, fonts, and more.
     """
+    # Signals
     save_settings_signal = Signal()
     reset_settings_signal = Signal()
     close_settings_signal = Signal()
@@ -87,9 +89,11 @@ class SettingsWindow(QWidget):
         Returns:
         QComboBox: The created QComboBox instance.
         """
+        # Create label and combo box
         label = QLabel(label_text)
         combo_box = QComboBox()
         combo_box.addItems(items)
+        # Set tooltip if provided
         if tooltip:
             combo_box.setToolTip(tooltip)
         self.layout.addWidget(label)
@@ -107,6 +111,7 @@ class SettingsWindow(QWidget):
         Returns:
         QCheckBox: The created QCheckBox instance.
         """
+        # Create checkbox
         checkbox = QCheckBox(label_text)
         if tooltip:
             checkbox.setToolTip(tooltip)
@@ -126,11 +131,13 @@ class SettingsWindow(QWidget):
         Returns:
         QSlider: The created QSlider instance.
         """
+        # Create label, slider, and value label
         label = QLabel(label_text)
         slider = QSlider(Qt.Horizontal)
         slider.setRange(int(min_val), int(max_val))
         value_label = QLabel(f"{slider.value()}{unit}")
         slider.valueChanged.connect(lambda value: value_label.setText(f"{value}{unit}"))
+        # Set tooltip if provided
         if tooltip:
             slider.setToolTip(tooltip)
         self.layout.addWidget(label)
@@ -151,6 +158,7 @@ class SettingsWindow(QWidget):
         Returns:
         QSlider: The created QSlider instance.
         """
+        # Create label, slider, and value label
         label = QLabel(label_text)
         slider = QSlider(Qt.Horizontal)
 
@@ -161,6 +169,7 @@ class SettingsWindow(QWidget):
         slider.setRange(min_val, max_val)
         value_label = QLabel(f"{slider.value()}")
         slider.valueChanged.connect(lambda value: value_label.setText(f"{value}"))
+        # Set tooltip if provided
         if tooltip:
             slider.setToolTip(tooltip)
 
@@ -182,6 +191,7 @@ class SettingsWindow(QWidget):
         Returns:
         QPushButton: The created QPushButton instance.
         """
+        # Create label and button
         label = QLabel(label_text)
         button = QPushButton(button_text)
         button.clicked.connect(click_handler)
@@ -193,6 +203,7 @@ class SettingsWindow(QWidget):
         """
         Open color picker for font color selection.
         """
+        # Open color dialog
         color = QColorDialog.getColor()
         if color.isValid():
             self.font_color_button.setStyleSheet(f"background-color:{color.name()};")
@@ -202,7 +213,6 @@ class SettingsWindow(QWidget):
         """
         Load current settings into the UI elements.
         """
-
         # Theme
         theme = self.settings_manager.get_setting('theme')
         self.theme_combo.setCurrentText(theme.capitalize())

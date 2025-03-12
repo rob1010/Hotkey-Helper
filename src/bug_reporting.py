@@ -5,31 +5,57 @@ import logging
 
 from PySide6.QtWidgets import QApplication, QDialog, QTextEdit, QPushButton, QVBoxLayout, QLabel
 
+# Get a logger for this module
 logger = logging.getLogger(__name__)
 
 # Global flag to track if the dialog has been shown
 _dialog_shown = False
 
 class BugReportDialog(QDialog):
+    """
+    Dialog to report a bug to the user and send a report to Sentry.
+
+    Args:
+        QDialog (_type_): _description_
+    """
     def __init__(self, parent=None, error_message=""):
+        """
+        Initialize the BugReportDialog with an error message and description field.
+        
+        Args:
+            parent (QWidget): The parent widget.
+            error_message (str): The error message to display.
+        """
+        # Initialize the QDialog
         super().__init__(parent)
         self.setWindowTitle("Report a Bug")
         layout = QVBoxLayout()
         layout.addWidget(QLabel(f"An error occurred: {error_message}"))
+        
+        # Add a description field for the user to provide additional context
         self.description = QTextEdit()
         self.description.setPlaceholderText("Describe what you were doing when this happened...")
+        
+        # Add buttons to send the report or cancel
         layout.addWidget(self.description)
         send_button = QPushButton("Send Report")
         send_button.clicked.connect(self.send_report)
         cancel_button = QPushButton("Cancel")
         cancel_button.clicked.connect(self.accept)
+        
+        # Add widgets to the layout
         layout.addWidget(send_button)
         layout.addWidget(cancel_button)
         self.setLayout(layout)
 
     def send_report(self):
+        """
+        Send the bug report to Sentry with additional context.
+        """
+        # Get the description and log content
         desc = self.description.toPlainText()
         log_path = os.path.join(os.path.dirname(__file__), "data/application.log")
+        # Read the last 1000 lines of the log file
         try:
             with open(log_path, 'r') as log_file:
                 log_content = ''.join(log_file.readlines()[-1000:])  # Last 1000 lines
@@ -49,6 +75,15 @@ class BugReportDialog(QDialog):
         self.accept()
 
 def exception_hook(exctype, value, traceback):
+    """
+    Custom exception hook to show a bug report dialog and send the exception to Sentry.
+    
+    Args:
+        exctype (type): The type of the exception.
+        value (Exception): The exception instance.
+        traceback (Traceback): The traceback information.
+    
+    """    
     global _dialog_shown
     
     # If the dialog is already shown, log the additional exception and exit

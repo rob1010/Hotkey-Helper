@@ -27,7 +27,6 @@ logger = logging.getLogger(__name__)
 APP_NAME_MAP_PATH = os.path.join(os.path.dirname(__file__), "data/app_name_map.txt")
 LOCAL_DB_PATH = os.path.join(os.path.dirname(__file__), "data/local_shortcut_db.json")
 
-
 class TrayIcon(QSystemTrayIcon):
     """
     Represents the system tray icon for the application.
@@ -44,7 +43,7 @@ class TrayIcon(QSystemTrayIcon):
     - open_startup_signal: Emitted when the "Show Startup" action is triggered.
     - quit_app_signal: Emitted when the "Quit" action is triggered.
     """
-
+    # Signals for tray icon actions
     open_startup_signal = Signal()
     quit_app_signal = Signal()
 
@@ -69,10 +68,12 @@ class TrayIcon(QSystemTrayIcon):
         Parameters:
         - base_dir (str): Base directory containing icon files.
         """
+        # Determine the icon path based on the operating system
         self.icon_path_win = os.path.join(base_dir, "data/icon.ico")
         self.icon_path_mac = os.path.join(base_dir, "data/icon.icns")
         self.icon_path_linux = os.path.join(base_dir, "data/icon.png")
 
+        # Set the icon path based on the current OS
         self.icon_path = (
             self.icon_path_win if platform.system() == "Windows"
             else self.icon_path_mac if platform.system() == "Darwin"
@@ -83,15 +84,19 @@ class TrayIcon(QSystemTrayIcon):
         """
         Configures the system tray icon and context menu actions.
         """
+        # Set the icon and context menu
         self.setIcon(QIcon(self.icon_path))
 
+        # Create the context menu with actions
         tray_menu = QMenu()
         show_startup_action = tray_menu.addAction("Show Startup")
         quit_action = tray_menu.addAction("Quit")
 
+        # Connect actions to signals
         show_startup_action.triggered.connect(self.emit_open_startup_signal)
         quit_action.triggered.connect(self.emit_quit_application_signal)
 
+        # Set the context menu for the tray icon
         self.setContextMenu(tray_menu)
         self.activated.connect(self.on_tray_icon_activated)
         self.showMessage("HotKey Helper", "Click here to access options!", QSystemTrayIcon.Information, 3000)
@@ -110,6 +115,7 @@ class TrayIcon(QSystemTrayIcon):
         """
         Emits the signal to open the startup dialog if no other action is in progress.
         """
+        # Prevent overlapping actions
         if not self.is_action_in_progress:
             self.is_action_in_progress = True
             self.open_startup_signal.emit()
@@ -134,7 +140,7 @@ class ShortcutDisplay(QWidget):
     - map_path (str): Path to the application name map file.
     - local_db_path (str): Path to the local shortcut database.
     """
-
+    # Signals for shortcut display actions
     def __init__(self, settings_manager, map_path=APP_NAME_MAP_PATH, local_db_path=LOCAL_DB_PATH, interval=250, parent=None):
         super().__init__(parent)
         self.settings_manager = settings_manager or {}
@@ -161,6 +167,7 @@ class ShortcutDisplay(QWidget):
         self.tray_icon.open_startup_signal.connect(self.tray_icon.emit_open_startup_signal)
         self.tray_icon.quit_app_signal.connect(self.tray_icon.emit_quit_application_signal)
 
+        # Initialize the UI
         self.init_ui()
         self.timer.timeout.connect(self.update_shortcuts)
         self.timer.start(self.interval)
@@ -169,10 +176,15 @@ class ShortcutDisplay(QWidget):
         """
         Initializes the user interface for the shortcut display.
         """
+        # Set up the layout and search bar
         self.layout = QVBoxLayout()
         self.layout.setContentsMargins(10, 10, 10, 10)
+        
+        # Set up the search bar and labels
         self.setup_search_bar()
         self.setup_labels()
+        
+        # Apply styles and set the layout
         self.setLayout(self.layout)
         self.setWindowFlags(Qt.WindowStaysOnTopHint | Qt.FramelessWindowHint)
         self.apply_styles_from_settings()
@@ -185,33 +197,27 @@ class ShortcutDisplay(QWidget):
         If a search is active, it filters the shortcuts based on the search query.
         Additionally, it adapts the display and position of the window as needed.
 
-        Steps:
-        1. Get the active window's title and process name.
-        2. Match the title with the app name map.
-        3. Retrieve shortcuts for the detected application or the previously active app.
-        4. Apply filtering if a search query is active.
-        5. Update the display and adjust the window size and position.
-
         Notes:
         - The search state is reset when switching to a new application.
         """
-        # Step 1: Retrieve the active window's title and process name
+        # Retrieve the active window's title and process name
         window_title, process_name = get_active_window_info()
 
+        # Check if the active window is empty
         if not window_title:
             self.descriptionLabel.setText("No active window detected")
             return
 
-        # Step 3: Match the active window title to an application name
+        # Match the active window title to an application name
         app_name = self.shortcut_manager.find_best_match(window_title)
         print(app_name)
         if not app_name:
             return
 
-        # Step 4: Determine if the current window belongs to this application
+        # Determine if the current window belongs to this application
         is_my_app = is_my_app_active(window_title)
 
-        # Step 5: Load shortcuts based on the app detection and previous state
+        # Load shortcuts based on the app detection and previous state
         if is_my_app and self.last_active_app_name is None:
             shortcuts = self.shortcut_manager.get_shortcuts(app_name)
         elif is_my_app and self.last_active_app_name is not None:
@@ -220,7 +226,7 @@ class ShortcutDisplay(QWidget):
             shortcuts = self.shortcut_manager.get_shortcuts(app_name)
             self.last_active_app_name = app_name
         
-        # Step 6: Handle active search state and filter shortcuts
+        # Handle active search state and filter shortcuts
         if self.is_search_active:
             filtered_shortcuts = {
                 key: value for key, value in self.current_shortcuts.items()
@@ -240,7 +246,7 @@ class ShortcutDisplay(QWidget):
             self.current_shortcuts = shortcuts
             self.display_shortcuts(self.current_shortcuts)
 
-        # Step 7: Adjust the window's size and position
+        # Adjust the window's size and position
         self.adjust_size_and_position()
 
     def apply_styles_from_settings(self):
@@ -319,6 +325,7 @@ class ShortcutDisplay(QWidget):
         """
         Configures the search bar, adding a placeholder and an optional leading icon.
         """
+        # Create the search bar and add it to the layout
         self.search_bar = QLineEdit(self)
         self.search_bar.setPlaceholderText("Search shortcuts...")
 
@@ -336,6 +343,7 @@ class ShortcutDisplay(QWidget):
         Creates labels for displaying shortcuts and their descriptions. 
         These are embedded in scrollable areas for better usability.
         """
+        # Create horizontal layout for the labels
         self.horizontal_layout = QHBoxLayout()
         self.descriptionLabel = QLabel("Descriptions will be displayed here")
         self.shortcutLabel = QLabel("Shortcuts will be displayed here")
@@ -367,8 +375,8 @@ class ShortcutDisplay(QWidget):
         Parameters:
         - shortcuts (dict): Dictionary containing shortcuts and their metadata.
         """
+        # Get descriptions and shortcuts for the current OS
         if shortcuts:
-            # Get descriptions and shortcuts for the current OS
             descriptions = []
             shortcut_keys = []
             
@@ -406,6 +414,7 @@ class ShortcutDisplay(QWidget):
         Dynamically adjusts the window size and repositions it based on screen size,
         user preferences, and the cursor's current location.
         """
+        # Get the screen and cursor positions
         screen = QApplication.screenAt(QCursor.pos())
         if not screen:
             return
@@ -414,6 +423,7 @@ class ShortcutDisplay(QWidget):
         screen_geometry = screen.geometry()
         cursor_pos = QCursor.pos()
 
+        # Determine the window size based on user settings
         if self.adapt:
             content_size = self.layout.sizeHint()
             max_width = screen_geometry.width()
@@ -429,6 +439,7 @@ class ShortcutDisplay(QWidget):
         # Determine preferred corner placement
         preferred_position = self.settings_manager.get_setting("position_priority")
 
+        # Map corner positions for dynamic adjustment
         position_map = {
             "top-left": 0,
             "top-right": 1,
@@ -462,6 +473,7 @@ class ShortcutDisplay(QWidget):
             0
         )
 
+        # Update the window position based on the cursor location
         if adjusted_window_geometry.contains(cursor_pos):
             if self.use_counter:
                 self.counter = (self.counter + 1) % len(corners)
@@ -474,5 +486,6 @@ class ShortcutDisplay(QWidget):
 
             self.use_counter = not self.use_counter
 
+        # Move the window to the new position
         new_position = corners[self.corner_index]
         self.move(*new_position)

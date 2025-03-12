@@ -16,6 +16,9 @@ CONFIG_PATH = os.environ.get(
 BACKUP_CONFIG_PATH = os.path.join(os.path.dirname(__file__), "data/config_backup.json")
 
 class SettingsManager:
+    """
+    Manage application settings with type validation and error handling.
+    """
     def __init__(self, settings_file: str = CONFIG_PATH):
         """
         Initialize SettingsManager with configurable settings file path.
@@ -98,8 +101,8 @@ class SettingsManager:
         Returns:
             Dict[str, Any]: Validated settings or default settings
         """
+        # Try loading from primary config file
         try:
-            # Try loading from primary config
             if os.path.exists(self.settings_file):
                 with open(self.settings_file, 'r') as file:
                     loaded_settings = json.load(file)
@@ -129,7 +132,6 @@ class SettingsManager:
                     return self._load_settings()
             except Exception as backup_error:
                 logger.error(f"Backup restoration failed: {backup_error}")
-        
         except Exception as e:
             logger.error(f"Unexpected error loading settings: {e}")
         
@@ -140,8 +142,8 @@ class SettingsManager:
         """
         Save settings with backup and error handling.
         """
+        # Create backup of existing settings
         try:
-            # Create backup of existing settings
             if os.path.exists(self.settings_file):
                 shutil.copy(self.settings_file, BACKUP_CONFIG_PATH)
             
@@ -153,7 +155,7 @@ class SettingsManager:
                 json.dump(self.settings, file, indent=4)
             
             logger.info("Settings saved successfully")
-        
+
         except Exception as e:
             logger.error(f"Failed to save settings: {e}")
 
@@ -181,10 +183,12 @@ class SettingsManager:
         Returns:
             bool: True if setting was successfully updated, False otherwise
         """
+        # Validate and update setting
         if key not in self.default_settings:
             logger.warning(f"Unknown setting key: {key}")
             return False
 
+        # Validate setting value
         if not self._validate_setting(key, value):
             logger.warning(f"Invalid value for {key}: {value}")
             return False
@@ -199,4 +203,5 @@ class SettingsManager:
         """
         self.settings = self.default_settings.copy()
         self.save_settings()
+        
         logger.info("Settings reset to defaults")

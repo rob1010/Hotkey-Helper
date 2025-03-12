@@ -44,6 +44,7 @@ class WindowManager:
         self.shortcut_display = None
         self.loading_window = None
         
+        # Set the application icon based on the operating system
         self.base_dir = os.path.dirname(__file__)
         self.app.setWindowIcon(QIcon(self.setup_icon_paths(self.base_dir)))
     
@@ -54,10 +55,12 @@ class WindowManager:
         Parameters:
         - base_dir (str): Base directory containing icon files.
         """
+        # Set the icon path based on the operating system
         self.icon_path_win = os.path.join(base_dir, "data/icon.ico")
         self.icon_path_mac = os.path.join(base_dir, "data/icon.icns")
         self.icon_path_linux = os.path.join(base_dir, "data/icon.png")
 
+        # Return the appropriate icon path based on the operating system
         self.icon_path = (
             self.icon_path_win if platform.system() == "Windows"
             else self.icon_path_mac if platform.system() == "Darwin"
@@ -120,10 +123,10 @@ class WindowManager:
         Start the application by checking if a database update is needed and initializing
         the appropriate window components.
         """
-        # Step 1: Set up the connection for update completion
+        # Set up the connection for update completion
         self.setup_signal_connection()
 
-        # Step 2: Check if an update is needed
+        # Check if an update is needed
         if check_for_db_updates():
             self.loading_window.start_update()
         else:
@@ -147,8 +150,10 @@ class WindowManager:
         Perform the first run actions, such as closing the loading window and showing the
         startup dialog.
         """
+        # Close the loading window if it exists
         if self.loading_window:
             self.loading_window.close()
+        # Show the startup dialog
         self.initialize_startup_dialog()
         self.startup_dialog.show()
         self.loading_window = None
@@ -187,6 +192,7 @@ class WindowManager:
         Returns:
         str: The contents of the stylesheet file.
         """
+        # Attempt to load the stylesheet from the file path
         try:
             with open(file_path, "r") as file:
                 return file.read()
@@ -198,9 +204,11 @@ class WindowManager:
         """
         Transition from the StartupDialog to the ShortcutDisplay window.
         """
+        # Initialize the ShortcutDisplay and show it
         self.initialize_shortcut_display()
         self.shortcut_display.timer.start()
         self.shortcut_display.show()
+        # Close the StartupDialog if it exists
         if self.startup_dialog:
             self.startup_dialog.close()
             self.disconnect_startup_dialog()
@@ -216,9 +224,12 @@ class WindowManager:
         """
         Quit the application.
         """
+        # Close the ShortcutDisplay and StartupDialog if they exist
         if self.shortcut_display:
             self.shortcut_display.tray_icon.close()
             self.disconnect_shortcut_display()
+        
+        # Close the StartupDialog if it exists
         if self.startup_dialog:
             self.startup_dialog.close()
             self.disconnect_startup_dialog()
@@ -228,12 +239,15 @@ class WindowManager:
         """
         Show the StartupDialog, closing other windows if necessary.
         """
+        # Initialize the StartupDialog and show it
         self.initialize_startup_dialog()
         self.startup_dialog.show()
         self.shortcut_display.timer.stop()
+        # Close the ShortcutDisplay if it exists
         if self.shortcut_display:
             self.shortcut_display.close()
             self.disconnect_shortcut_display()
+        # Close the SettingsWindow if it exists
         if self.settings_window:
             self.settings_window.close()
             self.disconnect_settings_window()
@@ -244,6 +258,7 @@ class WindowManager:
         """
         self.initialize_settings_window()
         self.settings_window.show()
+        # Close the StartupDialog if it exists
         if self.startup_dialog:
             self.startup_dialog.close() 
             self.disconnect_startup_dialog()
@@ -260,6 +275,7 @@ class WindowManager:
             stylesheet = self.load_stylesheet("data/light.qss")
         self.app.setStyleSheet(stylesheet)
         self.startup_dialog.show()
+        # Close the SettingsWindow if it exists
         if self.settings_window:
             self.settings_window.close()
             self.disconnect_settings_window()
@@ -276,6 +292,7 @@ class WindowManager:
             stylesheet = self.load_stylesheet("data/light.qss")
         self.app.setStyleSheet(stylesheet)
         self.startup_dialog.show()
+        # Close the SettingsWindow if it exists
         if self.settings_window:
             self.settings_window.close()
             self.disconnect_settings_window()
@@ -286,6 +303,7 @@ class WindowManager:
         """
         self.initialize_startup_dialog()
         self.startup_dialog.show()
+        # Close the SettingsWindow if it exists
         if self.settings_window:
             self.settings_window.close()
             self.disconnect_settings_window()

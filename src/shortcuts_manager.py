@@ -15,7 +15,9 @@ from threading import Lock
 logger = logging.getLogger(__name__)
 
 class ShortcutManager:
-    """Manages application shortcuts with caching and optimized matching.""" 
+    """
+    Manages application shortcuts with caching and optimized matching.
+    """ 
    
     def __init__(self, map_path, db_path, cache_duration=1):
         """
@@ -38,6 +40,7 @@ class ShortcutManager:
     def load_app_map(self):
         """Load and cache the application map from the text file."""
         current_time = time.time()
+        # Reload the app map if cache is empty or expired
         if self.app_map_cache is None or (current_time - self.last_load_time) > self.cache_duration:
             try:
                 with open(self.map_path, "r") as file:
@@ -53,6 +56,7 @@ class ShortcutManager:
                     self.app_names_sorted = sorted(app_map.keys(), key=len, reverse=True)
                     self.last_load_time = time.time()
                     logger.info("App map loaded and cached")
+                    
             except FileNotFoundError:
                 logger.error(f"App map file not found: {self.map_path}")
                 self.app_map_cache = {}
@@ -65,6 +69,7 @@ class ShortcutManager:
 
     def load_shortcut_cache(self):
         """Load and cache the shortcut database from the JSON file."""
+        # Reload the shortcut cache if empty or expired
         with self.cache_lock:
             if self.shortcut_cache is None or (time.time() - self.last_load_time) > self.cache_duration:
                 try:
@@ -93,6 +98,7 @@ class ShortcutManager:
         Returns:
             str or None: The standardized application name or None if no match.
         """
+        # Load the app map if not already loaded
         self.load_app_map()
         if not window_title:
             return None
@@ -127,7 +133,7 @@ class ShortcutManager:
             dict: Shortcuts for the matched application or empty dict if none.
         """
         app_name = self.find_best_match(window_title)
-        
+        # If no app name is found, return empty dict
         if app_name:
             self.load_shortcut_cache()  # Ensure the cache is loaded
             logger.info(f"Available apps in shortcut_cache: {list(self.shortcut_cache.keys())}")
@@ -174,7 +180,8 @@ class ShortcutManager:
                     if score > best_score and score >= 0.5:  # Require at least 50% length match
                         best_score = score
                         best_match = app
-            
+                        
+            # If a partial match is found, use it
             if best_match:
                 logger.info(f"Partial match found: '{app_name}' matched to '{best_match}' with score {best_score:.2f}")
                 shortcuts = self.shortcut_cache[best_match]
@@ -194,8 +201,8 @@ def get_active_window_info():
     Returns:
     tuple: (window_title, process_name) or (None, None) if no active window is found.
     """
+    ## Cross-platform active window title retrieval
     try:
-        # Cross-platform active window title
         if platform.system() == "Windows":
             # Get the active window handle
             hwnd = win32gui.GetForegroundWindow()
@@ -247,6 +254,7 @@ def is_my_app_active(active_window_title):
     Returns:
         bool: True if the app is active, False otherwise.
     """
+    # Check for specific keywords in the window title
     if not active_window_title:
         return False
     title_lower = active_window_title.lower()

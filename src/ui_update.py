@@ -11,6 +11,7 @@ class DbUpdateWorker(QThread):
     """
     Worker thread to manage the database update process.
     """
+    # Signals
     finished = Signal()
     error = Signal(str)
 
@@ -25,6 +26,7 @@ class DbUpdateWorker(QThread):
         """
         Run the update process in a separate thread.
         """
+        # Attempt to fetch the hotkeys from the server
         try:
             self.success = fetch_hotkeys()
             if not self.success:
@@ -47,12 +49,14 @@ class LoadingWindow(QWidget):
     """
     Loading window that provides feedback during the database update process.
     """
+    # Signals
     update_completed_signal = Signal()
 
     def __init__(self):
         """
         Initialize the LoadingWindow with a text label and cancel button.
         """
+        # Initialize the QWidget
         super().__init__()
         self.setWindowTitle("Loading")
         self.resize(400, 150)
@@ -93,10 +97,13 @@ class LoadingWindow(QWidget):
         """
         Handle actions to take once the update process is finished.
         """
+        # Update the text label based on the success of the update
         if self.worker.success:
             self.text_label.setText("Update completed successfully!")
         else:
             self.text_label.setText("Update failed. Please try again later.")
+            
+        # Emit the signal to indicate the update is completed
         self.thread.quit()
         self.thread.wait()
         self.update_completed_signal.emit()
@@ -106,6 +113,7 @@ class LoadingWindow(QWidget):
         """
         Clean up worker signals and resources.
         """
+        # Disconnect signals and delete the worker
         for signal in [self.worker.finished, self.worker.error]:
             signal.disconnect()
         self.worker.deleteLater()

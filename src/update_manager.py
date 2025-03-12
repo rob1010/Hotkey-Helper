@@ -16,13 +16,18 @@ TEMP_DB_PATH = os.path.join(BASE_DIR, "data/temp_shortcut_db.json")
 UPDATE_LOG_PATH = os.path.join(BASE_DIR, "data/update_log.json")
 
 def load_api_key():
+    """
+    Load the Firestore API key from a local file.
+    """
+    # Define the path to the API key file
     api_file = "data/api_key.txt"
     try:
         with open(api_file, "r") as f:
             return f.read().strip()
     except FileNotFoundError:
         logger.error(f"API key file not found: {api_file}")
-        
+
+# Define Firestore project details        
 PROJECT_ID = "hotkey-helper"
 API_KEY = load_api_key()
 FIRESTORE_URL = f"https://firestore.googleapis.com/v1/projects/{PROJECT_ID}/databases/(default)/documents"
@@ -75,6 +80,15 @@ def fetch_hotkeys():
     return True
 
 def transform_firestore_data(firestore_data):
+    """
+    Transform Firestore data into a simplified structure.
+    
+    Args:
+        firestore_data (dict): The Firestore response data.
+        
+    Returns:
+        dict: The transformed data in a simplified structure.
+    """
     simplified_data = {}
 
     # Iterate through each document in the Firestore response
@@ -111,6 +125,7 @@ def get_total_shortcuts_count():
     Returns:
         int: Total number of shortcuts, or 0 if an error occurs.
     """
+    # Fetch data from Firestore with error handling
     try:
         url = f"{FIRESTORE_URL}/hotkeys_metadata/counters?key={API_KEY}"
         response = requests.get(url)
@@ -128,7 +143,6 @@ def get_total_shortcuts_count():
         logger.error(f"Exception in get_total_shortcuts_count: {e}")
         return 0
 
-# Function to get the stored count of shortcuts from a local file
 def get_local_shortcuts_count():
     """
     Get the total number of shortcuts from the local update log file.
@@ -136,8 +150,8 @@ def get_local_shortcuts_count():
     Returns:
     int: The number of local shortcuts, or 0 if an error occurs.
     """
+    # Check if the file exists before trying to open it
     try:
-        # Check if the file exists before trying to open it
         if not os.path.exists(UPDATE_LOG_PATH):
             return 0
 
@@ -152,13 +166,7 @@ def get_local_shortcuts_count():
         # Retrieve the stored count, defaulting to 0 if the key is missing
         stored_count = update_log.get('processed_shortcuts', 0)
         return stored_count
-    
     except Exception as e:
-        # Handle the case where the JSON file is not properly formatted
-        logger.error("Error reading update log file: Invalid JSON format.")
-        return 0
-    except Exception as e:
-        # General error handler for any other unforeseen issues
         logger.error(f"Unexpected error reading update log file: {e}")
         return 0
 
@@ -170,6 +178,7 @@ def check_for_db_updates():
     Returns:
     bool: True if an update is needed, False otherwise.
     """
+    # Get the stored and current shortcut counts
     stored_count = get_local_shortcuts_count()
     current_count = get_total_shortcuts_count()
 
@@ -188,6 +197,7 @@ def log_update(processed_shortcuts):
     status (str): The status of the update (e.g., "completed", "cancelled", "failed").
     processed_shortcuts (int): The number of shortcuts processed during the update.
     """
+    # Create a log entry with the update status and processed shortcuts
     log_entry = {
         "processed_shortcuts": processed_shortcuts,  # Subtract 1 to account for the final increment
     }
@@ -200,6 +210,9 @@ def log_update(processed_shortcuts):
         logger.error(f"Failed to write update log: {e}")
     
 def load_latest_version():
+    """
+    Load the latest version number from a local file.
+    """
     version_file = "data/latest_version.txt"
     try:
         with open(version_file, "r") as f:
@@ -211,6 +224,16 @@ def load_latest_version():
         return "1.0.0"
 
 def check_for_application_updates(current_version):
+    """
+    Check for application updates by comparing the current version with the latest version.
+    
+    Args:
+        current_version (str): The current version of the application.
+        
+    Returns:
+        bool: True if an update is available, False otherwise.
+    """
+    # Fetch the latest version number from the repository
     try:
         url = "https://raw.githubusercontent.com/rob1010/Hotkey-Helper/main/latest_version.txt"
         response = requests.get(url)

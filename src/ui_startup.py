@@ -29,6 +29,7 @@ class StartupDialog(QDialog):
         is_action_in_progress (bool): Indicates whether an action is currently in progress.
         parent (QWidget): The parent widget for this dialog, if any.
         """
+        # Initialize the dialog with the parent widget
         super().__init__(parent)
         self.current_version = load_latest_version()
         self.update_status = check_for_application_updates(self.current_version)
@@ -40,6 +41,7 @@ class StartupDialog(QDialog):
         Set up the user interface for the startup dialog, including setting window properties,
         creating layouts, and adding buttons.
         """
+        # Set window properties
         self.setWindowTitle("Welcome to HotKey Helper")
         self.setWindowFlags(self.windowFlags() | Qt.FramelessWindowHint)
         self.setModal(True)  # Block interaction with the main window until this dialog is handled
@@ -97,6 +99,7 @@ class StartupDialog(QDialog):
         Returns:
         QHBoxLayout: A layout containing the icon and welcome text.
         """
+        # Create a horizontal layout
         horizontal_layout = QHBoxLayout()
 
         # Load the icon
@@ -116,6 +119,7 @@ class StartupDialog(QDialog):
         if 'welcome_label' not in locals():
             welcome_label = QLabel("Welcome to HotKey Helper!\nChoose an action below or press Enter to start:")
 
+        # Add the welcome label to the layout
         horizontal_layout.addWidget(welcome_label)
         horizontal_layout.setAlignment(Qt.AlignVCenter)
         horizontal_layout.addSpacing(10)
