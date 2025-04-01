@@ -1063,7 +1063,23 @@
       "VirtualBox",
       "Parallels Desktop",
       "Hyper-V",
-      "Docker Desktop"
+      "Docker Desktop",
+      "QEMU",
+      "KVM",
+      "Proxmox",
+      "Xen Project",
+      "LXC/LXD",
+      "Podman",
+      "Kubernetes Desktop",
+      "Vagrant",
+      "Windows Sandbox",
+      "UTM",
+      "Lima",
+      "Multipass",
+      "Rancher Desktop",
+      "Minikube",
+      "Kind",
+      "Colima"
     ]
   }
 }
