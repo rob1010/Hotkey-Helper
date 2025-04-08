@@ -113,9 +113,6 @@ def exception_hook(exctype, value, traceback):
     sentry_sdk.capture_exception((exctype, value, traceback))
     sentry_sdk.flush()  # Ensure the exception is sent immediately
 
-    # Initialize QApplication if not already running
-    QApplication.instance() or QApplication(sys.argv)
-
     # Show the dialog and handle potential errors
     try:
         dialog = BugReportDialog(error_message=str(value))
