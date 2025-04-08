@@ -37,17 +37,17 @@ class WindowManager:
         else:
             stylesheet = self.load_stylesheet("data/light.qss")
         self.app.setStyleSheet(stylesheet)
-        
+
         # Initialize window components as None; they will be lazily created
         self.startup_dialog = None
         self.settings_window = None
         self.shortcut_display = None
         self.loading_window = None
-        
+
         # Set the application icon based on the operating system
         self.base_dir = os.path.dirname(__file__)
         self.app.setWindowIcon(QIcon(self.setup_icon_paths(self.base_dir)))
-    
+
     def setup_icon_paths(self, base_dir):
         """
         Configures the appropriate icon path based on the operating system.
@@ -66,7 +66,7 @@ class WindowManager:
             else self.icon_path_mac if platform.system() == "Darwin"
             else self.icon_path_linux
         )
-        
+
     def initialize_startup_dialog(self):
         """
         Lazily initialize the startup dialog if it has not been created yet.
@@ -90,7 +90,7 @@ class WindowManager:
         if self.settings_window is None:
             self.settings_window = SettingsWindow(self.settings_manager)
         self.connect_signals_settings_window()
-        
+
     def disconnect_startup_dialog(self):
         """
         Disconnect all signals connected to the startup dialog.
@@ -117,7 +117,7 @@ class WindowManager:
         self.settings_window.reset_settings_signal.disconnect()
         self.settings_window.close_settings_signal.disconnect()
         self.settings_window = None
-        
+
     def run(self):
         """
         Start the application by checking if a database update is needed and initializing
@@ -198,17 +198,17 @@ class WindowManager:
             # Validate that the file path is within the expected directory
             base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
             abs_file_path = os.path.abspath(file_path)
-            
+
             # Check if the file path is within the base directory
             if not abs_file_path.startswith(base_dir):
                 logger.error("Invalid file path: %s is outside the application directory", file_path)
                 return ""
-                
+
             # Check if the file exists
             if not os.path.isfile(abs_file_path):
                 logger.error("File not found: %s", abs_file_path)
                 return ""
-                
+
             # Open the file with the validated path
             with open(abs_file_path, "r") as file:
                 return file.read()
@@ -228,7 +228,7 @@ class WindowManager:
         if self.startup_dialog:
             self.startup_dialog.close()
             self.disconnect_startup_dialog()
-            
+
     @staticmethod
     def open_website():
         """
@@ -245,7 +245,7 @@ class WindowManager:
         if self.shortcut_display:
             self.shortcut_display.tray_icon.close()
             self.disconnect_shortcut_display()
-        
+
         # Close the StartupDialog if it exists
         if self.startup_dialog:
             self.startup_dialog.close()
@@ -324,4 +324,3 @@ class WindowManager:
         if self.settings_window:
             self.settings_window.close()
             self.disconnect_settings_window()
-            
