@@ -11,7 +11,7 @@ logger = logging.getLogger(__name__)
 # Class to manage dialog state
 class DialogState:
     """Class to manage the state of dialogs in the application."""
-    
+
     def __init__(self):
         self.dialog_shown = False
 
@@ -25,7 +25,7 @@ class BugReportDialog(QDialog):
     Args:
         QDialog (_type_): _description_
     """
-    
+
     def __init__(self, parent=None, error_message=""):
         """
         Initialize the BugReportDialog with an error message and description field.
