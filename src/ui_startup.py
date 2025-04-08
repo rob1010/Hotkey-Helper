@@ -10,6 +10,7 @@ from update_manager import load_latest_version, check_for_application_updates
 logger = logging.getLogger(__name__)
 
 class StartupDialog(QDialog):
+    
     """
     The StartupDialog class provides the initial user interface for the application, allowing
     users to start the app, configure settings, visit the website, or quit the application.

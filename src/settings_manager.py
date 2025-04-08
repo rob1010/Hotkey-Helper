@@ -16,6 +16,7 @@ CONFIG_PATH = os.environ.get(
 BACKUP_CONFIG_PATH = os.path.join(os.path.dirname(__file__), "data/config_backup.json")
 
 class SettingsManager:
+    
     """Manage application settings with type validation and error handling."""
     
     def __init__(self, settings_file: str = CONFIG_PATH):

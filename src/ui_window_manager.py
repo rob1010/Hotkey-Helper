@@ -17,6 +17,7 @@ from update_manager import check_for_db_updates
 logger = logging.getLogger(__name__)
 
 class WindowManager:
+    
     """
     Manages the different UI components of the application, including the startup dialog,
     settings window, and shortcut display. It handles initialization, signal connections,

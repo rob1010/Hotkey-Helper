@@ -18,6 +18,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 def main():
+    
     """
     Initialize and run the application.
 
@@ -25,6 +26,7 @@ def main():
     It initializes the `WindowManager` to manage the different application windows
     and then starts the main event loop to handle GUI events.
     """
+    
     # Create the QApplication instance - necessary for managing all GUI components.
     app = QApplication(sys.argv)
 

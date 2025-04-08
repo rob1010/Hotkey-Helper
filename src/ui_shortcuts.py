@@ -28,6 +28,7 @@ APP_NAME_MAP_PATH = os.path.join(os.path.dirname(__file__), "data/app_name_map.t
 LOCAL_DB_PATH = os.path.join(os.path.dirname(__file__), "data/local_shortcut_db.json")
 
 class TrayIcon(QSystemTrayIcon):
+    
     """
     Represents the system tray icon for the application.
 
@@ -123,6 +124,7 @@ class TrayIcon(QSystemTrayIcon):
 
 
 class ShortcutDisplay(QWidget):
+    
     """
     Displays shortcuts relevant to the active application.
 

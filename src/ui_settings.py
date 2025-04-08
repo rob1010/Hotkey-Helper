@@ -7,6 +7,7 @@ from PySide6.QtWidgets import QWidget, QVBoxLayout, QLabel, QComboBox, QCheckBox
 logger = logging.getLogger(__name__)
 
 class SettingsWindow(QWidget):
+    
     """
     The SettingsWindow class provides the UI for managing user preferences
     for the application's shortcut display. Users can customize themes,

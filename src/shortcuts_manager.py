@@ -21,6 +21,7 @@ if platform.system() == "Windows":
         logger.warning("win32gui and win32process modules not available. Windows functionality will be limited.")
 
 class ShortcutManager:
+    
     """Manages application shortcuts with caching and optimized matching."""
     
     def __init__(self, map_path, db_path, cache_duration=1):
