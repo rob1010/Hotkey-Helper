@@ -33,9 +33,7 @@ class SettingsWindow(QWidget):
         self.move(self.x(), 0)
 
     def init_ui(self):
-        """
-        Set up the user interface for the settings window.
-        """
+        """Set up the user interface for the settings window."""
         self.setWindowTitle('Settings')
         self.setWindowFlags(Qt.WindowStaysOnTopHint | Qt.FramelessWindowHint)
         self.layout = QVBoxLayout()
@@ -200,9 +198,7 @@ class SettingsWindow(QWidget):
         return button
 
     def choose_font_color(self):
-        """
-        Open color picker for font color selection.
-        """
+        """Open color picker for font color selection."""
         # Open color dialog
         color = QColorDialog.getColor()
         if color.isValid():
@@ -210,9 +206,7 @@ class SettingsWindow(QWidget):
             self.save_settings_from_ui()  # Update via validated method
 
     def load_settings_into_ui(self):
-        """
-        Load current settings into the UI elements.
-        """
+        """Load current settings into the UI elements."""
         # Theme
         theme = self.settings_manager.get_setting('theme')
         self.theme_combo.setCurrentText(theme.capitalize())
@@ -253,9 +247,7 @@ class SettingsWindow(QWidget):
         self.position_priority_combo.setCurrentText(formatted_position)
 
     def save_settings_from_ui(self):
-        """
-        Save settings from UI elements into the settings manager.
-        """
+        """Save settings from UI elements into the settings manager."""
         # Theme
         self.settings_manager.set_setting('theme', self.theme_combo.currentText().lower())
 
@@ -297,15 +289,11 @@ class SettingsWindow(QWidget):
         self.save_settings_signal.emit()
 
     def reset_settings_emit(self):
-        """
-        Emit the reset settings signal and reset settings to defaults.
-        """
+        """Emit the reset settings signal and reset settings to defaults."""
         self.settings_manager.reset_to_defaults()
         self.load_settings_into_ui()
         self.reset_settings_signal.emit()
 
     def close_settings_emit(self):
-        """
-        Close the settings window.
-        """
+        """Close the settings window."""
         self.close_settings_signal.emit()

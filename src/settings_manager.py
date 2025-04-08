@@ -16,9 +16,7 @@ CONFIG_PATH = os.environ.get(
 BACKUP_CONFIG_PATH = os.path.join(os.path.dirname(__file__), "data/config_backup.json")
 
 class SettingsManager:
-    """
-    Manage application settings with type validation and error handling.
-    """
+    """Manage application settings with type validation and error handling."""
     def __init__(self, settings_file: str = CONFIG_PATH):
         """
         Initialize SettingsManager with configurable settings file path.
@@ -139,9 +137,7 @@ class SettingsManager:
         return self.default_settings.copy()
 
     def save_settings(self) -> None:
-        """
-        Save settings with backup and error handling.
-        """
+        """Save settings with backup and error handling."""
         # Create backup of existing settings
         try:
             if os.path.exists(self.settings_file):
@@ -198,9 +194,7 @@ class SettingsManager:
         return True
 
     def reset_to_defaults(self) -> None:
-        """
-        Reset all settings to their default values.
-        """
+        """Reset all settings to their default values."""
         self.settings = self.default_settings.copy()
         self.save_settings()
 
