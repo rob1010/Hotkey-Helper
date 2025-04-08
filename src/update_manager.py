@@ -135,7 +135,7 @@ def get_total_shortcuts_count():
         else:
             logger.error("Error getting total shortcuts count: %s %s", response.status_code, response.text)
         return 0
-    except requests.exceptions.RequestException as e:
+    except requests.exceptions.RequestException:
         logger.error("Error getting total shortcuts count: %s %s", response.status_code, response.text)
         return 0
     except Exception as e:
