@@ -28,7 +28,7 @@ APP_NAME_MAP_PATH = os.path.join(os.path.dirname(__file__), "data/app_name_map.t
 LOCAL_DB_PATH = os.path.join(os.path.dirname(__file__), "data/local_shortcut_db.json")
 
 class TrayIcon(QSystemTrayIcon):
-    
+
     """
     Represents the system tray icon for the application.
 
@@ -44,7 +44,7 @@ class TrayIcon(QSystemTrayIcon):
     - open_startup_signal: Emitted when the "Show Startup" action is triggered.
     - quit_app_signal: Emitted when the "Quit" action is triggered.
     """
-    
+
     # Signals for tray icon actions
     open_startup_signal = Signal()
     quit_app_signal = Signal()
@@ -124,7 +124,7 @@ class TrayIcon(QSystemTrayIcon):
 
 
 class ShortcutDisplay(QWidget):
-    
+
     """
     Displays shortcuts relevant to the active application.
 
@@ -137,7 +137,7 @@ class ShortcutDisplay(QWidget):
     - map_path (str): Path to the application name map file.
     - local_db_path (str): Path to the local shortcut database.
     """
-    
+
     # Signals for shortcut display actions
     def __init__(self, settings_manager, map_path=APP_NAME_MAP_PATH, local_db_path=LOCAL_DB_PATH, interval=250, parent=None):
         super().__init__(parent)
