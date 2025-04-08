@@ -24,6 +24,7 @@ class ShortcutManager:
 
     """Manages application shortcuts with caching and optimized matching."""
 
+
     def __init__(self, map_path, db_path, cache_duration=1):
         """
         Initialize the ShortcutManager with paths and cache settings.

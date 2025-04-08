@@ -19,6 +19,7 @@ class SettingsManager:
 
     """Manage application settings with type validation and error handling."""
 
+
     def __init__(self, settings_file: str = CONFIG_PATH):
         """
         Initialize SettingsManager with configurable settings file path.

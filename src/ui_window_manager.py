@@ -24,6 +24,7 @@ class WindowManager:
     and transitions between these components.
     """
 
+
     def __init__(self, app):
         """
         Initialize the WindowManager.
