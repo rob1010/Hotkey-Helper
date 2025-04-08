@@ -88,7 +88,6 @@ def exception_hook(exctype, value, traceback):
         traceback (Traceback): The traceback information.
 
     """    
-
     # If the dialog is already shown, log the additional exception and exit
     if dialog_state.dialog_shown:
         logger.error(

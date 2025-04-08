@@ -39,7 +39,6 @@ def fetch_hotkeys():
     Returns:
         bool: True if completed successfully, False if canceled or an error occurred.
     """
-
     # Fetch data from Firestore with error handling
     try:
         hotkeys_response = requests.get(f"{FIRESTORE_URL}/hotkeys/?key={API_KEY}")
