@@ -24,7 +24,7 @@ class ShortcutManager:
     """
     Manages application shortcuts with caching and optimized matching.
     """ 
-   
+
     def __init__(self, map_path, db_path, cache_duration=1):
         """
         Initialize the ShortcutManager with paths and cache settings.
@@ -62,7 +62,7 @@ class ShortcutManager:
                     self.app_names_sorted = sorted(app_map.keys(), key=len, reverse=True)
                     self.last_load_time = time.time()
                     logger.info("App map loaded and cached")
-                    
+
             except FileNotFoundError:
                 logger.error("App map file not found: %s", self.map_path)
                 self.app_map_cache = {}
@@ -93,14 +93,14 @@ class ShortcutManager:
                     logger.error("Unexpected error loading shortcut database: %s", e)
                     self.shortcut_cache = {}
             return self.shortcut_cache
-        
+
     def find_best_match(self, window_title):
         """
         Find the best matching application name based on the window title.
-        
+
         Args:
             window_title (str): The title of the active window.
-            
+
         Returns:
             str or None: The standardized application name or None if no match.
         """
@@ -108,13 +108,13 @@ class ShortcutManager:
         self.load_app_map()
         if not window_title:
             return None
-        
+
         # Attempt exact match based on phrases in the window title
         window_title_lower = window_title.lower()
         for app_name in self.app_names_sorted:
             if app_name.lower() in window_title_lower:
                 return self.app_map_cache[app_name].get("name", app_name)
-        
+
         # Extract the last part of the window title after " - " for better matching
         if " - " in window_title:
             window_title = window_title.split(" - ")[-1].strip()
@@ -131,10 +131,10 @@ class ShortcutManager:
     def get_shortcuts(self, window_title):
         """
         Retrieve shortcuts for the active window.
-        
+
         Args:
             window_title (str): The title of the active window.
-            
+
         Returns:
             dict: Shortcuts for the matched application or empty dict if none.
         """
@@ -143,17 +143,17 @@ class ShortcutManager:
         if app_name:
             self.load_shortcut_cache()  # Ensure the cache is loaded
             logger.info("Available apps in shortcut_cache: %s", list(self.shortcut_cache.keys()))
-            
+
             # First try exact match
             if app_name in self.shortcut_cache:
                 logger.info("Exact match found for: '%s'", app_name)
                 shortcuts = self.shortcut_cache[app_name]
                 return shortcuts
-            
+
             # Normalize app name for comparison
             normalized_input = normalize_app_name(app_name)
             available_apps = list(self.shortcut_cache.keys())
-            
+
             # First pass: Look for strict matches (cutoff 0.9) with normalized names
             normalized_apps = {app: normalize_app_name(app) for app in available_apps}
             close_matches = difflib.get_close_matches(
@@ -162,7 +162,7 @@ class ShortcutManager:
                 n=1,
                 cutoff=0.9
             )
-            
+
             if close_matches:
                 matched_normalized = close_matches[0]
                 # Find the original app name that corresponds to this normalized match
@@ -175,7 +175,7 @@ class ShortcutManager:
                 except StopIteration:
                     logger.warning("No matching app found for normalized name '%s'", matched_normalized)
                     # Continue to the next matching strategy
-            
+
             # Second pass: Look for partial matches (specifically for cases like "Chrome" -> "Google Chrome")
             best_match = None
             best_score = 0
@@ -190,13 +190,13 @@ class ShortcutManager:
                     if score > best_score and score >= 0.5:  # Require at least 50% length match
                         best_score = score
                         best_match = app
-                        
+
             # If a partial match is found, use it
             if best_match:
                 logger.info("Partial match found: '%s' matched to '%s' with score %.2f", app_name, best_match, best_score)
                 shortcuts = self.shortcut_cache[best_match]
                 return shortcuts
-            
+
             # If no match is found, return empty dict
             logger.info("No exact or close matches for: '%s' in the cache", app_name)
             return {}
@@ -204,7 +204,7 @@ class ShortcutManager:
 def normalize_app_name(name):
         """Normalize app names for better matching by removing spaces and converting to lowercase"""
         return re.sub(r'\s+', '', name.lower())
-      
+
 def get_active_window_info():
     """
     Retrieves the title and process name of the currently active window.
@@ -218,7 +218,7 @@ def get_active_window_info():
             # Get the active window handle
             hwnd = win32gui.GetForegroundWindow()
             window_title = win32gui.GetWindowText(hwnd)
-            
+
             # Get the PID of the active window
             _, pid = win32process.GetWindowThreadProcessId(hwnd)
             process = psutil.Process(pid)
@@ -262,10 +262,10 @@ def get_active_window_info():
 def is_my_app_active(active_window_title):
     """
     Check if the current application is active based on window title keywords.
-    
+
     Args:
         active_window_title (str): The title of the active window.
-        
+
     Returns:
         bool: True if the app is active, False otherwise.
     """

@@ -179,11 +179,11 @@ class ShortcutDisplay(QWidget):
         # Set up the layout and search bar
         self.layout = QVBoxLayout()
         self.layout.setContentsMargins(10, 10, 10, 10)
-        
+
         # Set up the search bar and labels
         self.setup_search_bar()
         self.setup_labels()
-        
+
         # Apply styles and set the layout
         self.setLayout(self.layout)
         self.setWindowFlags(Qt.WindowStaysOnTopHint | Qt.FramelessWindowHint)
@@ -225,7 +225,7 @@ class ShortcutDisplay(QWidget):
         elif not is_my_app:
             shortcuts = self.shortcut_manager.get_shortcuts(app_name)
             self.last_active_app_name = app_name
-        
+
         # Handle active search state and filter shortcuts
         if self.is_search_active:
             filtered_shortcuts = {
@@ -379,18 +379,18 @@ class ShortcutDisplay(QWidget):
         if shortcuts:
             descriptions = []
             shortcut_keys = []
-            
+
             # Iterate through each shortcut in the current OS
             if self.current_os in shortcuts:
                 for shortcut, data in shortcuts[self.current_os].items():
                     description = data.get("Description", "No Description")
                     descriptions.append(description)
                     shortcut_keys.append(shortcut)
-            
+
             # Join the lists into strings
             descriptions_text = "\n".join(descriptions) if descriptions else "No shortcuts available"
             shortcuts_text = "\n".join(shortcut_keys) if shortcut_keys else "No shortcuts available"
-            
+
             self.descriptionLabel.setText(descriptions_text)
             self.shortcutLabel.setText(shortcuts_text)
         else:
@@ -419,7 +419,7 @@ class ShortcutDisplay(QWidget):
         screen = QApplication.screenAt(QCursor.pos())
         if not screen:
             return
-        
+
         # Handle adaptive resizing based on content and screen dimensions
         screen_geometry = screen.geometry()
         cursor_pos = QCursor.pos()
