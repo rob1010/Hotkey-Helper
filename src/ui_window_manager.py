@@ -182,7 +182,8 @@ class WindowManager:
         self.settings_window.reset_settings_signal.connect(self.reset_settings)
         self.settings_window.close_settings_signal.connect(self.close_settings)
 
-    def load_stylesheet(self, file_path):
+    @staticmethod
+    def load_stylesheet(file_path):
         """
         Load the QSS stylesheet from the given file path.
 
@@ -194,10 +195,25 @@ class WindowManager:
         """
         # Attempt to load the stylesheet from the file path
         try:
-            with open(file_path, "r") as file:
+            # Validate that the file path is within the expected directory
+            base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+            abs_file_path = os.path.abspath(file_path)
+            
+            # Check if the file path is within the base directory
+            if not abs_file_path.startswith(base_dir):
+                logger.error("Invalid file path: %s is outside the application directory", file_path)
+                return ""
+                
+            # Check if the file exists
+            if not os.path.isfile(abs_file_path):
+                logger.error("File not found: %s", abs_file_path)
+                return ""
+                
+            # Open the file with the validated path
+            with open(abs_file_path, "r") as file:
                 return file.read()
         except Exception as e:
-            logger.error(f"Failed to load stylesheet: {e}")
+            logger.error("Failed to load stylesheet: %s", e)
             return ""
 
     def start_app(self):
@@ -213,7 +229,8 @@ class WindowManager:
             self.startup_dialog.close()
             self.disconnect_startup_dialog()
             
-    def open_website(self):
+    @staticmethod
+    def open_website():
         """
         Placeholder method for opening the website.
         """
@@ -307,3 +324,4 @@ class WindowManager:
         if self.settings_window:
             self.settings_window.close()
             self.disconnect_settings_window()
+            

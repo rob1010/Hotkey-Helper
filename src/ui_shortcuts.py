@@ -201,7 +201,7 @@ class ShortcutDisplay(QWidget):
         - The search state is reset when switching to a new application.
         """
         # Retrieve the active window's title and process name
-        window_title, process_name = get_active_window_info()
+        window_title, _ = get_active_window_info()
 
         # Check if the active window is empty
         if not window_title:
@@ -397,7 +397,8 @@ class ShortcutDisplay(QWidget):
             self.descriptionLabel.setText("No matching shortcuts found")
             self.shortcutLabel.setText("")
 
-    def scale_value(self, num):
+    @staticmethod
+    def scale_value(num):
         """
         Scales a numeric value for UI adjustment purposes.
 

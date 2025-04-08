@@ -5,3 +5,5 @@ src/build/
 src/Hotkey Helper.spec
 /Hotkey Helper.exe/
 /data/
+src/.venv/
+src/main.spec

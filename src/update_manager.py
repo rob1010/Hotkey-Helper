@@ -1,7 +1,5 @@
 import os
-import time
 import json
-import shutil
 import logging
 import requests
 
@@ -25,7 +23,7 @@ def load_api_key():
         with open(api_file, "r") as f:
             return f.read().strip()
     except FileNotFoundError:
-        logger.error(f"API key file not found: {api_file}")
+        logger.error("API key file not found: %s", api_file)
 
 # Define Firestore project details        
 PROJECT_ID = "hotkey-helper"
@@ -48,30 +46,30 @@ def fetch_hotkeys():
         hotkeys_response = requests.get(f"{FIRESTORE_URL}/hotkeys/?key={API_KEY}")
         hotkeys_response.raise_for_status()  # Raise an exception for HTTP errors
         db_temp = hotkeys_response.json()
-    except requests.RequestException as e:
-        logger.error(f"Error fetching hotkeys from Firestore: {e}")
+    except requests.exceptions.RequestException as e:
+        logger.error("Error fetching hotkeys from Firestore: %s", e)
         return False
     except json.JSONDecodeError as e:
-        logger.error(f"Error decoding JSON response: {e}")
+        logger.error("Error decoding JSON response: %s", e)
         return False
     
     # Transform the data from Firestore format to a simplified structure
     db = transform_firestore_data(db_temp)
     
-    # Write the transformed data to a file
+    # Write the transformed data to a temporary file
     try:
-        with open(LOCAL_DB_PATH, 'w') as db_file:
-            json.dump(db, db_file, indent=4)
+        with open(TEMP_DB_PATH, "w") as f:
+            json.dump(db, f, indent=2)
     except Exception as e:
-        logger.error(f"Error writing to temporary file {LOCAL_DB_PATH}: {e}")
+        logger.error("Error writing to temporary file %s: %s", TEMP_DB_PATH, e)
         return False
     
-    # Load temporary data from the file
+    # Read the temporary file to verify it was written correctly
     try:
-        with open(LOCAL_DB_PATH, 'r') as temp_db_file:
-            db_temp = json.load(temp_db_file)
+        with open(TEMP_DB_PATH, "r") as f:
+            json.load(f)  # Just verify it can be loaded
     except Exception as e:
-        logger.error(f"Error reading temporary file {TEMP_DB_PATH}: {e}") 
+        logger.error("Error reading temporary file %s: %s", TEMP_DB_PATH, e)
         return False
     
     # Update update log with the number of processed shortcuts
@@ -134,13 +132,15 @@ def get_total_shortcuts_count():
             total = data.get("fields", {}).get("total_shortcuts", {}).get("integerValue")
             if total is not None:
                 return int(total)
-            else:
-                logger.error("Total shortcuts field not found in the response.")
+            logger.error("Total shortcuts field not found in the response.")
         else:
-            logger.error(f"Error getting total shortcuts count: {response.status_code} {response.text}")
+            logger.error("Error getting total shortcuts count: %s %s", response.status_code, response.text)
+        return 0
+    except requests.exceptions.RequestException as e:
+        logger.error("Error getting total shortcuts count: %s %s", response.status_code, response.text)
         return 0
     except Exception as e:
-        logger.error(f"Exception in get_total_shortcuts_count: {e}")
+        logger.error("Exception in get_total_shortcuts_count: %s", e)
         return 0
 
 def get_local_shortcuts_count():
@@ -159,15 +159,15 @@ def get_local_shortcuts_count():
         try:
             with open(UPDATE_LOG_PATH, 'r') as update_log_file:
                 update_log = json.load(update_log_file)
-        except Exception as e:
-            # Handle the case where the JSON file is not properly formatted
+        except json.JSONDecodeError:
             logger.error("Error reading update log file: Invalid JSON format.")
+            return 0
         
         # Retrieve the stored count, defaulting to 0 if the key is missing
         stored_count = update_log.get('processed_shortcuts', 0)
         return stored_count
     except Exception as e:
-        logger.error(f"Unexpected error reading update log file: {e}")
+        logger.error("Unexpected error reading update log file: %s", e)
         return 0
 
 # Function to determine if an update is needed
@@ -185,8 +185,7 @@ def check_for_db_updates():
     # Determine if the local count matches the current count in the database
     if stored_count == current_count:
         return False
-    else:
-        return True
+    return True
     
 
 def log_update(processed_shortcuts):
@@ -205,9 +204,9 @@ def log_update(processed_shortcuts):
         # Write log entry to the file, overriding existing content
         with open(UPDATE_LOG_PATH, 'w') as log_file:
             json.dump(log_entry, log_file, indent=4)
-        logger.error(f"Update log saved to {UPDATE_LOG_PATH}")
+        logger.error("Update log saved to %s", UPDATE_LOG_PATH)
     except Exception as e:
-        logger.error(f"Failed to write update log: {e}")
+        logger.error("Failed to write update log: %s", e)
     
 def load_latest_version():
     """
@@ -220,7 +219,7 @@ def load_latest_version():
     except FileNotFoundError:
         return "1.0.0"
     except IOError as e:
-        logger.error(f"Error reading {version_file}: {e}")
+        logger.error("Error reading %s: %s", version_file, e)
         return "1.0.0"
 
 def check_for_application_updates(current_version):
@@ -241,8 +240,8 @@ def check_for_application_updates(current_version):
         if latest_version > current_version:
             print(f"New version available: {latest_version}\n and current version: {current_version}")
             return True
-        else:
-            #print("Latest and current versions: {latest_version} and {current_version}")
-            return False
+        #print("Latest and current versions: {latest_version} and {current_version}")
+        return False
     except Exception:
-        logger.error("Couldn’t check for updates.")
+        logger.error("Couldn't check for updates.")
+        return False

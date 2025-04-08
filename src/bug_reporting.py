@@ -8,8 +8,14 @@ from PySide6.QtWidgets import QApplication, QDialog, QTextEdit, QPushButton, QVB
 # Get a logger for this module
 logger = logging.getLogger(__name__)
 
-# Global flag to track if the dialog has been shown
-_dialog_shown = False
+# Class to manage dialog state
+class DialogState:
+    """Class to manage the state of dialogs in the application."""
+    def __init__(self):
+        self.dialog_shown = False
+
+# Create a singleton instance
+dialog_state = DialogState()
 
 class BugReportDialog(QDialog):
     """
@@ -84,10 +90,9 @@ def exception_hook(exctype, value, traceback):
         traceback (Traceback): The traceback information.
     
     """    
-    global _dialog_shown
     
     # If the dialog is already shown, log the additional exception and exit
-    if _dialog_shown:
+    if dialog_state.dialog_shown:
         logger.error(
             f"Additional unhandled exception while dialog is shown: {exctype}, {value}",
             exc_info=(exctype, value, traceback)
@@ -97,7 +102,7 @@ def exception_hook(exctype, value, traceback):
         sys.exit(1)  # Exit the application cleanly
     
     # Mark the dialog as shown
-    _dialog_shown = True
+    dialog_state.dialog_shown = True
     
     # Log the initial exception
     logger.error(
@@ -110,16 +115,17 @@ def exception_hook(exctype, value, traceback):
     sentry_sdk.flush()  # Ensure the exception is sent immediately
     
     # Initialize QApplication if not already running
-    app = QApplication.instance() or QApplication(sys.argv)
+    QApplication.instance() or QApplication(sys.argv)
     
     # Show the dialog and handle potential errors
     try:
         dialog = BugReportDialog(error_message=str(value))
         dialog.exec()  # Run the dialog's event loop
     except Exception as e:
-        logger.error(f"Error in BugReportDialog: {e}", exc_info=True)
+        logger.error("Error in BugReportDialog: %s", e, exc_info=True)
         sentry_sdk.capture_exception(e)
         sentry_sdk.flush()  # Send any dialog-related errors
     
     # After the dialog closes (or fails), exit the application
     sys.exit(1)
+    

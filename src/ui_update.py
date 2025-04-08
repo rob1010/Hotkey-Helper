@@ -1,7 +1,7 @@
 import logging
 
 from PySide6.QtCore import Signal, QThread, Qt
-from PySide6.QtWidgets import QWidget, QVBoxLayout, QLabel, QPushButton
+from PySide6.QtWidgets import QWidget, QVBoxLayout, QLabel
 from update_manager import fetch_hotkeys
 
 # Get a logger for this module
@@ -29,14 +29,12 @@ class DbUpdateWorker(QThread):
         # Attempt to fetch the hotkeys from the server
         try:
             self.success = fetch_hotkeys()
-            if not self.success:
-                self.finished.emit()
-            else:
-                self.finished.emit()
+            self.finished.emit()
 
         except Exception as e:
-            if not self.success:
-                self.error.emit(str(e))
+            error_message = str(e)
+            logger.error("Error during update: %s", error_message)
+            self.error.emit(error_message)
 
     def stop(self):
         """
@@ -92,7 +90,7 @@ class LoadingWindow(QWidget):
         """
         self.show()
         self.thread.start()
-        
+
     def update_finished(self):
         """
         Handle actions to take once the update process is finished.
@@ -102,7 +100,7 @@ class LoadingWindow(QWidget):
             self.text_label.setText("Update completed successfully!")
         else:
             self.text_label.setText("Update failed. Please try again later.")
-            
+
         # Emit the signal to indicate the update is completed
         self.thread.quit()
         self.thread.wait()
@@ -126,5 +124,6 @@ class LoadingWindow(QWidget):
         Parameters:
         error_message (str): Error message to be logged.
         """
-        logger.error(f"Error during update: {error_message}")
+        logger.error("Error during update: %s", error_message)
         self.close()
+        

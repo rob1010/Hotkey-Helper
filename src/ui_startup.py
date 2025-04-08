@@ -219,3 +219,4 @@ class StartupDialog(QDialog):
         Emit the signal to quit the application.
         """
         self.quit_app_signal.emit()
+        

@@ -1,5 +1,3 @@
-import win32gui
-import win32process
 import subprocess
 import time
 import psutil
@@ -13,6 +11,14 @@ from threading import Lock
 
 # Get a logger for this module
 logger = logging.getLogger(__name__)
+
+# Platform-specific imports
+if platform.system() == "Windows":
+    try:
+        import win32gui
+        import win32process
+    except ImportError:
+        logger.warning("win32gui and win32process modules not available. Windows functionality will be limited.")
 
 class ShortcutManager:
     """
@@ -58,11 +64,11 @@ class ShortcutManager:
                     logger.info("App map loaded and cached")
                     
             except FileNotFoundError:
-                logger.error(f"App map file not found: {self.map_path}")
+                logger.error("App map file not found: %s", self.map_path)
                 self.app_map_cache = {}
                 self.app_names_sorted = []
             except Exception as e:
-                logger.error(f"Error loading app map: {e}")
+                logger.error("Error loading app map: %s", e)
                 self.app_map_cache = {}
                 self.app_names_sorted = []
         return self.app_map_cache
@@ -78,13 +84,13 @@ class ShortcutManager:
                     self.last_load_time = time.time()
                     logger.info("Shortcut database loaded and cached")
                 except FileNotFoundError:
-                    logger.error(f"Shortcut database file not found: {self.db_path}")
+                    logger.error("Shortcut database file not found: %s", self.db_path)
                     self.shortcut_cache = {}
                 except json.JSONDecodeError:
                     logger.error("Error decoding JSON from shortcut database")
                     self.shortcut_cache = {}
                 except Exception as e:
-                    logger.error(f"Unexpected error loading shortcut database: {e}")
+                    logger.error("Unexpected error loading shortcut database: %s", e)
                     self.shortcut_cache = {}
             return self.shortcut_cache
         
@@ -136,11 +142,11 @@ class ShortcutManager:
         # If no app name is found, return empty dict
         if app_name:
             self.load_shortcut_cache()  # Ensure the cache is loaded
-            logger.info(f"Available apps in shortcut_cache: {list(self.shortcut_cache.keys())}")
+            logger.info("Available apps in shortcut_cache: %s", list(self.shortcut_cache.keys()))
             
             # First try exact match
             if app_name in self.shortcut_cache:
-                logger.info(f"Exact match found for: '{app_name}'")
+                logger.info("Exact match found for: '%s'", app_name)
                 shortcuts = self.shortcut_cache[app_name]
                 return shortcuts
             
@@ -160,11 +166,15 @@ class ShortcutManager:
             if close_matches:
                 matched_normalized = close_matches[0]
                 # Find the original app name that corresponds to this normalized match
-                matched_app = next(app for app, norm in normalized_apps.items() if norm == matched_normalized)
-                similarity = difflib.SequenceMatcher(None, normalized_input, matched_normalized).ratio()
-                logger.info(f"Strict fuzzy matched '{app_name}' to '{matched_app}' with similarity {similarity:.2f}")
-                shortcuts = self.shortcut_cache[matched_app]
-                return shortcuts
+                try:
+                    matched_app = next(app for app, norm in normalized_apps.items() if norm == matched_normalized)
+                    similarity = difflib.SequenceMatcher(None, normalized_input, matched_normalized).ratio()
+                    logger.info("Strict fuzzy matched '%s' to '%s' with similarity %.2f", app_name, matched_app, similarity)
+                    shortcuts = self.shortcut_cache[matched_app]
+                    return shortcuts
+                except StopIteration:
+                    logger.warning("No matching app found for normalized name '%s'", matched_normalized)
+                    # Continue to the next matching strategy
             
             # Second pass: Look for partial matches (specifically for cases like "Chrome" -> "Google Chrome")
             best_match = None
@@ -183,11 +193,12 @@ class ShortcutManager:
                         
             # If a partial match is found, use it
             if best_match:
-                logger.info(f"Partial match found: '{app_name}' matched to '{best_match}' with score {best_score:.2f}")
+                logger.info("Partial match found: '%s' matched to '%s' with score %.2f", app_name, best_match, best_score)
                 shortcuts = self.shortcut_cache[best_match]
                 return shortcuts
             
-            logger.info(f"No exact or close matches for: '{app_name}' in the cache")
+            # If no match is found, return empty dict
+            logger.info("No exact or close matches for: '%s' in the cache", app_name)
             return {}
 
 def normalize_app_name(name):
@@ -215,20 +226,24 @@ def get_active_window_info():
 
         elif platform.system() == "Linux":
             # Use xdotool to get the active window title and PID
+            # Use absolute paths to prevent security issues with partial paths
+            xdotool_path = "/usr/bin/xdotool"  # Standard location on most Linux systems
             window_title = subprocess.check_output(
-                ["xdotool", "getwindowfocus", "getwindowname"], text=True
+                [xdotool_path, "getwindowfocus", "getwindowname"], text=True
             ).strip()
             pid = subprocess.check_output(
-                ["xdotool", "getwindowfocus", "getwindowpid"], text=True
+                [xdotool_path, "getwindowfocus", "getwindowpid"], text=True
             ).strip()
             process = psutil.Process(int(pid))
             process_name = process.name()
 
         elif platform.system() == "Darwin":
             # Use AppleScript to get active application
+            # Use absolute paths to prevent security issues with partial paths
+            osascript_path = "/usr/bin/osascript"  # Standard location on macOS
             window_title = subprocess.check_output(
                 [
-                    "osascript",
+                    osascript_path,
                     "-e",
                     'tell application "System Events" to get name of (process 1 where frontmost is true)'
                 ],
@@ -241,7 +256,7 @@ def get_active_window_info():
 
         return window_title, process_name
     except Exception as e:
-        logger.info(f"Error getting active window info: {e}")
+        logger.info("Error getting active window info: %s", e)
         return None, None
 
 def is_my_app_active(active_window_title):
