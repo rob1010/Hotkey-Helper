@@ -9,6 +9,7 @@ logger = logging.getLogger(__name__)
 
 class DbUpdateWorker(QThread):
     """Worker thread to manage the database update process."""
+    
     # Signals
     finished = Signal()
     error = Signal(str)
@@ -37,6 +38,7 @@ class DbUpdateWorker(QThread):
 
 class LoadingWindow(QWidget):
     """Loading window that provides feedback during the database update process."""
+    
     # Signals
     update_completed_signal = Signal()
 

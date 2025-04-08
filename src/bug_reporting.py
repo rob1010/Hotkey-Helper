@@ -3,7 +3,7 @@ import os
 import sys
 import logging
 
-from PySide6.QtWidgets import QApplication, QDialog, QTextEdit, QPushButton, QVBoxLayout, QLabel
+from PySide6.QtWidgets import QDialog, QTextEdit, QPushButton, QVBoxLayout, QLabel
 
 # Get a logger for this module
 logger = logging.getLogger(__name__)
@@ -11,19 +11,21 @@ logger = logging.getLogger(__name__)
 # Class to manage dialog state
 class DialogState:
     """Class to manage the state of dialogs in the application."""
+    
     def __init__(self):
         self.dialog_shown = False
 
 # Create a singleton instance
 dialog_state = DialogState()
 
+
 class BugReportDialog(QDialog):
-    """
-    Dialog to report a bug to the user and send a report to Sentry.
+    """    Dialog to report a bug to the user and send a report to Sentry.
 
     Args:
         QDialog (_type_): _description_
     """
+    
     def __init__(self, parent=None, error_message=""):
         """
         Initialize the BugReportDialog with an error message and description field.
@@ -87,7 +89,7 @@ def exception_hook(exctype, value, traceback):
         value (Exception): The exception instance.
         traceback (Traceback): The traceback information.
 
-    """    
+    """
     # If the dialog is already shown, log the additional exception and exit
     if dialog_state.dialog_shown:
         logger.error(

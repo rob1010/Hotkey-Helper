@@ -22,9 +22,9 @@ def main():
     Initialize and run the application.
 
     This function sets up the core event loop by creating an instance of `QApplication`.
-    It initializes the `WindowManager` to manage the different application windows 
+    It initializes the `WindowManager` to manage the different application windows
     and then starts the main event loop to handle GUI events.
-    """           
+    """
     # Create the QApplication instance - necessary for managing all GUI components.
     app = QApplication(sys.argv)
 
@@ -41,5 +41,7 @@ def main():
     sys.exit(app.exec())
 
 if __name__ == "__main__":
+    
+    
     # Entry point of the application.
     main()

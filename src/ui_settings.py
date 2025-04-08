@@ -6,12 +6,13 @@ from PySide6.QtWidgets import QWidget, QVBoxLayout, QLabel, QComboBox, QCheckBox
 # Get a logger for this module
 logger = logging.getLogger(__name__)
 
-class SettingsWindow(QWidget): 
+class SettingsWindow(QWidget):
     """
     The SettingsWindow class provides the UI for managing user preferences
-    for the application's shortcut display. Users can customize themes, 
+    for the application's shortcut display. Users can customize themes,
     window dimensions, fonts, and more.
     """
+    
     # Signals
     save_settings_signal = Signal()
     reset_settings_signal = Signal()
@@ -55,12 +56,12 @@ class SettingsWindow(QWidget):
         self.opacity_slider = self.add_slider_setting('Shortcut window opacity:', 10, 100, "\nSet shortcut window opacity: 10-100%")
 
         # Position Priority
-        self.position_priority_combo = self.add_combo_box_setting('Shortcut window position priority:', 
-                                   ['Top-Left', 'Top-Right', 'Bottom-Left', 'Bottom-Right'], 
+        self.position_priority_combo = self.add_combo_box_setting('Shortcut window position priority:',
+                                   ['Top-Left', 'Top-Right', 'Bottom-Left', 'Bottom-Right'],
                                    "Choose the primary position for the shortcut window to appear.")
 
         # Font Settings
-        self.font_family_combo = self.add_combo_box_setting('Set font family for shortcut window:', 
+        self.font_family_combo = self.add_combo_box_setting('Set font family for shortcut window:',
                                    ['Arial', 'Verdana', 'Courier New', 'Times New Roman'])
 
         # Font color

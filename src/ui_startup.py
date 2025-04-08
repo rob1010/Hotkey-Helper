@@ -14,6 +14,7 @@ class StartupDialog(QDialog):
     The StartupDialog class provides the initial user interface for the application, allowing
     users to start the app, configure settings, visit the website, or quit the application.
     """
+    
     # Signals to interact with other parts of the application
     start_app_signal = Signal()
     open_website_signal = Signal()

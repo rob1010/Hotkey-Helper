@@ -24,7 +24,7 @@ def load_api_key():
         logger.error("API key file not found: %s", api_file)
     return None
 
-# Define Firestore project details        
+# Define Firestore project details
 PROJECT_ID = "hotkey-helper"
 API_KEY = load_api_key()
 FIRESTORE_URL = f"https://firestore.googleapis.com/v1/projects/{PROJECT_ID}/databases/(default)/documents"

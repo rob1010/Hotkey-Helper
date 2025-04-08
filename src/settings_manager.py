@@ -10,13 +10,14 @@ logger = logging.getLogger(__name__)
 
 # Configurable paths with environment variable support
 CONFIG_PATH = os.environ.get(
-    'HOTKEY_HELPER_CONFIG_PATH', 
+    'HOTKEY_HELPER_CONFIG_PATH',
     os.path.join(os.path.dirname(__file__), "data/config.json")
 )
 BACKUP_CONFIG_PATH = os.path.join(os.path.dirname(__file__), "data/config_backup.json")
 
 class SettingsManager:
     """Manage application settings with type validation and error handling."""
+    
     def __init__(self, settings_file: str = CONFIG_PATH):
         """
         Initialize SettingsManager with configurable settings file path.
@@ -42,14 +43,14 @@ class SettingsManager:
 
         # Default settings with type-safe values
         self.default_settings: Dict[str, Any] = {
-            'theme': 'light', 
-            'search_shortcuts': True, 
+            'theme': 'light',
+            'search_shortcuts': True,
             'opacity': 0.7,
-            'max_window_width': 0.25, 
+            'max_window_width': 0.25,
             'max_window_height': 0.5,
-            'font_family': 'Times New Roman', 
+            'font_family': 'Times New Roman',
             'font_color': '#000000',
-            'font_size': 8, 
+            'font_size': 8,
             'adapting_window_to_list': True,
             'position_priority': 'top-right'
         }

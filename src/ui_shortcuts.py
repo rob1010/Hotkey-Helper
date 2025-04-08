@@ -43,6 +43,7 @@ class TrayIcon(QSystemTrayIcon):
     - open_startup_signal: Emitted when the "Show Startup" action is triggered.
     - quit_app_signal: Emitted when the "Quit" action is triggered.
     """
+    
     # Signals for tray icon actions
     open_startup_signal = Signal()
     quit_app_signal = Signal()
@@ -134,6 +135,7 @@ class ShortcutDisplay(QWidget):
     - map_path (str): Path to the application name map file.
     - local_db_path (str): Path to the local shortcut database.
     """
+    
     # Signals for shortcut display actions
     def __init__(self, settings_manager, map_path=APP_NAME_MAP_PATH, local_db_path=LOCAL_DB_PATH, interval=250, parent=None):
         super().__init__(parent)
@@ -332,7 +334,7 @@ class ShortcutDisplay(QWidget):
 
     def setup_labels(self):
         """
-        Creates labels for displaying shortcuts and their descriptions. 
+        Creates labels for displaying shortcuts and their descriptions.
         These are embedded in scrollable areas for better usability.
         """
         # Create horizontal layout for the labels

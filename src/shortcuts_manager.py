@@ -22,6 +22,7 @@ if platform.system() == "Windows":
 
 class ShortcutManager:
     """Manages application shortcuts with caching and optimized matching."""
+    
     def __init__(self, map_path, db_path, cache_duration=1):
         """
         Initialize the ShortcutManager with paths and cache settings.
@@ -199,7 +200,7 @@ class ShortcutManager:
             return {}
 
 def normalize_app_name(name):
-        """Normalize app names for better matching by removing spaces and converting to lowercase"""
+        """Normalize application names for better matching by removing spaces and converting to lowercase"""
         return re.sub(r'\s+', '', name.lower())
 
 def get_active_window_info():

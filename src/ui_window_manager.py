@@ -22,6 +22,7 @@ class WindowManager:
     settings window, and shortcut display. It handles initialization, signal connections,
     and transitions between these components.
     """
+    
     def __init__(self, app):
         """
         Initialize the WindowManager.
@@ -218,7 +219,7 @@ class WindowManager:
     @staticmethod
     def open_website():
         """Placeholder method for opening the website."""
-        url="https://hotkey-helper.web.app/index.html"
+        url = "https://hotkey-helper.web.app/index.html"
         webbrowser.open(url)
 
     def quit_app(self):
@@ -255,7 +256,7 @@ class WindowManager:
         self.settings_window.show()
         # Close the StartupDialog if it exists
         if self.startup_dialog:
-            self.startup_dialog.close() 
+            self.startup_dialog.close()
             self.disconnect_startup_dialog()
 
     def save_settings(self):
