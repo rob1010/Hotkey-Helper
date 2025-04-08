@@ -24,6 +24,7 @@ def load_api_key():
             return f.read().strip()
     except FileNotFoundError:
         logger.error("API key file not found: %s", api_file)
+    return None
 
 # Define Firestore project details        
 PROJECT_ID = "hotkey-helper"
@@ -46,8 +47,8 @@ def fetch_hotkeys():
         hotkeys_response = requests.get(f"{FIRESTORE_URL}/hotkeys/?key={API_KEY}")
         hotkeys_response.raise_for_status()  # Raise an exception for HTTP errors
         db_temp = hotkeys_response.json()
-    except requests.exceptions.RequestException as e:
-        logger.error("Error fetching hotkeys from Firestore: %s", e)
+    except requests.exceptions.RequestException:
+        logger.error("Error fetching hotkeys from Firestore")
         return False
     except json.JSONDecodeError as e:
         logger.error("Error decoding JSON response: %s", e)
@@ -240,7 +241,6 @@ def check_for_application_updates(current_version):
         if latest_version > current_version:
             print(f"New version available: {latest_version}\n and current version: {current_version}")
             return True
-        #print("Latest and current versions: {latest_version} and {current_version}")
         return False
     except Exception:
         logger.error("Couldn't check for updates.")

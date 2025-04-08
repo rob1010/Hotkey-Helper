@@ -94,7 +94,8 @@ def exception_hook(exctype, value, traceback):
     # If the dialog is already shown, log the additional exception and exit
     if dialog_state.dialog_shown:
         logger.error(
-            f"Additional unhandled exception while dialog is shown: {exctype}, {value}",
+            "Additional unhandled exception while dialog is shown: %s, %s",
+            exctype, value,
             exc_info=(exctype, value, traceback)
         )
         sentry_sdk.capture_exception((exctype, value, traceback))
@@ -106,7 +107,8 @@ def exception_hook(exctype, value, traceback):
     
     # Log the initial exception
     logger.error(
-        f"Unhandled exception: {exctype}, {value}",
+        "Unhandled exception: %s, %s",
+        exctype, value,
         exc_info=(exctype, value, traceback)
     )
     
@@ -115,7 +117,7 @@ def exception_hook(exctype, value, traceback):
     sentry_sdk.flush()  # Ensure the exception is sent immediately
     
     # Initialize QApplication if not already running
-    QApplication.instance() or QApplication(sys.argv)
+    app = QApplication.instance() or QApplication(sys.argv)
     
     # Show the dialog and handle potential errors
     try:

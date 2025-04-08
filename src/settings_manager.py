@@ -81,15 +81,15 @@ class SettingsManager:
         # Additional specific validations
         if key == 'opacity':
             return 0.1 <= value <= 1.0
-        elif key == 'font_size':
+        if key == 'font_size':
             return value > 0
-        elif key in ['max_window_width', 'max_window_height']:
+        if key in ['max_window_width', 'max_window_height']:
             return 0.1 < value <= 1.0
-        elif key == 'theme':
+        if key == 'theme':
             return value in ['light', 'dark']
-        elif key == 'position_priority':
+        if key == 'position_priority':
             return value in ['top-right', 'top-left', 'bottom-right', 'bottom-left']
-        elif key == 'font_color':
+        if key == 'font_color':
             return isinstance(value, str) and value.startswith('#') and len(value) == 7
         
         return True

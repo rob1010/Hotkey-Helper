@@ -212,7 +212,7 @@ def get_active_window_info():
     Returns:
     tuple: (window_title, process_name) or (None, None) if no active window is found.
     """
-    ## Cross-platform active window title retrieval
+    # Cross-platform active window title retrieval
     try:
         if platform.system() == "Windows":
             # Get the active window handle
