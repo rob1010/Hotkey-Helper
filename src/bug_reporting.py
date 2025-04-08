@@ -27,7 +27,7 @@ class BugReportDialog(QDialog):
     def __init__(self, parent=None, error_message=""):
         """
         Initialize the BugReportDialog with an error message and description field.
-        
+
         Args:
             parent (QWidget): The parent widget.
             error_message (str): The error message to display.
@@ -37,18 +37,18 @@ class BugReportDialog(QDialog):
         self.setWindowTitle("Report a Bug")
         layout = QVBoxLayout()
         layout.addWidget(QLabel(f"An error occurred: {error_message}"))
-        
+
         # Add a description field for the user to provide additional context
         self.description = QTextEdit()
         self.description.setPlaceholderText("Describe what you were doing when this happened...")
-        
+
         # Add buttons to send the report or cancel
         layout.addWidget(self.description)
         send_button = QPushButton("Send Report")
         send_button.clicked.connect(self.send_report)
         cancel_button = QPushButton("Cancel")
         cancel_button.clicked.connect(self.accept)
-        
+
         # Add widgets to the layout
         layout.addWidget(send_button)
         layout.addWidget(cancel_button)
@@ -74,21 +74,21 @@ class BugReportDialog(QDialog):
         )
         sentry_sdk.flush()  # Ensure the report is sent before exiting
         logger.info("Bug report sent to Sentry")
-        
+
         # Close the dialog
         self.accept()
 
 def exception_hook(exctype, value, traceback):
     """
     Custom exception hook to show a bug report dialog and send the exception to Sentry.
-    
+
     Args:
         exctype (type): The type of the exception.
         value (Exception): The exception instance.
         traceback (Traceback): The traceback information.
-    
+
     """    
-    
+
     # If the dialog is already shown, log the additional exception and exit
     if dialog_state.dialog_shown:
         logger.error(
@@ -99,24 +99,24 @@ def exception_hook(exctype, value, traceback):
         sentry_sdk.capture_exception((exctype, value, traceback))
         sentry_sdk.flush()  # Ensure all reports are sent
         sys.exit(1)  # Exit the application cleanly
-    
+
     # Mark the dialog as shown
     dialog_state.dialog_shown = True
-    
+
     # Log the initial exception
     logger.error(
         "Unhandled exception: %s, %s",
         exctype, value,
         exc_info=(exctype, value, traceback)
     )
-    
+
     # Send the exception to Sentry
     sentry_sdk.capture_exception((exctype, value, traceback))
     sentry_sdk.flush()  # Ensure the exception is sent immediately
-    
+
     # Initialize QApplication if not already running
     app = QApplication.instance() or QApplication(sys.argv)
-    
+
     # Show the dialog and handle potential errors
     try:
         dialog = BugReportDialog(error_message=str(value))
@@ -125,7 +125,6 @@ def exception_hook(exctype, value, traceback):
         logger.error("Error in BugReportDialog: %s", e, exc_info=True)
         sentry_sdk.capture_exception(e)
         sentry_sdk.flush()  # Send any dialog-related errors
-    
+
     # After the dialog closes (or fails), exit the application
     sys.exit(1)
-    

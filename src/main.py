@@ -16,7 +16,7 @@ logging.basicConfig(
     filename='data/application.log'  # Single log file for all modules
 )
 logger = logging.getLogger(__name__)
-        
+
 def main():
     """
     Initialize and run the application.
@@ -27,10 +27,10 @@ def main():
     """           
     # Create the QApplication instance - necessary for managing all GUI components.
     app = QApplication(sys.argv)
-    
+
     # Set the exception hook to handle uncaught exceptions and display a bug report dialog.
     sys.excepthook = exception_hook
-    
+
     # Create the main window manager instance that handles all application windows and signals.
     window_manager = WindowManager(app)
 

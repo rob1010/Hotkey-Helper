@@ -53,7 +53,7 @@ class SettingsWindow(QWidget):
 
         # Opacity Slider
         self.opacity_slider = self.add_slider_setting('Shortcut window opacity:', 10, 100, "\nSet shortcut window opacity: 10-100%")
-        
+
         # Position Priority
         self.position_priority_combo = self.add_combo_box_setting('Shortcut window position priority:', 
                                    ['Top-Left', 'Top-Right', 'Bottom-Left', 'Bottom-Right'], 
@@ -62,7 +62,7 @@ class SettingsWindow(QWidget):
         # Font Settings
         self.font_family_combo = self.add_combo_box_setting('Set font family for shortcut window:', 
                                    ['Arial', 'Verdana', 'Courier New', 'Times New Roman'])
-        
+
         # Font color
         self.font_color_button = self.add_button_setting('Set font color for shortcut window:', 'Select Color', self.choose_font_color)
 
@@ -142,7 +142,7 @@ class SettingsWindow(QWidget):
         self.layout.addWidget(slider)
         self.layout.addWidget(value_label)
         return slider
-    
+
     def add_slider_setting_number(self, label_text, min_val, max_val, tooltip=None):
         """
         Add a slider setting to the layout.
@@ -204,7 +204,7 @@ class SettingsWindow(QWidget):
         if color.isValid():
             self.font_color_button.setStyleSheet(f"background-color:{color.name()};")
             self.save_settings_from_ui()  # Update via validated method
-            
+
     def load_settings_into_ui(self):
         """Load current settings into the UI elements."""
         # Theme

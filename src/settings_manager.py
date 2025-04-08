@@ -25,7 +25,7 @@ class SettingsManager:
             settings_file (str): Path to the settings file. Defaults to CONFIG_PATH.
         """
         self.settings_file = settings_file
-        
+
         # Define expected types for settings validation
         self.settings_types = {
             'theme': str,
@@ -39,7 +39,7 @@ class SettingsManager:
             'adapting_window_to_list': bool,
             'position_priority': str
         }
-        
+
         # Default settings with type-safe values
         self.default_settings: Dict[str, Any] = {
             'theme': 'light', 
@@ -53,10 +53,10 @@ class SettingsManager:
             'adapting_window_to_list': True,
             'position_priority': 'top-right'
         }
-        
+
         # Ensure data directory exists
         os.makedirs(os.path.dirname(self.settings_file), exist_ok=True)
-        
+
         # Load settings, ensuring type safety
         self.settings = self._load_settings()
 
@@ -89,7 +89,7 @@ class SettingsManager:
             return value in ['top-right', 'top-left', 'bottom-right', 'bottom-left']
         if key == 'font_color':
             return isinstance(value, str) and value.startswith('#') and len(value) == 7
-        
+
         return True
 
     def _load_settings(self) -> Dict[str, Any]:
@@ -104,7 +104,7 @@ class SettingsManager:
             if os.path.exists(self.settings_file):
                 with open(self.settings_file, 'r') as file:
                     loaded_settings = json.load(file)
-                    
+
                     # Validate and merge loaded settings
                     validated_settings = self.default_settings.copy()
                     for key, value in loaded_settings.items():
@@ -112,15 +112,15 @@ class SettingsManager:
                             validated_settings[key] = value
                         else:
                             logger.warning("Invalid setting: %s = %s", key, value)
-                    
+
                     logger.info("Settings loaded successfully")
                     return validated_settings
-            
+
             # If no settings file exists, use defaults
             logger.warning("No settings file found. Using defaults.")
             self.save_settings()
             return self.default_settings.copy()
-        
+
         except json.JSONDecodeError:
             # Attempt to restore from backup
             logger.error("JSON decode error. Attempting to restore from backup.")
@@ -132,7 +132,7 @@ class SettingsManager:
                 logger.error("Backup restoration failed: %s", backup_error)
         except Exception as e:
             logger.error("Unexpected error loading settings: %s", e)
-        
+
         # Fallback to defaults if all else fails
         return self.default_settings.copy()
 
@@ -142,14 +142,14 @@ class SettingsManager:
         try:
             if os.path.exists(self.settings_file):
                 shutil.copy(self.settings_file, BACKUP_CONFIG_PATH)
-            
+
             # Ensure directory exists
             os.makedirs(os.path.dirname(self.settings_file), exist_ok=True)
-            
+
             # Save settings
             with open(self.settings_file, 'w') as file:
                 json.dump(self.settings, file, indent=4)
-            
+
             logger.info("Settings saved successfully")
 
         except Exception as e:
@@ -197,6 +197,5 @@ class SettingsManager:
         """Reset all settings to their default values."""
         self.settings = self.default_settings.copy()
         self.save_settings()
-        
+
         logger.info("Settings reset to defaults")
-        

@@ -19,7 +19,7 @@ class StartupDialog(QDialog):
     open_website_signal = Signal()
     open_settings_signal = Signal()
     quit_app_signal = Signal()
-    
+
     def __init__(self, is_action_in_progress=False, parent=None):
         """
         Initialize the StartupDialog with buttons for starting the app, opening settings,
@@ -54,7 +54,7 @@ class StartupDialog(QDialog):
         # Create the header layout
         header_layout = self.create_header_layout(icon_path)
         layout.addLayout(header_layout)
-        
+
         # Create buttons
         start_button = self.create_start_button()
         settings_button = self.create_settings_button()
@@ -65,7 +65,7 @@ class StartupDialog(QDialog):
 
         for button in buttons:
             layout.addWidget(button)
-            
+
         # Add version label at the bottom
         if self.update_status:
             version_label = QLabel(f"Version: {self.current_version} (Update available!)")
@@ -73,7 +73,7 @@ class StartupDialog(QDialog):
             version_label = QLabel(f"Version: {self.current_version} (Up to date)")
         version_label.setAlignment(Qt.AlignLeft)
         layout.addWidget(version_label)
-        
+
         # Set the main layout for the dialog
         self.setLayout(layout)
         self.set_tab_order(buttons)
@@ -173,7 +173,7 @@ class StartupDialog(QDialog):
         """
         button = self.create_button("Settings", lambda: self.emit_open_settings_signal())
         return button
-    
+
     def create_web_button(self):
         """
         Create the "Website" button to open the application's website.
@@ -183,7 +183,7 @@ class StartupDialog(QDialog):
         """
         button = self.create_button("Website", lambda: self.emit_open_website_signal())
         return button
-    
+
     def create_close_button(self):
         """
         Create the "Quit" button to close the application.
@@ -199,16 +199,15 @@ class StartupDialog(QDialog):
         if not self.is_action_in_progress:
             self.is_action_in_progress = True
             self.start_app_signal.emit()
-        
+
     def emit_open_settings_signal(self):
         """Emit the signal to open the settings window."""
         self.open_settings_signal.emit()
-        
+
     def emit_open_website_signal(self):
         """Emit the signal to open a website in the default web browser."""
         self.open_website_signal.emit()
-        
+
     def emit_quit_app_signal(self):
         """Emit the signal to quit the application."""
         self.quit_app_signal.emit()
-        

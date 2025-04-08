@@ -32,14 +32,14 @@ FIRESTORE_URL = f"https://firestore.googleapis.com/v1/projects/{PROJECT_ID}/data
 def fetch_hotkeys():
     """
     Fetch the 'hotkeys' collection from Firestore, transform it, and save to local storage.
-    
+
     Args:
         cancel (callable, optional): A function to call to determine if the process should be canceled.
-    
+
     Returns:
         bool: True if completed successfully, False if canceled or an error occurred.
     """
-    
+
     # Fetch data from Firestore with error handling
     try:
         hotkeys_response = requests.get(f"{FIRESTORE_URL}/hotkeys/?key={API_KEY}")
@@ -51,10 +51,10 @@ def fetch_hotkeys():
     except json.JSONDecodeError as e:
         logger.error("Error decoding JSON response: %s", e)
         return False
-    
+
     # Transform the data from Firestore format to a simplified structure
     db = transform_firestore_data(db_temp)
-    
+
     # Write the transformed data to a temporary file
     try:
         with open(TEMP_DB_PATH, "w") as f:
@@ -62,7 +62,7 @@ def fetch_hotkeys():
     except Exception as e:
         logger.error("Error writing to temporary file %s: %s", TEMP_DB_PATH, e)
         return False
-    
+
     # Read the temporary file to verify it was written correctly
     try:
         with open(TEMP_DB_PATH, "r") as f:
@@ -70,7 +70,7 @@ def fetch_hotkeys():
     except Exception as e:
         logger.error("Error reading temporary file %s: %s", TEMP_DB_PATH, e)
         return False
-    
+
     # Update update log with the number of processed shortcuts
     db_lenght = get_total_shortcuts_count()
     log_update(db_lenght)
@@ -79,10 +79,10 @@ def fetch_hotkeys():
 def transform_firestore_data(firestore_data):
     """
     Transform Firestore data into a simplified structure.
-    
+
     Args:
         firestore_data (dict): The Firestore response data.
-        
+
     Returns:
         dict: The transformed data in a simplified structure.
     """
@@ -161,7 +161,7 @@ def get_local_shortcuts_count():
         except json.JSONDecodeError:
             logger.error("Error reading update log file: Invalid JSON format.")
             return 0
-        
+
         # Retrieve the stored count, defaulting to 0 if the key is missing
         stored_count = update_log.get('processed_shortcuts', 0)
         return stored_count
@@ -185,7 +185,7 @@ def check_for_db_updates():
     if stored_count == current_count:
         return False
     return True
-    
+
 
 def log_update(processed_shortcuts):
     """
@@ -206,7 +206,7 @@ def log_update(processed_shortcuts):
         logger.error("Update log saved to %s", UPDATE_LOG_PATH)
     except Exception as e:
         logger.error("Failed to write update log: %s", e)
-    
+
 def load_latest_version():
     """Load the latest version number from a local file."""
     version_file = "data/latest_version.txt"
@@ -222,10 +222,10 @@ def load_latest_version():
 def check_for_application_updates(current_version):
     """
     Check for application updates by comparing the current version with the latest version.
-    
+
     Args:
         current_version (str): The current version of the application.
-        
+
     Returns:
         bool: True if an update is available, False otherwise.
     """

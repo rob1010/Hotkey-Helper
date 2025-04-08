@@ -106,4 +106,3 @@ class LoadingWindow(QWidget):
         """
         logger.error("Error during update: %s", error_message)
         self.close()
-        
