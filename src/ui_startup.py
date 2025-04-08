@@ -195,28 +195,20 @@ class StartupDialog(QDialog):
         return button
 
     def emit_start_app_signal(self):
-        """
-        Emit the signal to start the main application.
-        """
+        """Emit the signal to start the main application."""
         if not self.is_action_in_progress:
             self.is_action_in_progress = True
             self.start_app_signal.emit()
         
     def emit_open_settings_signal(self):
-        """
-        Emit the signal to open the settings window.
-        """
+        """Emit the signal to open the settings window."""
         self.open_settings_signal.emit()
         
     def emit_open_website_signal(self):
-        """
-        Emit the signal to open a website in the default web browser.
-        """
+        """Emit the signal to open a website in the default web browser."""
         self.open_website_signal.emit()
         
     def emit_quit_app_signal(self):
-        """
-        Emit the signal to quit the application.
-        """
+        """Emit the signal to quit the application."""
         self.quit_app_signal.emit()
         

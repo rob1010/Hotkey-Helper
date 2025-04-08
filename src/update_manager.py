@@ -14,9 +14,7 @@ TEMP_DB_PATH = os.path.join(BASE_DIR, "data/temp_shortcut_db.json")
 UPDATE_LOG_PATH = os.path.join(BASE_DIR, "data/update_log.json")
 
 def load_api_key():
-    """
-    Load the Firestore API key from a local file.
-    """
+    """Load the Firestore API key from a local file."""
     # Define the path to the API key file
     api_file = "data/api_key.txt"
     try:
@@ -210,9 +208,7 @@ def log_update(processed_shortcuts):
         logger.error("Failed to write update log: %s", e)
     
 def load_latest_version():
-    """
-    Load the latest version number from a local file.
-    """
+    """Load the latest version number from a local file."""
     version_file = "data/latest_version.txt"
     try:
         with open(version_file, "r") as f:

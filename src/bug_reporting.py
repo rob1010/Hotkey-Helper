@@ -55,9 +55,7 @@ class BugReportDialog(QDialog):
         self.setLayout(layout)
 
     def send_report(self):
-        """
-        Send the bug report to Sentry with additional context.
-        """
+        """Send the bug report to Sentry with additional context."""
         # Get the description and log content
         desc = self.description.toPlainText()
         log_path = os.path.join(os.path.dirname(__file__), "data/application.log")

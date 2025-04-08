@@ -55,9 +55,7 @@ class TrayIcon(QSystemTrayIcon):
         self.init_ui()
 
     def init_ui(self):
-        """
-        Initializes the tray icon UI, setting up the icon and context menu.
-        """
+        """Initializes the tray icon UI, setting up the icon and context menu."""
         self.setup_icon_paths(self.base_dir)
         self.setup_tray_icon()
 
@@ -81,9 +79,7 @@ class TrayIcon(QSystemTrayIcon):
         )
 
     def setup_tray_icon(self):
-        """
-        Configures the system tray icon and context menu actions.
-        """
+        """Configures the system tray icon and context menu actions."""
         # Set the icon and context menu
         self.setIcon(QIcon(self.icon_path))
 
@@ -121,9 +117,7 @@ class TrayIcon(QSystemTrayIcon):
             self.open_startup_signal.emit()
 
     def emit_quit_application_signal(self):
-        """
-        Emits the signal to quit the application.
-        """
+        """Emits the signal to quit the application."""
         self.quit_app_signal.emit()
 
 
@@ -173,9 +167,7 @@ class ShortcutDisplay(QWidget):
         self.timer.start(self.interval)
 
     def init_ui(self):
-        """
-        Initializes the user interface for the shortcut display.
-        """
+        """Initializes the user interface for the shortcut display."""
         # Set up the layout and search bar
         self.layout = QVBoxLayout()
         self.layout.setContentsMargins(10, 10, 10, 10)

@@ -68,33 +68,25 @@ class WindowManager:
         )
         
     def initialize_startup_dialog(self):
-        """
-        Lazily initialize the startup dialog if it has not been created yet.
-        """
+        """Lazily initialize the startup dialog if it has not been created yet."""
         if self.startup_dialog is None:
             self.startup_dialog = StartupDialog()
         self.connect_signals_startup_dialog()
 
     def initialize_shortcut_display(self):
-        """
-        Lazily initialize the shortcut display if it has not been created yet.
-        """
+        """Lazily initialize the shortcut display if it has not been created yet."""
         if self.shortcut_display is None:
             self.shortcut_display = ShortcutDisplay(self.settings_manager)
         self.connect_signals_shortcut_display()
 
     def initialize_settings_window(self):
-        """
-        Lazily initialize the settings window if it has not been created yet.
-        """
+        """Lazily initialize the settings window if it has not been created yet."""
         if self.settings_window is None:
             self.settings_window = SettingsWindow(self.settings_manager)
         self.connect_signals_settings_window()
         
     def disconnect_startup_dialog(self):
-        """
-        Disconnect all signals connected to the startup dialog.
-        """
+        """Disconnect all signals connected to the startup dialog."""
         self.startup_dialog.start_app_signal.disconnect()
         self.startup_dialog.open_website_signal.disconnect()
         self.startup_dialog.open_settings_signal.disconnect()
@@ -102,17 +94,13 @@ class WindowManager:
         self.startup_dialog = None
 
     def disconnect_shortcut_display(self):
-        """
-        Disconnect all signals connected to the shortcut display.
-        """
+        """Disconnect all signals connected to the shortcut display."""
         self.shortcut_display.tray_icon.open_startup_signal.disconnect()
         self.shortcut_display.tray_icon.quit_app_signal.disconnect()
         self.shortcut_display = None
 
     def disconnect_settings_window(self):
-        """
-        Disconnect all signals connected to the settings window.
-        """
+        """Disconnect all signals connected to the settings window."""
         self.settings_window.save_settings_signal.disconnect()
         self.settings_window.reset_settings_signal.disconnect()
         self.settings_window.close_settings_signal.disconnect()
@@ -217,9 +205,7 @@ class WindowManager:
             return ""
 
     def start_app(self):
-        """
-        Transition from the StartupDialog to the ShortcutDisplay window.
-        """
+        """Transition from the StartupDialog to the ShortcutDisplay window."""
         # Initialize the ShortcutDisplay and show it
         self.initialize_shortcut_display()
         self.shortcut_display.timer.start()
@@ -231,16 +217,12 @@ class WindowManager:
             
     @staticmethod
     def open_website():
-        """
-        Placeholder method for opening the website.
-        """
+        """Placeholder method for opening the website."""
         url="https://hotkey-helper.web.app/index.html"
         webbrowser.open(url)
 
     def quit_app(self):
-        """
-        Quit the application.
-        """
+        """Quit the application."""
         # Close the ShortcutDisplay and StartupDialog if they exist
         if self.shortcut_display:
             self.shortcut_display.tray_icon.close()
@@ -253,9 +235,7 @@ class WindowManager:
         QApplication.quit()
 
     def show_startup(self):
-        """
-        Show the StartupDialog, closing other windows if necessary.
-        """
+        """Show the StartupDialog, closing other windows if necessary."""
         # Initialize the StartupDialog and show it
         self.initialize_startup_dialog()
         self.startup_dialog.show()
@@ -270,9 +250,7 @@ class WindowManager:
             self.disconnect_settings_window()
 
     def open_settings(self):
-        """
-        Transition from the StartupDialog to the SettingsWindow.
-        """
+        """Transition from the StartupDialog to the SettingsWindow."""
         self.initialize_settings_window()
         self.settings_window.show()
         # Close the StartupDialog if it exists
@@ -281,9 +259,7 @@ class WindowManager:
             self.disconnect_startup_dialog()
 
     def save_settings(self):
-        """
-        Save the settings and return to the StartupDialog.
-        """
+        """Save the settings and return to the StartupDialog."""
         self.initialize_startup_dialog()
         # Apply the theme based on updated settings
         if self.settings_manager.get_setting("theme") == "dark":
@@ -298,9 +274,7 @@ class WindowManager:
             self.disconnect_settings_window()
 
     def reset_settings(self):
-        """
-        Reset settings to their default values and return to the StartupDialog.
-        """
+        """Reset settings to their default values and return to the StartupDialog."""
         self.initialize_startup_dialog()
         # Apply the default theme
         if self.settings_manager.get_setting("theme") == "dark":
@@ -315,9 +289,7 @@ class WindowManager:
             self.disconnect_settings_window()
 
     def close_settings(self):
-        """
-        Close the SettingsWindow and return to the StartupDialog.
-        """
+        """Close the SettingsWindow and return to the StartupDialog."""
         self.initialize_startup_dialog()
         self.startup_dialog.show()
         # Close the SettingsWindow if it exists

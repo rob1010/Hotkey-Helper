@@ -8,24 +8,18 @@ from update_manager import fetch_hotkeys
 logger = logging.getLogger(__name__)
 
 class DbUpdateWorker(QThread):
-    """
-    Worker thread to manage the database update process.
-    """
+    """Worker thread to manage the database update process."""
     # Signals
     finished = Signal()
     error = Signal(str)
 
     def __init__(self):
-        """
-        Initialize the DbUpdateWorker.
-        """
+        """Initialize the DbUpdateWorker."""
         super().__init__()
         self.success = False
 
     def run(self):
-        """
-        Run the update process in a separate thread.
-        """
+        """Run the update process in a separate thread."""
         # Attempt to fetch the hotkeys from the server
         try:
             self.success = fetch_hotkeys()
@@ -37,23 +31,17 @@ class DbUpdateWorker(QThread):
             self.error.emit(error_message)
 
     def stop(self):
-        """
-        Stop the update process.
-        """
+        """Stop the update process."""
         self.success = True
         self.wait()
 
 class LoadingWindow(QWidget):
-    """
-    Loading window that provides feedback during the database update process.
-    """
+    """Loading window that provides feedback during the database update process."""
     # Signals
     update_completed_signal = Signal()
 
     def __init__(self):
-        """
-        Initialize the LoadingWindow with a text label and cancel button.
-        """
+        """Initialize the LoadingWindow with a text label and cancel button."""
         # Initialize the QWidget
         super().__init__()
         self.setWindowTitle("Loading")
@@ -77,24 +65,18 @@ class LoadingWindow(QWidget):
         self.setup_worker_connections()
 
     def setup_worker_connections(self):
-        """
-        Set up the worker connections for handling completion and errors.
-        """
+        """Set up the worker connections for handling completion and errors."""
         self.worker.finished.connect(self.update_finished)
         self.worker.error.connect(self.handle_error)
         self.thread.started.connect(self.worker.run)
 
     def start_update(self):
-        """
-        Start the worker thread to begin the update process.
-        """
+        """Start the worker thread to begin the update process."""
         self.show()
         self.thread.start()
 
     def update_finished(self):
-        """
-        Handle actions to take once the update process is finished.
-        """
+        """Handle actions to take once the update process is finished."""
         # Update the text label based on the success of the update
         if self.worker.success:
             self.text_label.setText("Update completed successfully!")
@@ -108,9 +90,7 @@ class LoadingWindow(QWidget):
         self.cleanup()
 
     def cleanup(self):
-        """
-        Clean up worker signals and resources.
-        """
+        """Clean up worker signals and resources."""
         # Disconnect signals and delete the worker
         for signal in [self.worker.finished, self.worker.error]:
             signal.disconnect()
